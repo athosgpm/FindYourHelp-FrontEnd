@@ -9,6 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     RodapeComponent,
     MenuComponent,
     LoginComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    SobreNosComponent
   ],
   imports: [
     BrowserModule,
