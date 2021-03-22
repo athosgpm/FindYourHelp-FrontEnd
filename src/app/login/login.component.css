@@ -1,0 +1,17 @@
+#img-bg {
+
+  background-image: linear-gradient(to right, #f8fdb9,#f4f74b, #ddf76e,#fff);
+  min-height: 695px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+}
+
+
+.bg-white{
+
+box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+padding: 20px 30px;
+  border-radius: 0.8cm;
+}
