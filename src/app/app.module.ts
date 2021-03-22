@@ -8,13 +8,15 @@ import { MenuComponent } from './menu/menu.component';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RodapeComponent,
     MenuComponent,
-    LoginComponent
+    LoginComponent,
+    CadastrarComponent
   ],
   imports: [
     BrowserModule,
