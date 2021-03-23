@@ -1,11 +1,13 @@
-#img-bg {
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-  background-image: url(https://i.imgur.com/SC52DR9.jpg);
-  min-height: 850px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  max-width: 100%;
-  height: auto;
-
+.centro{
+  display:inline-flex;
+  flex-direction:row;
+  align-items: center;
+  text-align: center;
 }
