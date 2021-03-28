@@ -1,3 +1,4 @@
+/*Steps*/
 :host {
   display: flex;
   flex-direction: column;
@@ -5,9 +6,94 @@
   text-align: center;
 }
 
+/*botoes*/
 .centro{
   display:inline-flex;
   flex-direction:row;
   align-items: center;
   text-align: center;
 }
+
+/*termos e condicoes Step 4*/
+.termo{
+  overflow:scroll; 
+  width:600px; 
+  height:200px;
+  background-color: white;
+  border-radius: 1rem;
+  border: 1px solid;
+  padding: 30px;
+  box-shadow: 4px 7px #888888;
+}
+
+
+/*Scrollbar*/
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/*Scrollbar*/  
+::-webkit-scrollbar-thumb {
+border-radius: 1rem;
+background-color: #FFF;
+background-image: -webkit-linear-gradient(90deg,
+                                          rgba(0, 0, 0, 1) 0%,
+                      rgba(0, 0, 0, 1) 25%,
+                      transparent 100%,
+                      rgba(0, 0, 0, 1) 75%,
+                      transparent)
+
+}
+
+/*Campos dos input*/
+.mat-form-field{
+min-width: 300px;
+}
+
+/*Resposta do ngif icone*/
+
+
+/*cards do 1 Step*/
+.mat-card:hover{
+transform: translateY(-10px);
+-webkit-box-shadow: -2px 19px 11px 6px rgba(0,0,0,0.56);
+-moz-box-shadow: -2px 19px 11px 6px rgba(0,0,0,0.56);
+box-shadow: -2px 19px 11px 6px rgba(0,0,0,0.56);
+}
+
+
+
+/*
+::ng-deep .mat-horizontal-stepper-header-container {
+border: solid 1px red; 
+}
+
+::ng-deep mat-stepper-horizontal, mat-stepper-horizontal {
+border: dashed 1px blue; 
+padding: 1em;
+}
+*/
+
+
+/*cor do step letra ativo*/
+::ng-deep .mat-step-header[aria-selected="true"] .mat-step-label-active { color:rgb(0, 0, 36) }
+
+/*desabilitar eventos no header*/
+::ng-deep .mat-horizontal-stepper-header {
+box-sizing:content-box;
+flex-direction:column;
+height: auto;
+padding: 31px;
+pointer-events: none !important;
+cursor: not-allowed;
+
+}
+/*cor do step  ativa*/
+::ng-deep .mat-step-header .mat-step-icon-selected {
+background-color: rgb(119, 0, 255); 
+}
+
+
+
+
+
