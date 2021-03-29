@@ -1,86 +1,257 @@
-<mat-horizontal-stepper>
-  <div class="container">
+<!--
+  Projeto Find your help 
+  Codigo da pagina desenvolvido por : Tatiane Tissoni
+-->
+<!--
+  Bibliotecas usadas: Angular Material , Font Awesome , Flex Layout , Bootstrap
+-->
 
-  <mat-step label="Step 1" state="phone">
-      <label id="opcao"><h1 class="display-4">Qual sua renda familiar?</h1></label>
+<mat-horizontal-stepper #stepper>
+
+  <!--Primeiro Step-->
+  <form>
+    <mat-step label="Passo 1" state="quemevc">
+      <h1 class="display-4">Quem é você?</h1>
+      <div class="container d-flex justify-content-center align-items-center">
+        <div fxLayout="row" fxLayoutGap="21px grid" fxLayoutAlign="center center">
+
+          <div class="col" fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
+            <mat-card class="mat-elevation-z5" (click)="move(1)">
+              <!--função para mover para o step 1-->
+              <mat-card-header>
+                <mat-card-title class="text-center">Empreendedor</mat-card-title>
+              </mat-card-header>
+              <img mat-card-image src="https://i.imgur.com/T4RXlfT.png" class="img-fluid">
+              <mat-card-content class="py-2">
+                <p class="lead">
+                  Tenho uma ideia e preciso de ajuda para sair do papel
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>Cadastre-se</button>
+
+              </mat-card-actions>
+            </mat-card>
+          </div>
+          <div class="col" fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
+            <mat-card class="mat-elevation-z5" (click)="move(2)">
+              <!--função para mover para o step 2-->
+              <mat-card-header>
+                <mat-card-title>Colaborador</mat-card-title>
+              </mat-card-header>
+              <img mat-card-image src="https://i.imgur.com/T4RXlfT.png" class="img-fluid">
+              <mat-card-content class="py-3">
+                <p class="lead">
+                  Quero ajudar uma ideia a sair do papel
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>Cadastre-se</button>
+
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+
+      <div class="py-4">
+        <button mat-flat-button color="primary">Voltar</button>
+
+      </div>
+    </mat-step>
+  </form>
+  <!--/Primeiro Step-->
+  <form>
+    <!--Segundo Step-->
+
+    <mat-step label="Passo 2" state="phone">
+      <label id="opcao">
+        <h1 class="display-4">Qual sua renda familiar?</h1>
+      </label>
       <br>
-      <mat-radio-group class="py-4" aria-label="Select an option">
-          <mat-radio-button class="mr-5" value="1">ate 2.034 R$ </mat-radio-button>
-          <mat-radio-button value="2">maior que 2.034 R$</mat-radio-button>
-        </mat-radio-group>
-    <div class="py-4">
-      <button mat-flat-button color="primary" matStepperNext >Next</button>
+      <!--Estabelecer um controle no atributo renda-->
 
-    </div>
-  </mat-step>
+      <mat-radio-group class="py-4" aria-label="Select an option" [formControl]="renda" required>
+        <mat-radio-button class="mr-5" value="1">ate 2.034 R$ </mat-radio-button>
+        <mat-radio-button value="2">maior que 2.034 R$</mat-radio-button>
+      </mat-radio-group>
+      <!--função para mostrar o erro por uma caracteristica no controle do atributo renda //ngif tem o mesmo sintaxe que o if da programação-->
+      <mat-error *ngIf="renda.invalid ">{{getErrorMessageRenda()}} </mat-error>
+      <div class="py-4">
+        <!--Desabilitar o botao usando o parametro do controle e resposta da funcao testarrenda pelo clique do botao-->
 
-  <mat-step label="Step 2" state="chat">
+        <button mat-flat-button color="primary" matStepperNext (click)="testarRenda()"
+          [disabled]="renda.invalid">Next</button>
+
+      </div>
+    </mat-step>
+  </form>
+
+  <!--/Segundo Step-->
+  <!--Terceiro Step-->
+  <mat-step label="Passo 3" state="chat">
     <div class="container">
       <form class="example-form">
-          <mat-form-field class="example-full-width">
-            <mat-label>Find your Help</mat-label>
-            <input matInput disabled value="Cadastre-se">
+        <mat-form-field class="example-full-width">
+          <mat-label>Find your Help</mat-label>
+          <input matInput disabled value="Cadastre-se">
+        </mat-form-field>
+        <p>
+          <!--Nome-->
+          <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <!--Estabelecer um controle no atributo nome-->
+            <input matInput placeholder="Placeholder" [formControl]="nome" required>
+            <!--função para mostrar o erro por uma caracteristica no controle do atributo nome//ngif tem o mesmo sintaxe que o if da programação-->
+            <mat-error *ngIf="nome.invalid ">{{getErrorMessageNome()}} </mat-error>
+            <mat-error *ngIf=" nome.hasError('minlength') ">
+              <mat-icon class="icone" aria-hidden="false" aria-label="Example home icon">block</mat-icon><span>Nome
+                precisa ter mais de 2 caracteres </span>
+            </mat-error>
+            <mat-error *ngIf=" nome.hasError('maxlength') "><span>Nome precisa ter menos de 6 caracteres </span>
+            </mat-error>
+            <mat-icon matSuffix>public</mat-icon>
+            <mat-hint>Hint</mat-hint>
           </mat-form-field>
-          <p>
-              <mat-form-field appearance="outline">
-                <mat-label>Nome</mat-label>
-                <input matInput placeholder="Placeholder">
-                <mat-icon matSuffix>public</mat-icon>
-                <mat-hint>Hint</mat-hint>
-              </mat-form-field>
-            </p>
-            <p>
-              <mat-form-field appearance="outline">
-                <mat-label>E-mail</mat-label>
-                <input matInput placeholder="Placeholder">
-                <mat-icon matSuffix>alternate_email</mat-icon>
-                <mat-hint>Hint</mat-hint>
-              </mat-form-field>
-            </p>
-            <p>
-              <mat-form-field appearance="outline">
-                <mat-label>Imagem</mat-label>
-                <input matInput placeholder="Placeholder">
-                <mat-icon matSuffix>add_photo_alternate</mat-icon>
-                <mat-hint>Hint</mat-hint>
-              </mat-form-field>
-            </p>
+        </p>
+        <p>
+          <!--Email-->
+          <mat-form-field appearance="outline">
+            <mat-label>Seu email</mat-label>
+            <!--Estabelecer um controle no atributo email-->
+            <input matInput placeholder="pat@example.com" [formControl]="email" required>
+            <!--função para mostrar o erro por uma caracteristica no controle do atributo email //ngif tem o mesmo sintaxe que o if da programação-->
+            <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}} </mat-error>
+            <mat-icon matSuffix>alternate_email</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
 
-            <p>
-              <mat-form-field appearance="outline">
-                  <mat-label>Tipo de Usuario</mat-label>
-                  <mat-icon matSuffix>safety_divider</mat-icon>
-                  <mat-select>
-                    <mat-option value="one">Colaborador</mat-option>
-                    <mat-option value="two">Empreendedor</mat-option>
-                  </mat-select>
-                </mat-form-field>
-            </p>
+        </p>
+        <p>
+          <!--Imagem-->
+          <mat-form-field appearance="outline">
+            <mat-label>Imagem</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-icon matSuffix>add_photo_alternate</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <!--Senha-->
+          <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <!--Estabelecer um controle no atributo senha-->
+            <!--Atributo hide que condiciona a mudança do input type password para input text condicioando a visualização da senha-->
+            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="senha" required>
+            <!--função para mostrar o erro por uma caracteristica no controle do atributo senha //ngif tem o mesmo sintaxe que o if da programação-->
+            <mat-error *ngIf="senha.invalid ">{{getErrorMessageSenha()}} </mat-error>
+            <mat-error *ngIf=" senha.hasError('minlength') "><span>Senha precisa ter mais de 2 caracteres </span>
+            </mat-error>
+            <mat-error *ngIf=" senha.hasError('maxlength') "><span>Senha precisa ter menos de 6 caracteres </span>
+            </mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+        </p>
+
+        <p>
+          <!--TipodeUsuario-->
+          <mat-form-field appearance="outline">
+            <mat-label>Tipo de Usuario</mat-label>
+            <mat-icon matSuffix>safety_divider</mat-icon>
+            <!--Estabelecer um controle no atributo tipodeUsuario-->
+            <mat-select [formControl]="tipoUsuario" required>
+              <mat-option value="colaborador">Colaborador</mat-option>
+              <mat-option value="empreendedor">Empreendedor</mat-option>
+            </mat-select>
+            <!--função para mostrar o erro por uma caracteristica no controle do atributo tipodeUsuario //ngif tem o mesmo sintaxe que o if da programação-->
+
+            <mat-error *ngIf="tipoUsuario.invalid">{{getErrorMessageTipo()}} </mat-error>
+          </mat-form-field>
+        </p>
       </form>
     </div>
     <div class="btn-toolbar centro" role="toolbar" aria-label="Toolbar with button groups">
-      <div class="btn-group mr-2" role="group" aria-label="First group">
-          <button mat-flat-button matStepperPrevious class="btn btn-secondary"  >Back</button>
-      </div>
+
 
       <div class="btn-group" role="group" aria-label="Second group">
-          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        <button mat-flat-button color="primary" matStepperNext>Next</button>
       </div>
     </div>
   </mat-step>
 
-  <mat-step label="Step 3">
-    <p>Texto pra iludir </p>
-    <div>
-    <mat-checkbox class="example-margin">Aceito termo de compromisso</mat-checkbox>
-  </div>
+  <mat-step label="Passo 4">
+    <div class="container" fxLayoutAlign="center center">
+      <div class="termo">
+        <h2>Política Privacidade</h2>
+        <p>A sua privacidade é importante para nós.</p>
+        <p> É política do Find your help respeitar a sua privacidade em relação a
+          qualquer informação sua que possamos coletar no site <a href=findyourhelp.org>Find your help</a>,
+        </p>
+        <p>Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço.
+          Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento.
+          Também informamos por que estamos coletando e como será usado. </p>
+        <p>Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado.
+          Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas
+          e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p>
+        <p>Não compartilhamos informações de identificação pessoal publicamente ou com terceiros,
+          exceto quando exigido por lei.</p>
+
+        <p>Você é livre para recusar a nossa solicitação de informações pessoais,
+          entendendo que talvez não possamos fornecer alguns dos serviços desejados.</p>
+        <p>Nosso site se compromete a possibilitar somente a conexão entre os usuários, não as negociações.</p>
+        <p>
+          O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de
+          privacidade e informações pessoais.
+          Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais,
+          entre em contacto conosco.</p>
+        <h3>Compromisso do Usuário</h3>
+        <p>O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o Find your help
+          oferece no site e com caráter enunciativo, mas não limitativo:</p>
+        <ul class="list-unstyled">
+          <li>A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;
+
+          </li>
+          <li>B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica,
+            , jogos de sorte e
+            azar, qualquer tipo de pornografia ilegal,
+            de apologia ao terrorismo ou contra os direitos humanos;</li>
+          <li>
+            C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do Find your help,
+            de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer
+            outros
+            Sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.</li>
+        </ul>
+
+
+        <h3>Copyright</h3>
+
+        <p>É terminantemente vedada a distribuição, representação, publicação, uso comercial e/ou utilização de
+          materiais (marcas, obras e/ou criações)
+          disponibilizadas no site Findyourhelp, no todo ou em parte, sem a prévia e expressa autorização do site
+          Find your help ou do idealizador da ideia
+
+        <p>A violação destes direitos é crime, e seu infrator está sujeito às penalidades legais previstas nas
+          Leis 9.610/98 e 9.279/96 e no art. 184 do Código Penal Brasileiro,
+          bem como ao pagamento de indenização pelos prejuízos causados.
+          O site Find your Help não se responsabiliza por informações que possam vir a ser copiadas para sites de
+          terceiros.</p>
+        <p>Esta política é efetiva a partir de <strong>Abril</strong>/<strong>2021</strong>.</p>
+      </div>
+    </div>
+    <div class="py-4">
+      <mat-slide-toggle name="aceitomesmo" (change)="Mudando($event)">Accept Terms & Conditions</mat-slide-toggle>  
+    </div>
     <div class="btn-toolbar centro" role="toolbar" aria-label="Toolbar with button groups">
       <div class="btn-group mr-2" role="group" aria-label="First group">
-          <button mat-flat-button matStepperPrevious class="btn btn-secondary"  >Back</button>
+        <button mat-flat-button matStepperPrevious class="btn btn-secondary">Back</button>
       </div>
 
       <div class="btn-group" role="group" aria-label="Second group">
-          <button mat-flat-button color="primary" matStepperNext>Next</button>
+        <button mat-flat-button color="primary" matStepperNext [disabled]="aceitomesmo==0" >Next</button>
       </div>
     </div>
 
@@ -94,5 +265,5 @@
   <ng-template matStepperIcon="chat">
     <mat-icon>forum</mat-icon>
   </ng-template>
-</div>
+
 </mat-horizontal-stepper>
