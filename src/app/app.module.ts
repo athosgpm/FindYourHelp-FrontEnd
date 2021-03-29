@@ -22,15 +22,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-<<<<<<< HEAD
 import { HomePageComponent } from './home-page/home-page.component';
 
-=======
 import {MatCardModule} from '@angular/material/card';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
->>>>>>> 99b7583c1d23475cd93a3a4748e196aaca6d4b27
 
 
 @NgModule({
