@@ -18,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 
@@ -28,7 +29,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MenuComponent,
     LoginComponent,
     CadastrarComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

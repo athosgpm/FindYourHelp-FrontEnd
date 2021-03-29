@@ -1,13 +1,19 @@
 .fs-16 {
   font-size: 16pt;
 }
-
 a {
   cursor: pointer;
 }
-
+.gris{
+  background: linear-gradient(to bottom, #000, transparent);
+}
+.top-nav-collapse{
+  background: #fff !important;
+}
 .bg-color{
   background-color: #fff;
 }
-
+nav{
+  z-index: 2;
+}
 
