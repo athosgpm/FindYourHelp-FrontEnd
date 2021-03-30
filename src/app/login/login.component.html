@@ -1,43 +1,45 @@
-<div id="img-bg">
-  <div class="container-fluid">
-      <div class="row d-flex align-items-center">
-          <div class="col-md">
-              <div class="row">
-                  <div class="col-md-6 mt-3 ml-3">
-                      <a href="">
-                      <img src="https://i.imgur.com/tF84Tak.png" class="img-fluid rounded-circle" width="60"
-                      alt="Logo da Escape">
-                  </a>
-                  </div>
 
-              </div>
-              <div class="row d-flex justify-content-center">
-                  <div class="col-md-4 mt-5 bg-white">
-                      <h1 class="text-center mb-3">Entrar</h1>
-                      <div class="form-group">
-                          <label for="usuario">Usuário</label>
-                          <input class="form-control" type="text" name="usuario" id="usuario"
-                              placeholder="Insira seu usuário">
-                              
-
-                      </div>
-
-                      <div class="form-group">
-                          <label for="senha">Senha</label>
-                          <input class="form-control" type="password" name="senha" id="senha"
-                              placeholder="Insira sua senha">
-                      </div>
-
-                      <div class="d-flex justify-content-center mt-3">
-                          <button type="submit" class="btn btn-outline-dark">Entrar</button>
-                      </div>
-
-                      <hr class="mt-3 mb-3">
-                      <p class="text-center">Não tem uma conta? <a routerLink='/cadastrar'>Cadastre-se</a>
-                      </p>
-                  </div>
-              </div>
-          </div>
+<div class="gradient-background d-flex align-items-center">
+    <div class="container " id="container" [ngClass]="{'right-panel-active':activeClass}">
+        <div class="form-container sign-up-container">
+          <form action="#">
+            <h1>Crie uma conta</h1>
+            <br>
+    
+            <input type="text" placeholder="Nome" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Senha" />
+            <br>
+            <button>Cadastrar-se</button>
+        </form>
+        </div>
+    
+        <div class="form-container sign-in-container">
+          <form action="#">
+            <h1>Entrar</h1>
+    
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Senha" />
+            <a href="#">Esqueceu sua senha?</a>
+            <button>Entrar</button>
+        </form>
+        </div>
+        <div class="overlay-container">
+      
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Bem-vinde de volta!</h1>
+                <p>
+                    Para se manter conectado conosco, faça o login com suas informações pessoais
+                </p>
+                <button class="ghost" id="signIn" (click)="toggleClass()" >Entrar</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Olá, Amigo!</h1>
+                <p>Insira seus dados pessoais e comece a inovar conosco!</p>
+                <button class="ghost" id="signUp" (click)="toggleClass()" >Cadastrar-se</button>
+            </div>
+        </div>
+        </div>
       </div>
-  </div>
-</div>
+    </div>
