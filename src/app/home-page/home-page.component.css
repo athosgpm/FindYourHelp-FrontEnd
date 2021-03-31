@@ -150,6 +150,13 @@
 
 }
 
+.sobreNos{
+
+  
+
+}
+
+
 .profile{
   position: relative;
   width: 200px;
@@ -215,7 +222,9 @@
   top: 40%;
   color: #fff;
   flex: column;
-}/* 
+}
+ /* --------------------------- */
+
 #myCarousel .carousel-item .mask {
   position: absolute;
   top: 0;
@@ -224,7 +233,7 @@
   width: 100%;
   background-attachment: fixed
 }
-#myCarousel h4 {
+#myCarousel .bannerProf {
   font-size: 50px;
   margin-bottom: 15px;
   position: absolute;
@@ -235,7 +244,7 @@
   letter-spacing: 0.5px;
   font-weight: 600
 }
-#myCarousel p {
+#myCarousel .textCom {
   font-size: 22px;
   position: absolute;
   left: 110px;
@@ -287,7 +296,9 @@
 #myCarousel .carousel-item {
   height: 100%;
   min-height: 550px
-}*/
+}
+/* ---------------------- */
+
 #myCarousel {
   position: relative;
   height: 250px;
@@ -304,7 +315,7 @@ top: 80px;
 right: 20px;
 color: rgb(245, 210, 13);
 }
-/*
+/* --------------------- */
 .carousel-control-prev-icon:after {
 content: '←';
 font-size: 55px;
@@ -462,9 +473,11 @@ background-image: url();
 .slideInRight {
   -webkit-animation-name: slideInRight;
   animation-name: slideInRight
-}*/
+}
 .imgTam{
   width: 200px;
   height: 200px;
   
 } 
+
+

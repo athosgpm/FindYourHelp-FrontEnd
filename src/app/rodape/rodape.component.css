@@ -1,3 +1,26 @@
-.bg-color{
-  background-image: url(https://i.imgur.com/4geyJ4u.png);
+
+.foot{
+  background-image: url(https://media.discordapp.net/attachments/801479206424412170/826835085298761738/fotter.jpg?width=1025&height=257);
+  height: 250px;
+ 
+}
+
+.copyright{
+  background-color: white;
+  margin-top: 20px;
+}
+
+.btn{
+  float:right;
+  margin-top: 80px;
+  margin-right: 150px;
+      
+}
+
+.fs{
+  font-size: 40px;
+  text-align-last: left;
+  margin-left: 200px;
+  
+  
 }
