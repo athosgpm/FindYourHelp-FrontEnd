@@ -157,6 +157,8 @@
           </mat-error>
           <mat-error *ngIf=" telefone.hasError('maxlength') "><span>Telefone precisa ter 11 caracteres </span>
           </mat-error>
+          <mat-error *ngIf=" telefone.hasError('pattern') "><span>Telefone precisa ser numeros </span>
+          </mat-error>
           
         </mat-form-field>
       </p>
