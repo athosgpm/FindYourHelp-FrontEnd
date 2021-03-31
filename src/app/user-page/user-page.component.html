@@ -1,0 +1,262 @@
+<!--
+  Projeto Find your help 
+  Codigo da pagina desenvolvido por : Tatiane Tissoni
+-->
+<!--
+  Bibliotecas usadas: Angular Material , Font Awesome , Flex Layout , Bootstrap
+-->
+
+<!--Pagina do feed-->
+<div fxLayout="row " fxLayoutGap="32px grid" fxLayout.lt-md="column" fxLayoutAlign="start start" fxLayoutGap="10px">
+    <!--CardPerfil-->
+    <div fxFlex="22" class="px-5 mt-3 text-center">
+        <mat-card class="mat-elevation-z5">
+
+            <mat-card-header>
+                <mat-card-title class="text-center">Nome do Usuario</mat-card-title>
+            </mat-card-header>
+
+            <div class="circulo">
+                <img mat-card-image src="https://i.imgur.com/0zyzZht.png">
+            </div>
+            <mat-card-content class="py-2">
+                <p class="lead">
+                    Email do Usuario
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button color="warn">Empreendedor</button>
+
+            </mat-card-actions>
+        </mat-card>
+
+
+    </div>
+    <!--/CardPerfil-->
+    <!--DivCentral-->
+    <div fxFlex="60" class="py-5">
+        <!--CardIdeias-->
+        <h1 class="fs-1"> Ideias mais Populares</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-3">
+            <div class="col">
+                <mat-card class="mat-elevation-z5 fundo">
+
+
+
+
+                    <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
+                    <mat-card-header>
+                        <mat-card-title class="text-start">Energia Renovavel Parque Eolico</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="py-2">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
+                            quidem laboriosam corporis qui perferendis cupiditate reprehenderit
+                        </p>
+                    </mat-card-content>
+                    <hr>
+                    <mat-card-actions>
+                        <button mat-button class="botaodacor">Colaborar</button>
+
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="col">
+                <mat-card class="mat-elevation-z5 fundo">
+
+
+
+
+                    <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
+                    <mat-card-header>
+                        <mat-card-title class="text-start">Mercado Financeiro para todos</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="py-2">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
+                            quidem laboriosam corporis qui perferendis cupiditate reprehenderit
+                        </p>
+                    </mat-card-content>
+                    <hr>
+                    <mat-card-actions>
+                        <button mat-button class="botaodacor">Colaborar</button>
+
+                    </mat-card-actions>
+                </mat-card>
+
+            </div>
+            <div class="col">
+                <mat-card class="mat-elevation-z5 fundo">
+
+
+
+
+                    <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
+                    <mat-card-header>
+                        <mat-card-title class="text-start">Empreendedorismo Feminino</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="py-2">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
+                            quidem laboriosam corporis qui perferendis cupiditate reprehenderit
+                        </p>
+                    </mat-card-content>
+                    <hr>
+                    <mat-card-actions>
+                        <button mat-button class="botaodacor">Colaborar</button>
+
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+
+        </div>
+        <!--/CardIdeias-->
+        <!--CardBotao-->
+        <div>
+
+            <mat-card class="py-2 mat-elevation-z5 mt-4">
+                <mat-card-header>
+
+                    <img mat-card-avatar src="https://i.imgur.com/0zyzZht.png" alt="img User">
+
+                    <mat-card-title>Nome do Usuario</mat-card-title>
+                    <mat-card-subtitle><button mat-button class="mat-elevation-z5 botaodahora" data-toggle="modal"
+                            data-target="#postagens">Qual ideia está em sua mente <span>Nome de Usuario</span>
+                            <mat-icon class="ml-3 mb-2" matSuffix aria-hidden="false" aria-label="Example home icon">
+                                create</mat-icon>
+                        </button></mat-card-subtitle>
+
+                </mat-card-header>
+
+                <mat-card-content class="py-2">
+
+                    Poste uma ideia para iluminar o mundo com o apoio dos colaboradores
+
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <!--/CardBotao-->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="postagens" tabindex="-1" role="dialog" aria-labelledby="postagens"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title ml-5 mt-3" id="postagens">Publicando uma ideia</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <mat-card>
+                            <mat-card-header>
+                                <img mat-card-avatar src="https://i.imgur.com/0zyzZht.png" alt="img User">
+                                <mat-card-title>Nome do Usuario</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content class="py-2">
+                                <!--Form-->
+                                <mat-horizontal-stepper>
+
+                                    <mat-step label="Step 1">
+                                      <p>Segue o modelo para uma ideia campeã</p>
+                                      <div class="btn-toolbar centro" role="toolbar" aria-label="Toolbar with button groups">
+                                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                                          <button mat-flat-button matStepperPrevious class="btn btn-secondary">Back</button>
+                                        </div>
+                                  
+                                        <div class="btn-group" role="group" aria-label="Second group">
+                                          <button mat-flat-button color="primary" matStepperNext  >Next</button>
+                                        </div>
+                                      </div>
+                                    </mat-step>
+                                  
+                                    <mat-step label="Step 2">
+                                        <div class="formlado mt-4">
+                                            <div class="form-group">
+                                                <label for="Tema">Tema</label>
+                                                <select class="form-control" id="Tema">
+                                                  <option>Social</option>
+                                                  <option>Educação</option>
+                                                  <option>Saude</option>
+                                                  <option>Inovação Tecnologica</option>
+                                                  <option>Outros</option>
+                                                </select>
+                                              </div>
+
+                                              <div class="form-group ml-3">
+                                                <label for="TipoAjuda">Tipo de Ajuda</label>
+                                                <select class="form-control" id="TipoAjuda">
+                                                  <option>Financeiro</option>
+                                                  <option>Serviço</option>
+                                                 
+                                                </select>
+                                              </div>
+                                              
+                                        </div>
+                                        
+                                   <p>
+                                    Por acaso voce quer fazer um novo tema! <a href="">Cadastre-se</a>
+                                   </p>  
+                                        
+                                        
+
+                                      <!--botao-->
+                                        <div class="btn-toolbar centro" role="toolbar" aria-label="Toolbar with button groups">
+                                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                                              <button mat-flat-button matStepperPrevious class="btn btn-secondary">Back</button>
+                                            </div>
+                                      
+                                            <div class="btn-group" role="group" aria-label="Second group">
+                                              <button mat-flat-button color="primary" matStepperNext  >Next</button>
+                                            </div>
+                                          </div>
+                                         <!--/botao--> 
+                                          
+                                    </mat-step>
+                                  
+                                    <mat-step label="Step 3">
+                                        <form>
+                                            <div class="form-group">
+                                              <label for="TituloPostagem">Titulo</label>
+                                              <input type="text" class="form-control" id="TituloPostagem" placeholder="titulo da Postagem">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ImagemPostagem">Imagem</label>
+                                                <input type="text" class="form-control" id="ImagemPostagem" placeholder="Imagem da Postagem">
+                                              </div>
+                                            
+                                            <div class="form-group">
+                                              <label for="DescricaoPostagem">Descrição</label>
+                                              <textarea class="form-control" id="DescricaoPostagem" rows="3"></textarea>
+                                            </div>
+                                          </form>
+                                          <!--botao-->
+                                        <div class="btn-toolbar centro" role="toolbar" aria-label="Toolbar with button groups">
+                                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                                              <button mat-flat-button matStepperPrevious class="btn btn-secondary">Back</button>
+                                            </div>
+                                      
+                                            <div class="btn-group" role="group" aria-label="Second group">
+                                              <button mat-flat-button color="primary" matStepperNext  >Enviar</button>
+                                            </div>
+                                          </div>
+                                         <!--/botao--> 
+                                    </mat-step>
+                                    
+                                  </mat-horizontal-stepper>
+                                <!--/Form-->
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Div Central-->
+
+
+</div>
