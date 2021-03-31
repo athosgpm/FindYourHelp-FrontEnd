@@ -10,6 +10,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { LoginComponent } from './login/login.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { UserPageComponent } from './user-page/user-page.component';
 //Biblioteca Flex Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 //Biblioteca Angular Material
@@ -27,6 +28,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,8 @@ import {MatListModule} from '@angular/material/list';
     LoginComponent,
     CadastrarComponent,
     SobreNosComponent,
-    HomePageComponent
+    HomePageComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,
