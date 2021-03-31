@@ -1,32 +1,29 @@
-<div class= "bg">
+<header [class.header_change]="header_variable">
 
-<nav class="navbar navbar-expand-lg navbar-light gris scrolling-navbar fixed-top ">
+<nav class="navbar navbar-expand-lg navbar-light gris fixed-top">
 
-  <nav class="navbar">
-      <img src="https://i.imgur.com/tF84Tak.png" class="img-fluid rounded-circle" width="60" alt="Logo da Escape">
-      <a class="navbar-brand ml-2" style="color: white;" href="#"> Find Your Help</a>
-  </nav>
-
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado" >
-    <ul class="navbar-nav ml-auto d-flex align-items-center">
-      <li class="nav-item active pl-3">
-
-      <li class="nav-item pl-3">
-        <a href="">
-          <p class="text-color fs-16 m-0" style="color: white;">Home</p>
-        </a>
-      </li>
-      <li class="nav-item pl-3">
-        <a href="">
-          <p class="text-color fs-16 m-0"style="color: white;">Entrar</p>
-        </a>
-      </li>
-      <li class="nav-item pl-3">
-        <a href="">
-          <p class="text-color fs-16 m-0"style="color: white;">Cadastrar</p>
-        </a>
-      </li>
-    </ul>
-
+  <div class="container-fluid">
+      <img class="img-fluid rounded-circle" width="55" alt="Logo da Escape" src="https://i.imgur.com/tF84Tak.png">
+      <a class="navbar-brand mx-4 letra" style="font-size: 20pt;" href="#">FindYourHelp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+              <li class="nav-item letra">
+                  <a class="nav-link active fs-14 mx-3 cor" aria-current="page" 
+                      href="#">Home</a>
+              </li>
+              <li class="nav-item letra">
+                  <a class="nav-link active fs-14 mx-3 cor"  routerLink='/login'>Entrar</a>
+              </li>
+              <li>
+                  <button class="btn btn-outline-warning ml-3" type="submit"
+                      routerLink='/cadastrar'>Cadastrar-se</button>
+              </li>
+          </ul>
+      </div>
   </div>
 </nav>
+</header>

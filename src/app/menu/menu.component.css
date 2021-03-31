@@ -1,19 +1,33 @@
-.fs-16 {
-  font-size: 16pt;
+.fs-14 {
+  font-size: 14pt;
 }
-a {
-  cursor: pointer;
+header .gris {
+ /*  background: linear-gradient(to bottom, #000, transparent); */
+ background-color: transparent;
+  transition: background-color 1s ease 0s;
 }
-.gris{
-  background: linear-gradient(to bottom, #000, transparent);
-}
-.top-nav-collapse{
-  background: #fff !important;
-}
-.bg-color{
-  background-color: #fff;
-}
-nav{
-  z-index: 2;
+.header_change .gris{
+  background: #fff;
 }
 
+header .letra{
+  color: #fff;
+  transition: color 1s ease 0s;
+}
+
+.header_change .letra{
+  color: rgb(0, 0, 0);
+ 
+ 
+}
+
+header .letra .cor{
+  color: #fff;
+  transition: color 1s ease 0s;
+}
+
+.header_change .letra .cor{
+  color: rgb(0, 0, 0);
+ 
+ 
+}
