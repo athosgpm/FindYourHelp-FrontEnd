@@ -93,6 +93,10 @@ cursor: not-allowed;
 background-color: rgb(119, 0, 255); 
 }
 
+/*disposição dos form*/
+.formlado{
+  display: inline-flex;
+}
 
 
 

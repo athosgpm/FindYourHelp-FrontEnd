@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { NgForm, Validators, FormBuilder,FormsModule } from '@angular/forms';
 import { ViewChild } from '@angular/core';
-
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -23,7 +23,9 @@ export class CadastrarComponent  {
   nome = new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(7)]);
   tipoUsuario = new FormControl('', [Validators.required]);
   senha = new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(7)]);
-  
+  telefone = new FormControl ('', [ Validators.required,Validators.pattern("^[0-9]*$"),
+    Validators.minLength(11), Validators.maxLength(11)]);
+
   constructor() { }
 
  
@@ -36,7 +38,12 @@ export class CadastrarComponent  {
     /*funcao que pega o valor do atributo renda e retorna direção*/
     testarRenda() {
       if (this.renda.value == 2) {
-        alert('Desculpe-nos, seu formulario não preenche os requisitos para ser Empreendedor')
+        Swal.fire({  
+          icon: 'error',  
+          title: 'Desculpe-nos',  
+          text: 'Seu formulario não preenche os requisitos para ser Empreendedor'  
+          
+        }) 
         this.stepper.selectedIndex = 0;
       }
     }
@@ -85,6 +92,16 @@ export class CadastrarComponent  {
     return null;
 
   }
+/*funcao de retorno de erros com o uso do parametro validators*/
+getErrorMessageTelefone() {
+  if (this.telefone.hasError('required')) {
+    return 'O Telefone é obrigatorio';
+  }
+  return null;
+
+}
+
+
 
   /*funcao de mudança de valor do atributo com o click do mouse*/
   Mudando(event: any) {
@@ -97,7 +114,31 @@ export class CadastrarComponent  {
     }
   }
 
- 
+  /*funcao que muda de cor usando referencia do styles.scss*/
+  get controlColor() {
+    return this.nome.valid ? 'accent' : this.nome.invalid ? 'warn' : 'primary';
+  }
+
+  /*funcao que muda de cor usando referencia do styles.scss*/
+  get controlColor1() {
+    return this.email.valid ? 'accent' : this.email.invalid ? 'warn' : 'primary';
+  }
+
+  /*funcao que muda de cor usando referencia do styles.scss*/
+  get controlColor2() {
+    return this.telefone.valid ? 'accent' : this.telefone.invalid ? 'warn' : 'primary';
+  }
+
+  /*funcao que muda de cor usando referencia do styles.scss*/
+  get controlColor3() {
+    return this.senha.valid ? 'accent' : this.senha.invalid ? 'warn' : 'primary';
+  }
+
+  
+  /*funcao que muda de cor usando referencia do styles.scss*/
+  get controlColor4() {
+    return this.tipoUsuario.valid ? 'accent' : this.tipoUsuario.invalid ? 'warn' : 'primary';
+  }
 
 
 
