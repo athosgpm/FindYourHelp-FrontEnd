@@ -1,0 +1,76 @@
+.circulo {
+    background-color: #aaa;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin:10px;
+   
+    }
+
+    .circulo img {
+        background-color: #ddd;
+        border-radius: 100%;
+        height: 200px;
+        object-fit: cover;
+        width: 200px; 
+      }
+
+      hr{
+        width: 100%;
+        border-bottom: 1px solid #000000;
+      }
+
+      .botaodacor{
+          background-color: #f4af1b;
+          position:relative;
+          top:50%; 
+          left:30%;
+          
+      }
+      .botaocor{
+        background-color: #f4af1b;
+      }
+
+      .fundo{
+          background-color: #F2BC94;
+      }
+
+
+      .botaodahora{
+       
+        background-color:transparent;
+        border-radius:8px;
+        display:inline-block;
+        cursor:pointer;
+        color:darkgray;
+        font-weight:bold;
+        border-color: 1px darkgray;
+        border-color:transparent;
+        
+        
+      }
+
+      .modal-title{
+        text-align: center;
+        font-size: 21px;
+      }
+
+     .formlado{
+       display: inline-flex;
+       width: 400px;
+     }
+
+     .modal-header {
+      background: #3f89e9;
+      background-image: linear-gradient(to right, #015ad1, #1748bc);
+      color: #fff;
+      height: 80px;
+      
+    }
+      .close{
+        color:red;
+        margin:5px;
+      }
+  
