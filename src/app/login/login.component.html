@@ -10,7 +10,7 @@
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Senha" />
             <br>
-            <button>Cadastrar-se</button>
+            <button routerLink='/cadastrar'>Cadastrar-se</button>
         </form>
         </div>
     
@@ -18,10 +18,10 @@
           <form action="#">
             <h1>Entrar</h1>
     
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Senha" />
+            <input type="email" placeholder="Email" [(ngModel)] = 'userLogin.emailUsuario' />
+            <input type="password" placeholder="Senha" [(ngModel)] = 'userLogin.senhaUsuario' />
             <a href="#">Esqueceu sua senha?</a>
-            <button>Entrar</button>
+            <button (click)='entrar()'>Entrar</button>
         </form>
         </div>
         <div class="overlay-container">
