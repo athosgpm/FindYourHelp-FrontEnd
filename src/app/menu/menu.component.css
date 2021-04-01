@@ -3,7 +3,7 @@
 }
 header .gris {
  /*  background: linear-gradient(to bottom, #000, transparent); */
- background-color: transparent;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);;
   transition: background-color 1s ease 0s;
 }
 .header_change .gris{
