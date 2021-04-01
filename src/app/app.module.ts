@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
+import { HttpClientModule } from '@angular/common/http';
 //Biblioteca Flex Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 //Biblioteca Angular Material
@@ -26,6 +27,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
+import {HashLocationStrategy,LocationStrategy} from '@angular/common';
 
 
 
@@ -57,9 +59,10 @@ import {MatListModule} from '@angular/material/list';
     MatSlideToggleModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [ {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
