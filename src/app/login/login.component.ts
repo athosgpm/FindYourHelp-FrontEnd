@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
+
   toggleClass(){
     this.activeClass=!this.activeClass
   }
