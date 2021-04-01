@@ -5,9 +5,7 @@
   background: linear-gradient(to bottom, #000, transparent);
 }
 
-
-
-/* Banner */
+/*------------ Banner-------------- */
 
 #banner{
   margin-bottom: 50px;
@@ -88,7 +86,7 @@
 }
 .magic:hover .middle{
   opacity: 1;
-  
+
 }
 #text{
   justify-content: left;
@@ -117,44 +115,38 @@
   font-size: 2.3em;
   z-index: 1;
 }
-  
-  /* Sobre Find your Help */
+/*------------/Banner-------------- */
+
+
+  /*---------- Sobre Find your Help------------ */
   p, h1 {
     font-family: 'Roboto', sans-serif;
-  
+
   }
-  
+
   .text-color{
     color:#F4AF1B;
   }
-  
+
   div .quadrado{
     width: 60px;
     height: 3px;
     background-color: #F4AF1B;
   }
-  
+
   .bg{
     background-color: aliceblue;
   }
 
- /*  Css Cards */
+  /*---------- /Sobre Find your Help------------ */
+
+ /*-----------------Cards---------------*/
  .wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50vh;
- 
-
 }
-
-/* .sobreNos{
-
-  
-
-} */
-
-/* Cards */
 
 .profile{
   position: relative;
@@ -179,7 +171,6 @@
   border-top-right-radius: 35px !important;
   border-radius: 6px;
 }
-
 .profile:hover .overlay{
   opacity: 1;
 }
@@ -222,266 +213,8 @@
   color: #fff;
   flex: column;
 }
+ /* -----------/Cards---------------- */
 
-/* /Cards */
- /* --------------------------- */
-/* depoimentos */
-#myCarousel .carousel-item .mask {
-  position: absolute;
-  top: 0;
-  left: 80px;
-  height: 100%;
-  width: 100%;
-  background-attachment: fixed
-}
-#myCarousel .bannerProf {
-  font-size: 50px;
-  margin-bottom: 15px;
-  position: absolute;
-  left: 90px;
-  bottom: 30px;
-  color: rgb(240, 209, 37);
-  line-height: 100%;
-  letter-spacing: 0.5px;
-  font-weight: 600
-}
-#myCarousel .textCom {
-  font-size: 22px;
-  position: absolute;
-  left: 110px;
-  margin-bottom: 15px;
-  color: #D5D5D5
-}
-#myCarousel .carousel-item a {
-  background: #FF0000;
-  font-size: 14px;
-  color: #FFF;
-  padding: 13px 32px;
-  display: inline-block
-}
-#myCarousel .carousel-item a:hover {
-  background: #FF0000;
-  text-decoration: none
-}
-#myCarousel .carousel-item h4 {
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft
-}
-#myCarousel .carousel-item p {
-  -webkit-animation-name: slideInRight;
-  animation-name: slideInRight
-}
-#myCarousel .carousel-item a {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp
-}
-#myCarousel .carousel-item .mask img {
-  -webkit-animation-name: slideInRight;
-  animation-name: slideInRight;
-  display: block;
-  height: auto;
-  max-width: 100%
-} 
-#myCarousel h4,
-#myCarousel p,
-#myCarousel a,
-#myCarousel .carousel-item .mask img {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1.2s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both
-}
-#myCarousel .container {
-  max-width: 1430px
-}
-#myCarousel .carousel-item {
-  height: 100%;
-  min-height: 550px
-}
-
-/* ---------------------- */
-
-#myCarousel {
-  position: relative;
+/* .altura{
   height: 250px;
-  z-index: 1;
-  background: linear-gradient(180deg, rgba(1,89,153,1) 0%, rgba(0,101,169,1) 35%, rgba(0,107,177,1) 92%);
-  background-size: cover
-}
-.carousel-control-next-icon:after
-{
-content: '→';
-font-size: 55px;
-position: absolute;
-top: 80px;
-right: 20px;
-color: rgb(245, 210, 13);
-}
-
-/* --------------------- */
-
-.carousel-control-prev-icon:after {
-content: '←';
-font-size: 55px;
-position: absolute;
-left: 20px;
-top: 80px;
-color: rgb(241, 219, 20);
-
-}
-.carousel .carousel-control-next-icon {
-  
-  background-image: url();
-}
-
-.carousel .carousel-control-prev-icon {
-
-background-image: url();
-}
-.carousel-item {
-  position: relative;
-  display: none;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-  transition: -webkit-transform .6s ease;
-  transition: transform .6s ease;
-  transition: transform .6s ease, -webkit-transform .6s ease;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px
-}
-.carousel-fade .carousel-item {
-  opacity: 0;
-  -webkit-transition-duration: .6s;
-  transition-duration: .6s;
-  -webkit-transition-property: opacity;
-  transition-property: opacity
-}
-.carousel-fade .carousel-item-next.carousel-item-left,
-.carousel-fade .carousel-item-prev.carousel-item-right,
-.carousel-fade .carousel-item.active {
-  opacity: 1
-}
-.carousel-fade .carousel-item-left.active,
-.carousel-fade .carousel-item-right.active {
-  opacity: 0
-}
-.carousel-fade .carousel-item-left.active,
-.carousel-fade .carousel-item-next,
-.carousel-fade .carousel-item-prev,
-.carousel-fade .carousel-item-prev.active,
-.carousel-fade .carousel-item.active {
-  -webkit-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0)
-} 
-@supports (transform-style:preserve-3d) {
-  .carousel-fade .carousel-item-left.active,
-  .carousel-fade .carousel-item-next,
-  .carousel-fade .carousel-item-prev,
-  .carousel-fade .carousel-item-prev.active,
-  .carousel-fade .carousel-item.active {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0)
-  }
-}
-.carousel-fade .carousel-item-left.active,
-.carousel-fade .carousel-item-next,
-.carousel-fade .carousel-item-prev,
-.carousel-fade .carousel-item-prev.active,
-.carousel-fade .carousel-item.active {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0)
-} 
-@-webkit-keyframes fadeInLeft {
-  from {
-      opacity: 0;
-      -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0)
-  }
-  to {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0)
-  }
-}
-@keyframes fadeInLeft {
-  from {
-      opacity: 0;
-      -webkit-transform: translate3d(-100%, 0, 0);
-      transform: translate3d(-100%, 0, 0)
-  }
-  to {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0)
-  }
-}
-.fadeInLeft {
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft
-}
-@-webkit-keyframes fadeInUp {
-  from {
-      opacity: 0;
-      -webkit-transform: translate3d(0, 100%, 0);
-      transform: translate3d(0, 100%, 0)
-  }
-  to {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0)
-  }
-}
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      -webkit-transform: translate3d(0, 100%, 0);
-      transform: translate3d(0, 100%, 0)
-  }
-  to {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0)
-  }
-}
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp
-}
-@-webkit-keyframes slideInRight {
-  from {
-      -webkit-transform: translate3d(100%, 0, 0);
-      transform: translate3d(100%, 0, 0);
-      visibility: visible
-  }
-  to {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0)
-  }
-}
-@keyframes slideInRight {
-  from {
-      -webkit-transform: translate3d(100%, 0, 0);
-      transform: translate3d(100%, 0, 0);
-      visibility: visible
-  }
-  to {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0)
-  }
-}
-.slideInRight {
-  -webkit-animation-name: slideInRight;
-  animation-name: slideInRight
-}
-.imgTam{
-  width: 200px;
-  height: 200px;
-  
-} 
-
-
+} */
