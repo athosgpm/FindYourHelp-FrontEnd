@@ -6,6 +6,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
+import { TemaComponent } from './tema/tema.component';
 
 const routes: Routes = [
 
@@ -16,7 +17,8 @@ const routes: Routes = [
    {path: "menu", component:MenuComponent},
    {path: "rodape", component:RodapeComponent},
    {path: "homepage", component:HomePageComponent},
-   {path:"userpage", component:UserPageComponent}
+   {path:"userpage", component:UserPageComponent},
+   {path: "tema", component:TemaComponent}
 ];
 
 @NgModule({
