@@ -181,11 +181,15 @@
               <input matInput [type]="hide ? 'password' : 'text'" [formControl]="senha" required
                 (input)='confirmSenha($event)' name="senha" id="senha" placeholder="Digite sua senha!">
               <!--função para mostrar o erro por uma caracteristica no controle do atributo senha //ngif tem o mesmo sintaxe que o if da programação-->
+            
+<!-- -----------------------             
               <mat-error *ngIf="senha.invalid ">{{getErrorMessageSenha()}} </mat-error>
               <mat-error *ngIf=" senha.hasError('minlength') "><span>Senha precisa ter mais de 2 caracteres </span>
               </mat-error>
               <mat-error *ngIf=" senha.hasError('maxlength') "><span>Senha precisa ter menos de 6 caracteres </span>
               </mat-error>
+------------------------ -->     
+
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
