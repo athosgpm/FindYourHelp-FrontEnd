@@ -1,33 +1,141 @@
-<div class="container-fluid">
 
-  <div class="row bg-color d-flex align-items-center">
-    <div class="col-md-6">
+<!--Pagina do feed-->
+<div fxLayout="row " fxLayoutGap="32px grid" fxLayout.lt-md="column" fxLayoutAlign="start start" fxLayoutGap="10px">
+  <!--CardPerfil-->
+  <div fxFlex="22" class="px-5 mt-3 text-center">
+    <mat-card class="mat-elevation-z5">
 
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-6 text-color">
-          <h1 class="fs-54">Seja bem-vindo(a)!</h1>
-          <h5 class="fs-18">Expresse aqui seus pensamentos e opniões!</h5>
-          <a (click)='sair()'>Sair</a>
-        </div>
+      <mat-card-header>
+        <mat-card-title class="text-center">{{nomeUsuario}}</mat-card-title>
+        <mat-icon  aria-hidden="false" aria-label="Example home icon" class="">edit</mat-icon>
+               
+      </mat-card-header>
+
+      <div class="circulo">
+        <img mat-card-image src="{{imagemUsuario}}">
       </div>
+      <mat-card-content class="py-2">
+        <small class="lead">
+          {{emailUsuario}}
+        </small>
+        <a [routerLink] = "['/user-edit',idUsuario]">
+        <mat-icon  aria-hidden="false" aria-label="Example home icon"  class="" >edit</mat-icon></a>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="warn">Empreendedor</button>
+        <button mat-button color="warn" (click)='sair()'>Sair</button>
 
-      <div class="row d-flex justify-content-center mt-3 mb-5">
-        <div class="col-md-6">
-          <button class="btn mr-2" data-toggle="modal" data-target="#novaPostagem">Nova Postagem</button>
-          <a class="btn" href="#postagens">Ver Postagens</a>
+      </mat-card-actions>
+    </mat-card>
 
-        </div>
-      </div>
 
-    </div>
-
-    <div class="col-md-6 d-flex justify-content-center">
-
-      <img src="https://i.imgur.com/X4Nyojg.png" width="500px" height="500px">
-
-    </div>
   </div>
-</div>
+  <!--/CardPerfil-->
+  <!--DivCentral-->
+  <div fxFlex="60" class="py-5">
+    <!--CardIdeias-->
+
+    <h1 class="fs-1"> Ideias mais Populares</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      <div class="col">
+        <mat-card class="mat-elevation-z5 fundo">
+
+
+
+
+          <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
+          <mat-card-header>
+            <mat-card-title class="text-start">Energia Renovavel Parque Eolico</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="py-2">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
+              quidem laboriosam corporis qui perferendis cupiditate reprehenderit
+            </p>
+          </mat-card-content>
+          <hr>
+          <mat-card-actions>
+            <button mat-button class="botaodacor">Colaborar</button>
+
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <div class="col">
+        <mat-card class="mat-elevation-z5 fundo">
+
+
+
+
+          <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
+          <mat-card-header>
+            <mat-card-title class="text-start">Mercado Financeiro para todos</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="py-2">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
+              quidem laboriosam corporis qui perferendis cupiditate reprehenderit
+            </p>
+          </mat-card-content>
+          <hr>
+          <mat-card-actions>
+            <button mat-button class="botaodacor">Colaborar</button>
+
+          </mat-card-actions>
+        </mat-card>
+
+      </div>
+      <div class="col">
+        <mat-card class="mat-elevation-z5 fundo">
+
+
+
+
+          <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
+          <mat-card-header>
+            <mat-card-title class="text-start">Empreendedorismo Feminino</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="py-2">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
+              quidem laboriosam corporis qui perferendis cupiditate reprehenderit
+            </p>
+          </mat-card-content>
+          <hr>
+          <mat-card-actions>
+            <button mat-button class="botaodacor">Colaborar</button>
+
+          </mat-card-actions>
+        </mat-card>
+      </div>
+
+    </div>
+    <!--/CardIdeias-->
+    <!--CardBotao-->
+    <div>
+
+      <mat-card class="py-2 mat-elevation-z5 mt-4">
+        <mat-card-header>
+
+          <img mat-card-avatar src="{{imagemUsuario}}" alt="img User">
+
+          <mat-card-title>{{nomeUsuario}}</mat-card-title>
+          <mat-card-subtitle><button mat-button class="mat-elevation-z5 botaodahora"  data-toggle="modal" data-target="#novaPostagem">Qual ideia está em sua mente <span>{{nomeUsuario}}</span>
+              <mat-icon class="ml-3 mb-2" matSuffix aria-hidden="false" aria-label="Example home icon">
+                create</mat-icon>
+            </button></mat-card-subtitle>
+
+        </mat-card-header>
+
+        <mat-card-content class="py-2">
+
+          Poste uma ideia para iluminar o mundo com o apoio dos colaboradores
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <!--/CardBotao-->
+
 
 <div class="container mb-5 mt-5" id="postagens">
   <nav>
@@ -56,15 +164,28 @@
 
       <div class="card-columns">
         <div class="card text-center" *ngFor='let item of listaPostagens'>
+          <div class="">
+            <h5 class="text-muted">Tema: {{item.tema.categoriaTema}} </h5>
+            <h5 class="card-title m-0">Titulo:{{item.tituloPostagem}}</h5>
+            <h5 class="card-title m-0 text-danger">Tipo de Ajuda :{{item.tipoAjudaPostagem}}</h5>
+          </div>
+         
           <div class="card-body">
-            <h5 class="card-title m-0">{{item.tituloPostagem}}</h5>
-            <small class="text-muted">Tema: {{item.tema.categoriaTema}} </small>
+            <img src="{{item.urlImagemPostagem}}" class="card-img-top" alt="...">
+            
+            
             <p class="card-text mt-3">{{item.descricaoPostagem}}</p>
             <p class="card-text"><small class="text-muted"> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às
                 {{item.dataPostagem | date: 'HH:mm'}} </small></p>
             <p class="card-text"><small class="text-muted">
                 by: {{item.usuario.nomeUsuario}}
               </small></p>
+              <div class="formlado">
+               
+                <mat-icon aria-hidden="false" aria-label="Example home icon" class="mt-2">favorite_border</mat-icon>
+                <mat-icon aria-hidden="false" aria-label="Example home icon" class="ml-2 mt-2">thumb_up</mat-icon>
+                <button class="btn botaocor ml-3">Colaborar</button>
+              </div>
           </div>
         </div>
       </div>
@@ -94,14 +215,27 @@
 
       <div class="card-columns" *ngFor='let tema of listaTemas'>
         <div class="card text-center" *ngFor='let item of tema.postagem'>
+            <div class="">
+            
+            <h5 class="card-title m-0">Titulo:{{item.tituloPostagem}}</h5>
+            <h5 class="card-title m-0 text-danger">Tipo de Ajuda :{{item.tipoAjudaPostagem}}</h5>
+          </div>
           <div class="card-body">
-            <h5 class="card-title m-0">{{item.tituloPostagem}}</h5>
+            <img src="{{item.urlImagemPostagem}}" class="card-img-top" alt="...">
+            
+            
             <p class="card-text mt-3">{{item.descricaoPostagem}}</p>
             <p class="card-text"><small class="text-muted"> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às
                 {{item.dataPostagem | date: 'HH:mm'}} </small></p>
             <p class="card-text"><small class="text-muted">
                 by: {{item.usuario.nomeUsuario}}
               </small></p>
+              <div class="formlado">
+               
+                <mat-icon aria-hidden="false" aria-label="Example home icon" class="mt-2">favorite_border</mat-icon>
+                <mat-icon aria-hidden="false" aria-label="Example home icon" class="ml-2 mt-2">thumb_up</mat-icon>
+                <button class="btn botaocor ml-3">Colaborar</button>
+              </div>
           </div>
         </div>
       </div>

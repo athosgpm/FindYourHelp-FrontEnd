@@ -25,6 +25,14 @@ export class AuthService {
     return this.http.post<User>(`${this.baseURL}/usuarios/cadastrar`,user)
 
   }
+  atualizar(user: User): Observable<User> {
+    return this.http.put<User>(`${this.baseURL}/usuarios`, user,
+    {headers: {'Authorization': environment.token}})
+  }
+  
+  findUserById(id: number): Observable<User>{
+    return this.http.get<User>(`http://localhost:8080/usuarios/${id}`, { headers: {'Authorization':environment.token}})
+  }
 
   getByIdUser(id:number):Observable<User>{
     return this.http.get<User>(`http://localhost:8080/usuarios/${id}`, { headers: {'Authorization':environment.token}})
