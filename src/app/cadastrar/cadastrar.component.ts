@@ -13,9 +13,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./cadastrar.component.css'],
 })
 export class CadastrarComponent implements OnInit {
+
   user: User = new User();
   confirmarSenha: string;
+  
   tipoUser: string;
+
+
+
   @ViewChild('stepper') stepper: any; // esse atributo é para uso de index nos steps
   hide = true; // Esse atributo é para revelar a senha
 
