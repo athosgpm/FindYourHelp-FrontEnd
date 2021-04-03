@@ -56,8 +56,8 @@
               <td> {{tema.categoriaTema}} </td>
               <td> {{tema.descricaoTema}} </td> 
               <td class="d-flex justify-content-end">
-                <button class="btn mr-3">Editar</button>
-                <button class="btn">Apagar</button>
+                <button class="btn mr-3" [routerLink]="['/tema-edit',tema.idTema]">Editar</button>
+                <button class="btn" [routerLink]="['/tema-delete',tema.idTema]">Apagar</button>
               </td>
             </tr> 
   

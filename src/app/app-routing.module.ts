@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { TemaComponent } from './tema/tema.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 
 const routes: Routes = [
 
@@ -18,7 +20,9 @@ const routes: Routes = [
    {path: "rodape", component:RodapeComponent},
    {path: "homepage", component:HomePageComponent},
    {path:"userpage", component:UserPageComponent},
-   {path: "tema", component:TemaComponent}
+   {path: "tema", component:TemaComponent},
+   {path: "tema-delete/:id", component:TemaDeleteComponent},
+   {path: "tema-edit/:id", component:TemaEditComponent}
 ];
 
 @NgModule({
