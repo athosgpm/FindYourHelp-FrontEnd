@@ -202,7 +202,8 @@
             <p class="card-text mt-3">{{item.descricaoPostagem}}</p>
             <p class="card-text"><small class="text-muted"> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às
                 {{item.dataPostagem | date: 'HH:mm'}} </small></p>
-
+                <a [routerLink]= "['/postagem-edit',item.idPostagem]" class="text-info mr-3">Editar</a>
+                <a [routerLink]= "['/postagem-delete',item.idPostagem] "class="text-danger">Apagar</a>
             
 
           </div>
