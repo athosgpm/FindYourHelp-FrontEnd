@@ -5,6 +5,7 @@ import { NgForm, Validators, FormBuilder, FormsModule } from '@angular/forms';
 import { User } from 'src/app/model/User';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from './../../../environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-edit',
@@ -65,12 +66,20 @@ export class UserEditComponent implements OnInit {
     
 
     if(this.user.senhaUsuario != this.confirmarSenha){
-      alert('A senhas estão incorretas.')
+      Swal.fire({
+        icon: 'error',
+        title: 'Show',
+        text: 'As senhas estão incorretas',
+      });
     } else {
       this.authService.atualizar(this.user).subscribe((resp: User) => {
           this.user = resp
           this.router.navigate(['/login'])
-          alert('Usuário Atualizado com sucesso, faça o login novamente.')
+          Swal.fire({
+            icon: 'success',
+            title: 'Show',
+            text: 'Usuario atualizada com sucesso!Faça login novamente',
+          });
           
           environment.token = ''
           environment.nomeUsuario = ''

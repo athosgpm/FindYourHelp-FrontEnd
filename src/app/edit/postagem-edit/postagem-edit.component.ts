@@ -5,6 +5,7 @@ import { Tema } from 'src/app/model/Tema';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from './../../../environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-postagem-edit',
@@ -64,7 +65,11 @@ export class PostagemEditComponent implements OnInit {
 
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem)=> {
       this.postagem = resp
-      alert("Postagem atualizada com sucesso!")
+      Swal.fire({
+        icon: 'success',
+        title: 'Show',
+        text: 'Postagem atualizada com sucesso!',
+      });
       this.router.navigate(['/userpage'])
     })
   }

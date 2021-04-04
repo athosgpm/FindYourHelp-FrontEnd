@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Tema } from 'src/app/model/Tema';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tema-edit',
@@ -21,7 +22,11 @@ export class TemaEditComponent implements OnInit {
   ngOnInit() {
     if(environment.token == '')
     {
-      alert('Sua sessão expirou faça login novamente')
+      Swal.fire({
+        icon: 'error',
+        title: 'Ops...',
+        text: 'Sua sessão expirou faça login novamente!',
+      });
       this.router.navigate(['/login'])
     }
 
@@ -38,7 +43,11 @@ export class TemaEditComponent implements OnInit {
   atualizar(){
       this.temaService.putTema(this.tema).subscribe((resp:Tema)=>{
         this.tema = resp
-        alert('Tema atualizado com Sucesso')
+        Swal.fire({
+          icon: 'success',
+          title: 'Show',
+          text: 'Tema atualizada com sucesso!',
+        });
         this.router.navigate(['/tema'])
       })
   }

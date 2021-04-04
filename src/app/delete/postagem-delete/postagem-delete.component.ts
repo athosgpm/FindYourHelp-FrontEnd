@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Postagem } from 'src/app/model/Postagem';
-import { Tema } from 'src/app/model/Tema';
 import { PostagemService } from 'src/app/service/postagem.service';
-import { TemaService } from 'src/app/service/tema.service';
 import { environment } from './../../../environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-postagem-delete',
@@ -43,7 +42,11 @@ export class PostagemDeleteComponent implements OnInit {
   
   apagar() {
     this.postagemService.deletePostagem(this.idPost).subscribe(()=>{
-      alert('Essa postagem foi deletado com sucesso')
+      Swal.fire({
+        icon: 'success',
+        title: 'Show',
+        text: 'Postagem deletada com sucesso!',
+      });
       this.router.navigate(['/userpage'])
     })
   }

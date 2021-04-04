@@ -8,6 +8,7 @@ import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-page',
@@ -90,7 +91,11 @@ export class UserPageComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp:Postagem)=>{
       this.postagem = resp
-      alert('Postagem realizada com sucesso')
+      Swal.fire({
+        icon: 'success',
+        title: 'Show',
+        text: 'Postagem realizada com sucesso!',
+      });
       this.postagem = new Postagem()
       this.getAllPostagens()
     })

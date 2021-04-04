@@ -3,6 +3,7 @@ import { Tema } from 'src/app/model/Tema';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tema-delete',
@@ -21,7 +22,11 @@ export class TemaDeleteComponent implements OnInit {
   ngOnInit(){
     if(environment.token == '')
     {
-      alert('Sua sessão expirou faça login novamente')
+      Swal.fire({
+        icon: 'error',
+        title: 'Ops...',
+        text: 'Sua sessão expirou faça login novamente!',
+      });
       this.router.navigate(['/login'])
     }
     this.idTema = this.route.snapshot.params['id']
@@ -36,7 +41,11 @@ export class TemaDeleteComponent implements OnInit {
   deletar()
   {
     this.temaService.deleteTema(this.idTema).subscribe(()=>{
-      alert('Esse tema foi deletado com sucesso')
+      Swal.fire({
+        icon: 'success',
+        title: 'Show',
+        text: 'Tema deletada com sucesso!',
+      });
       this.router.navigate(['/tema'])
     })
   }
