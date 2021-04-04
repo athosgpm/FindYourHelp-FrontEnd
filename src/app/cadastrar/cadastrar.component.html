@@ -240,7 +240,7 @@
 
 
       <div class="btn-group" role="group" aria-label="Second group">
-        <button mat-flat-button color="primary" (click)='cadastrar()'>Next</button>
+        <button mat-flat-button color="primary" matStepperNext >Next</button>
       </div>
     </div>
   </mat-step>
@@ -314,7 +314,7 @@
       </div>
 
       <div class="btn-group" role="group" aria-label="Second group">
-        <button mat-flat-button color="primary" matStepperNext [disabled]="aceitomesmo==0">Next</button>
+        <button mat-flat-button color="primary"  [disabled]="aceitomesmo==0" (click)='cadastrar()'>Enviar</button>
       </div>
     </div>
 
