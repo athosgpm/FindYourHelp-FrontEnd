@@ -58,7 +58,7 @@ export class CadastrarComponent implements OnInit {
     this.tipoUser = event.target.value;
   }
   cadastrar() {
-    this.user.tipoUsuario = this.tipoUser;
+    
     if (this.user.senhaUsuario != this.confirmarSenha) {
       Swal.fire({
         icon: 'error',

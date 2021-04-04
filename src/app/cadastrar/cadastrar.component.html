@@ -221,13 +221,13 @@
         </div>
         <p>
           <!--TipodeUsuario-->
-          <mat-form-field appearance="outline" [color]="controlColor4">
+          <mat-form-field appearance="outline" [color]="controlColor4" [formControl]="tipoS" >
             <mat-label>Tipo de Usuario</mat-label>
             <mat-icon matSuffix>safety_divider</mat-icon>
             <!--Estabelecer um controle no atributo tipodeUsuario-->
-            <mat-select [formControl]="tipoS" required (change)='tipoDeUsuario($event)'>
-              <mat-option value="colaborador">Colaborador</mat-option>
-              <mat-option value="empreendedor">Empreendedor</mat-option>
+            <mat-select matNativeControl required id="tipo" name="tipo" [(ngModel)]='user.tipoUsuario'>
+              <mat-option value="Colaborador">Colaborador</mat-option>
+              <mat-option value="Empreendedor">Empreendedor</mat-option>
             </mat-select>
             <!--função para mostrar o erro por uma caracteristica no controle do atributo tipodeUsuario //ngif tem o mesmo sintaxe que o if da programação-->
 
