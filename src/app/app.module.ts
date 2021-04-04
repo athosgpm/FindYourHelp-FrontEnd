@@ -8,7 +8,6 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { MenuComponent } from './menu/menu.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { LoginComponent } from './login/login.component';
-import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -44,7 +43,6 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
     MenuComponent,
     LoginComponent,
     CadastrarComponent,
-    SobreNosComponent,
     HomePageComponent,
     UserPageComponent,
     TemaComponent,
