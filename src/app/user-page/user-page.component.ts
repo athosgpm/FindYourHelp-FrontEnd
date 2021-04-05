@@ -21,6 +21,7 @@ export class UserPageComponent implements OnInit {
   emailUsuario = environment.emailUsuario
   idUsuario = environment.idUsuario
   imagemUsuario = environment.imagemUsuario
+  tipoUsuario = environment.tipoUsuario
   
   postagem:Postagem = new Postagem()
   listaPostagens :Postagem[]
@@ -87,6 +88,7 @@ export class UserPageComponent implements OnInit {
     this.postagem.tema = this.tema
 
     this.user.idUsuario = this.idUser
+    this.user.imagemUsuario = this.imagemUsuario
     this.postagem.usuario = this.user
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp:Postagem)=>{
@@ -101,8 +103,6 @@ export class UserPageComponent implements OnInit {
     })
     
   }
-
-
 
   sair() {
     this.router.navigate(['/homepage'])

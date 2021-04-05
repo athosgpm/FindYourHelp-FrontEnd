@@ -1,251 +1,376 @@
+<nav class="navbar navbar-expand-lg navbar-light gris fixed-top" style="height: 50px;">
+
+  <div class="container-fluid">
+    <img class="img-fluid rounded-circle" width="40" alt="Logo da Escape" src="https://i.imgur.com/tF84Tak.png">
+    <a class="navbar-brand mx-4 letra" style="font-size: 20pt;" href="#" style="color: white;">FindYourHelp</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+        <li class="nav-item letra">
+          <a class="nav-link active fs-14 mx-3 cor" aria-current="page" href="#" style="color: white;">Home</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
 <!--Pagina do feed-->
-<div fxLayout="row " fxLayoutGap="32px grid" fxLayout.lt-md="column" fxLayoutAlign="start start" fxLayoutGap="10px">
-  <!--CardPerfil-->
-  <div fxFlex="22" class="px-5 mt-3 text-center">
-    <mat-card class="mat-elevation-z5">
+<div class="container-fluid gedf-wrapper">
 
-      <mat-card-header>
-        <mat-card-title class="text-center">{{nomeUsuario}}</mat-card-title>
-        <mat-icon  aria-hidden="false" aria-label="Example home icon" class="">edit</mat-icon>
-               
-      </mat-card-header>
+  <div class="row justify-content-between">
+    <!--CardPerfil-->
+    <div class="col-md-2 mt-5 ml-5">
+      <div class="text-center" style="position: fixed;">
+        <mat-card class="mat-elevation-z5">
 
-      <div class="circulo">
-        <img mat-card-image src="{{imagemUsuario}}">
-      </div>
-      <mat-card-content class="py-2">
-        <small class="lead">
-          {{emailUsuario}}
-        </small>
-        <a [routerLink] = "['/user-edit',idUsuario]">
-        <mat-icon  aria-hidden="false" aria-label="Example home icon"  class="" >edit</mat-icon></a>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button color="warn">Empreendedor</button>
-        <button mat-button color="warn" (click)='sair()'>Sair</button>
-
-      </mat-card-actions>
-    </mat-card>
-
-
-  </div>
-  <!--/CardPerfil-->
-  <!--DivCentral-->
-  <div fxFlex="60" class="py-5">
-    <!--CardIdeias-->
-
-    <h1 class="fs-1"> Ideias mais Populares</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-3">
-      <div class="col">
-        <mat-card class="mat-elevation-z5 fundo">
-
-
-
-
-          <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
           <mat-card-header>
-            <mat-card-title class="text-start">Energia Renovavel Parque Eolico</mat-card-title>
+            <mat-card-title class="text-center">{{nomeUsuario}}</mat-card-title>
+            <mat-icon aria-hidden="false" aria-label="Example home icon" class="">edit</mat-icon>
           </mat-card-header>
-          <mat-card-content class="py-2">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
-              quidem laboriosam corporis qui perferendis cupiditate reprehenderit
-            </p>
-          </mat-card-content>
-          <hr>
-          <mat-card-actions>
-            <button mat-button class="botaodacor">Colaborar</button>
 
+          <div class="circulo">
+            <img mat-card-image src="{{imagemUsuario}}">
+          </div>
+          <mat-card-content class="py-2">
+            <small class="lead">
+              {{emailUsuario}}
+            </small>
+            <a [routerLink]="['/user-edit',idUsuario]">
+              <mat-icon aria-hidden="false" aria-label="Example home icon" class="">edit</mat-icon>
+            </a>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="warn">{{tipoUsuario}}</button>
+            <button mat-button color="warn" (click)='sair()'>Sair</button>
           </mat-card-actions>
         </mat-card>
       </div>
-      <div class="col">
-        <mat-card class="mat-elevation-z5 fundo">
-
-
-
-
-          <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
-          <mat-card-header>
-            <mat-card-title class="text-start">Mercado Financeiro para todos</mat-card-title>
-          </mat-card-header>
-          <mat-card-content class="py-2">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
-              quidem laboriosam corporis qui perferendis cupiditate reprehenderit
-            </p>
-          </mat-card-content>
-          <hr>
-          <mat-card-actions>
-            <button mat-button class="botaodacor">Colaborar</button>
-
-          </mat-card-actions>
-        </mat-card>
-
-      </div>
-      <div class="col">
-        <mat-card class="mat-elevation-z5 fundo">
-
-
-
-
-          <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
-          <mat-card-header>
-            <mat-card-title class="text-start">Empreendedorismo Feminino</mat-card-title>
-          </mat-card-header>
-          <mat-card-content class="py-2">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
-              quidem laboriosam corporis qui perferendis cupiditate reprehenderit
-            </p>
-          </mat-card-content>
-          <hr>
-          <mat-card-actions>
-            <button mat-button class="botaodacor">Colaborar</button>
-
-          </mat-card-actions>
-        </mat-card>
-      </div>
-
     </div>
-    <!--/CardIdeias-->
-    <!--CardBotao-->
-    <div>
+    <!--/CardPerfil-->
 
-      <mat-card class="py-2 mat-elevation-z5 mt-4">
-        <mat-card-header>
+    <!--DivCentral-->
+    <!-- <div fxFlex="60" class="py-5"> -->
+    <div class="col-md-6 mt-5 gedf-main">
+      <!--CardIdeias-->
 
-          <img mat-card-avatar src="{{imagemUsuario}}" alt="img User">
+      <h1 class="fs-1"> Ideias mais Populares</h1>
+      <div class="row row-cols-1 row-cols-md-3 g-3">
+        <div class="col">
+          <mat-card class="mat-elevation-z5 fundo">
 
-          <mat-card-title>{{nomeUsuario}}</mat-card-title>
-          <mat-card-subtitle><button mat-button class="mat-elevation-z5 botaodahora"  data-toggle="modal" data-target="#novaPostagem">Qual ideia está em sua mente <span>{{nomeUsuario}}</span>
-              <mat-icon class="ml-3 mb-2" matSuffix aria-hidden="false" aria-label="Example home icon">
-                create</mat-icon>
-            </button></mat-card-subtitle>
+            <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
+            <mat-card-header>
+              <mat-card-title class="text-start">Energia Renovavel Parque Eolico</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="py-2">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
+                quidem laboriosam corporis qui perferendis cupiditate reprehenderit
+              </p>
+            </mat-card-content>
+            <hr>
+            <mat-card-actions>
+              <button mat-button class="botaodacor">Colaborar</button>
+
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="col">
+          <mat-card class="mat-elevation-z5 fundo">
+
+
+
+
+            <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
+            <mat-card-header>
+              <mat-card-title class="text-start">Mercado Financeiro para todos</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="py-2">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
+                quidem laboriosam corporis qui perferendis cupiditate reprehenderit
+              </p>
+            </mat-card-content>
+            <hr>
+            <mat-card-actions>
+              <button mat-button class="botaodacor">Colaborar</button>
+
+            </mat-card-actions>
+          </mat-card>
+
+        </div>
+        <div class="col">
+          <mat-card class="mat-elevation-z5 fundo">
+
+
+
+
+            <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
+            <mat-card-header>
+              <mat-card-title class="text-start">Empreendedorismo Feminino</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="py-2">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
+                quidem laboriosam corporis qui perferendis cupiditate reprehenderit
+              </p>
+            </mat-card-content>
+            <hr>
+            <mat-card-actions>
+              <button mat-button class="botaodacor">Colaborar</button>
+
+            </mat-card-actions>
+          </mat-card>
+        </div>
+
+      </div>
+      <!--/CardIdeias-->
+      <!--CardBotao-->
+      <mat-card class="mat-elevation-z4 mt-4">
+        <mat-card-header class="row mt-2">
+
+          <div class="col-md-1">
+            <img class="rounded-circle" width="45" height="45" src="{{imagemUsuario}}" alt="img User">
+          </div>
+
+          <div class="col-md-11">
+            <mat-card-subtitle><button
+                style="font-size: 14pt; height: 45px; width: 100%; border-radius: 23px; font-weight: normal; text-align: start;"
+                mat-button class="mat-elevation-z3 botaodahora ml-1" data-toggle="modal" data-target="#novaPostagem">
+                Qual ideia está em sua mente, <span>{{nomeUsuario}}</span>
+                <mat-icon class="ml-3 mb-2" matSuffix aria-hidden="false" aria-label="Example home icon">
+                  create</mat-icon>
+              </button></mat-card-subtitle>
+          </div>
 
         </mat-card-header>
-
-        <mat-card-content class="py-2">
-
-          Poste uma ideia para iluminar o mundo com o apoio dos colaboradores
-
+        <mat-card-content class="mt-1 mb-2" style="color: gray;">
+          <hr>
+          Poste uma ideia para iluminar o mundo com o apoio dos colaboradores.
         </mat-card-content>
       </mat-card>
-    </div>
 
-    <!--/CardBotao-->
+      <!--/CardBotao-->
 
+      <!-- Filtro Post -->
+      <div class="container mb-5 mt-5" id="postagens">
+        <nav>
+          <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
 
-<div class="container mb-5 mt-5" id="postagens">
-  <nav>
-    <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active text-color font-weight-bold" id="nav-todasPostagens-tab"
+              data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens"
+              aria-selected="true">
+              Todas as postagens
+            </a>
 
-      <a class="nav-item nav-link active text-color" id="nav-todasPostagens-tab" data-toggle="tab"
-        href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">
-        Todas as postagens
-      </a>
+            <a (click)='findByIdUser()' class="nav-item nav-link text-color font-weight-bold"
+              id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab"
+              aria-controls="nav-minhasPostagens" aria-selected="false">
+              Minhas Postagens
+            </a>
 
-      <a (click)='findByIdUser()' class="nav-item nav-link text-color" id="nav-minhasPostagens-tab" data-toggle="tab"
-        href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">
-        Minhas Postagens
-      </a>
-
-      <a class="nav-item nav-link text-color" id="nav-porTema-tab" data-toggle="tab" href="#porTema" role="tab"
-        aria-controls="nav-porTema" aria-selected="false">
-        Postagens por tema
-      </a>
-    </div>
-  </nav>
-
-  <div class="tab-content mt-5" id="nav-tabContent">
-
-    <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
-
-      <div class="card-columns">
-        <div class="card text-center" *ngFor='let item of listaPostagens'>
-          <div class="">
-            <h5 class="text-muted">Tema: {{item.tema.categoriaTema}} </h5>
-            <h5 class="card-title m-0">Titulo:{{item.tituloPostagem}}</h5>
-            <h5 class="card-title m-0 text-danger">Tipo de Ajuda :{{item.tipoAjudaPostagem}}</h5>
+            <a class="nav-item nav-link text-color font-weight-bold" id="nav-porTema-tab" data-toggle="tab"
+              href="#porTema" role="tab" aria-controls="nav-porTema" aria-selected="false">
+              Postagens por tema
+            </a>
           </div>
-         
-          <div class="card-body">
-            <img src="{{item.urlImagemPostagem}}" class="card-img-top" alt="...">
-            
-            
-            <p class="card-text mt-3">{{item.descricaoPostagem}}</p>
-            <p class="card-text"><small class="text-muted"> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às
-                {{item.dataPostagem | date: 'HH:mm'}} </small></p>
-            <p class="card-text"><small class="text-muted">
-                by: {{item.usuario.nomeUsuario}}
-              </small></p>
-              <div class="formlado">
-               
-                <mat-icon aria-hidden="false" aria-label="Example home icon" class="mt-2">favorite_border</mat-icon>
-                <mat-icon aria-hidden="false" aria-label="Example home icon" class="ml-2 mt-2">thumb_up</mat-icon>
-                <button class="btn botaocor ml-3">Colaborar</button>
+        </nav>
+
+        <!--- \\\\\\\Posts-->
+        <div class="tab-content mt-5" id="nav-tabContent">
+
+          <!--- \\\\\\\ todos os Post-->
+          <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
+            aria-labelledby="nav-todasPostagens-tab">
+            <div class="card gedf-card mb-4" *ngFor='let item of listaPostagens'>
+
+              <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="mr-2">
+                      <img class="rounded-circle" width="45" height="45" src="{{item.usuario.imagemUsuario}}" alt="">
+                    </div>
+                    <div class="ml-2">
+                      <div class="h5 m-0">{{item.usuario.nomeUsuario}}</div>
+                      <div class="text-muted h7Post">
+                        <i class="fa fa-clock-o"></i> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às {{item.dataPostagem
+                        |
+                        date: 'HH:mm'}} |
+                        <i class="fa fa-tag"></i> {{item.tema.categoriaTema}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-          </div>
-        </div>
-      </div>
 
+              <img height="350px" width="100%" src="{{item.urlImagemPostagem}}" alt="">
 
-    </div>
-    <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
-
-      <div class="card-columns">
-        <div class="card text-center" *ngFor='let item of user.postagem'>
-          <div class="card-body">
-            <h5 class="card-title m-0">{{item.tituloPostagem}}</h5>
-            <small class="text-muted">Tema: {{item.tema.categoriaTema}} </small>
-            <p class="card-text mt-3">{{item.descricaoPostagem}}</p>
-            <p class="card-text"><small class="text-muted"> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às
-                {{item.dataPostagem | date: 'HH:mm'}} </small></p>
-                <a [routerLink]= "['/postagem-edit',item.idPostagem]" class="text-info mr-3">Editar</a>
-                <a [routerLink]= "['/postagem-delete',item.idPostagem] "class="text-danger">Apagar</a>
-            
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="tab-pane fade" id="porTema" role="tabpanel" aria-labelledby="nav-porTema-tab">
-
-
-      <div class="card-columns" *ngFor='let tema of listaTemas'>
-        <div class="card text-center" *ngFor='let item of tema.postagem'>
-            <div class="">
-            
-            <h5 class="card-title m-0">Titulo:{{item.tituloPostagem}}</h5>
-            <h5 class="card-title m-0 text-danger">Tipo de Ajuda :{{item.tipoAjudaPostagem}}</h5>
-          </div>
-          <div class="card-body">
-            <img src="{{item.urlImagemPostagem}}" class="card-img-top" alt="...">
-            
-            
-            <p class="card-text mt-3">{{item.descricaoPostagem}}</p>
-            <p class="card-text"><small class="text-muted"> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às
-                {{item.dataPostagem | date: 'HH:mm'}} </small></p>
-            <p class="card-text"><small class="text-muted">
-                by: {{item.usuario.nomeUsuario}}
-              </small></p>
-              <div class="formlado">
-               
-                <mat-icon aria-hidden="false" aria-label="Example home icon" class="mt-2">favorite_border</mat-icon>
-                <mat-icon aria-hidden="false" aria-label="Example home icon" class="ml-2 mt-2">thumb_up</mat-icon>
-                <button class="btn botaocor ml-3">Colaborar</button>
+              <div class="card-body">
+                <h2 class="card-title">{{item.tituloPostagem}}</h2>
+                <p class="card-text">
+                  {{item.descricaoPostagem}}
+                </p>
+                <div class="badge badge-danger mr-1" style="font-size: 10pt; font-weight: normal">
+                  <i class="fa fa-handshake-o" style="color: white; font-size: 10pt;"></i>
+                  {{item.tipoAjudaPostagem}}
+                </div>
               </div>
+
+              <div class="card-footer d-flex bd-highlight align-items-center">
+                <a href="" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
+                <a href="" class="card-link bd-highlight"><i class="fa fa-comment"></i> Comment</a>
+                <div class="ml-auto bd-highlight"><button type="button" class="btn btn-warning">Colaborar</button></div>
+              </div>
+            </div>
+          </div>
+          <!-- Post /////-->
+
+          <!--- \\\\\\\ meus Post-->
+          <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+
+            <div class="card gedf-card mb-4" *ngFor='let userPost of user.postagem'>
+
+              <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="mr-2">
+                      <img class="rounded-circle" width="45" height="45" src="{{imagemUsuario}}" alt="">
+                    </div>
+                    <div class="ml-2">
+                      <div class="h5 m-0">{{nomeUsuario}}</div>
+                      <div class="text-muted h7Post">
+                        <i class="fa fa-clock-o"></i> {{userPost.dataPostagem | date: 'dd/MM/yyyy'}} às
+                        {{userPost.dataPostagem | date: 'HH:mm'}} |
+                        <i class="fa fa-tag"></i> {{userPost.tema.categoriaTema}}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="dropdown">
+                      <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-h"></i>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                        <div class="h6 dropdown-header">Configurações</div>
+                        <a class="dropdown-item" [routerLink]="['/postagem-edit',userPost.idPostagem]">Editar</a>
+                        <a class="dropdown-item" [routerLink]="['/postagem-delete',userPost.idPostagem]">Deletar</a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <img height="450px" width="100%" src="{{userPost.urlImagemPostagem}}" alt="">
+
+              <div class="card-body">
+                <h2 class="card-title">{{userPost.tituloPostagem}}</h2>
+                <p class="card-text">
+                  {{userPost.descricaoPostagem}}
+                </p>
+                <div class="badge badge-danger mr-1" style="font-size: 10pt; font-weight: normal">
+                  <i class="fa fa-handshake-o" style="color: white; font-size: 10pt;"></i>
+                  {{userPost.tipoAjudaPostagem}}
+                </div>
+              </div>
+
+              <div class="card-footer d-flex bd-highlight align-items-center">
+                <a href="#" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
+                <a href="#" class="card-link bd-highlight"><i class="fa fa-comment"></i> Comment</a>
+                <div class="ml-auto bd-highlight"><button type="button" class="btn btn-warning">Colaborar</button></div>
+              </div>
+
+            </div>
+          </div>
+          <!-- Post /////-->
+
+          <!--- \\\\\\\ tema Post -->
+          <div class="tab-pane fade" id="porTema" role="tabpanel" aria-labelledby="nav-porTema-tab"
+            *ngFor='let tema of listaTemas'>
+            <div class="card gedf-card mb-4" *ngFor='let item of tema.postagem'>
+
+              <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="mr-2">
+                      <img class="rounded-circle" width="45" height="45" src="{{item.usuario.imagemUsuario}}" alt="">
+                    </div>
+                    <div class="ml-2">
+                      <div class="h5 m-0">{{item.usuario.nomeUsuario}}</div>
+                      <div class="text-muted h7Post">
+                        <i class="fa fa-clock-o"></i> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às {{item.dataPostagem
+                        | date: 'HH:mm'}} |
+                        <i class="fa fa-tag"></i> {{tema.categoriaTema}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <img height="450px" width="100%" src="{{item.urlImagemPostagem}}" alt="">
+
+              <div class="card-body">
+                <h2 class="card-title">{{item.tituloPostagem}}</h2>
+                <p class="card-text">
+                  {{item.descricaoPostagem}}
+                </p>
+                <div class="badge badge-danger mr-1" style="font-size: 10pt; font-weight: normal">
+                  <i class="fa fa-handshake-o" style="color: white; font-size: 10pt;"></i>
+                  {{item.tipoAjudaPostagem}}
+                </div>
+              </div>
+
+              <div class="card-footer d-flex bd-highlight align-items-center">
+                <a href="" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
+                <a href="" class="card-link bd-highlight"><i class="fa fa-comment"></i> Comment</a>
+                <div class="ml-auto bd-highlight"><button type="button" class="btn btn-warning">Colaborar</button></div>
+              </div>
+            </div>
+          </div>
+          <!--  Post /////-->
+
+        </div>
+      </div>
+      <!-- Posts /////-->
+    </div>
+    <!-- /////cards a direita -->
+    <div class="col-md-3 mt-5">
+      <div class="mr-5" style="position: fixed; ">
+        <h2>Notícias FindYourHelp</h2>
+        <hr>
+        <div class="card gedf-card">
+          <div class="card-body">
+            <h5 class="card-title">Generation Brasil</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Centenas de novos Dev's no mercado </h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a href="#" class="card-link">Site Generation</a>
+            <a href="#" class="card-link">Site PI-FindYourHelp</a>
+          </div>
+        </div>
+        <div class="card gedf-card">
+          <div class="card-body">
+            <h5 class="card-title">Find Your Help!</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Melhor Projeto do Brasil</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a href="#" class="card-link">Site Generation</a>
+            <a href="#" class="card-link">Site PI-FindYourHelp</a>
           </div>
         </div>
       </div>
-
-
     </div>
+    <!-- cards a direita///// -->
   </div>
-
 </div>
+
 
 
 <!-- Modal -->
@@ -262,60 +387,62 @@
       <div class="modal-body">
 
         <div class="formlado mt-4">
-        <div class="form-group">
-          <label for="Tema">Tema</label>
-          <select class="form-control" id="Tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
-            <option *ngFor='let item of listaTemas' value="{{item.idTema}}"> {{item.categoriaTema}}
-            </option>
+          <div class="form-group">
+            <label for="Tema">Tema</label>
+            <select class="form-control" id="Tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+              <option *ngFor='let item of listaTemas' value="{{item.idTema}}"> {{item.categoriaTema}}
+              </option>
 
-          </select>
+            </select>
+          </div>
+
+          <div class="form-group ml-3">
+            <label for="tipoAjudaPostagem">Tipo de Ajuda</label>
+            <select class="form-control" id="tipoAjudaPostagem" (change)='tipoDeAjuda($event)' name="tipoAjudaPostagem">
+              <option style="opacity: 0.5;">Selecione uma opção</option>
+              <option value="Financeiro">Financeiro</option>
+              <option value="Servico">Serviço</option>
+
+            </select>
+          </div>
+
+
+
+        </div>
+        <p>
+          Por acaso voce quer fazer um novo tema! <a data-dismiss="modal" routerLink="/tema">Cadastre</a>
+        </p>
+
+        <form>
+          <div class="form-group">
+            <label for="tituloPostagem">Titulo</label>
+            <input [(ngModel)]='postagem.tituloPostagem' type="text" class="form-control" id="tituloPostagem"
+              placeholder="titulo da Postagem" name="tituloPostagem">
+          </div>
+          <div class="form-group">
+            <label for="urlImagemPostagem">Imagem</label>
+            <input [(ngModel)]='postagem.urlImagemPostagem' type="text" class="form-control" id="urlImagemPostagem"
+              placeholder="Imagem da Postagem" name="urlImagemPostagem">
+          </div>
+
+          <div class="form-group">
+            <label for="descricaoPostagem">Descrição</label>
+            <textarea [(ngModel)]='postagem.descricaoPostagem' class="form-control" id="descricaoPostagem" rows="3"
+              name="descricaoPostagem"></textarea>
+          </div>
+
+        </form>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn" data-dismiss="modal" (click)='publicar()'>Publicar</button>
         </div>
 
-        <div class="form-group ml-3">
-          <label for="tipoAjudaPostagem">Tipo de Ajuda</label>
-          <select class="form-control" id="tipoAjudaPostagem" (change)='tipoDeAjuda($event)' name="tipoAjudaPostagem">
-            <option value="Financeiro">Financeiro</option>
-            <option value="Servico">Serviço</option>
-
-          </select>
-        </div>
 
 
 
       </div>
-      <p>
-        Por acaso voce quer fazer um novo tema! <a data-dismiss="modal" routerLink="/tema">Cadastre</a>
-      </p>
-
-      <form>
-        <div class="form-group">
-          <label for="tituloPostagem">Titulo</label>
-          <input [(ngModel)]='postagem.tituloPostagem' type="text" class="form-control" id="tituloPostagem"
-            placeholder="titulo da Postagem" name="tituloPostagem">
-        </div>
-        <div class="form-group">
-          <label for="urlImagemPostagem">Imagem</label>
-          <input [(ngModel)]='postagem.urlImagemPostagem' type="text" class="form-control" id="urlImagemPostagem"
-            placeholder="Imagem da Postagem" name="urlImagemPostagem">
-        </div>
-
-        <div class="form-group">
-          <label for="descricaoPostagem">Descrição</label>
-          <textarea [(ngModel)]='postagem.descricaoPostagem' class="form-control" id="descricaoPostagem" rows="3"
-            name="descricaoPostagem"></textarea>
-        </div>
-      
-      </form>
-      <div class="modal-footer">
-        <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn" data-dismiss="modal" (click)='publicar()'>Publicar</button>
-      </div>
-
-
-
 
     </div>
 
   </div>
-  
 </div>

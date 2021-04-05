@@ -17,11 +17,6 @@
         width: 200px; 
       }
 
-      hr{
-        width: 100%;
-        border-bottom: 1px solid #000000;
-      }
-
       .botaodacor{
           background-color: #f4af1b;
           position:relative;
@@ -69,8 +64,44 @@
       height: 80px;
       
     }
-      .close{
-        color:red;
-        margin:5px;
-      }
-  
+    .close{
+      color:red;
+      margin:5px;
+    }
+
+    /* navBar */
+    .fs-14 {
+      font-size: 14pt;
+    }
+    .gris {
+      background-color: rgb(38, 45, 59);
+    }
+
+    /* postagems */
+    body {
+        background-color: #eeeeee;
+    }
+    
+    .h7Post {
+        font-size: 0.8rem;
+    }
+    
+    .gedf-wrapper {
+        margin-top: 0.97rem;
+    }
+    
+    @media (min-width: 992px) {
+        .gedf-main {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+        .gedf-card {
+            margin-bottom: 2.77rem;
+        }
+    }
+    
+    /**Reset Bootstrap*/
+    .dropdown-toggle::after {
+        content: none;
+        display: none;
+    }

@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
       environment.idUsuario = this.userLogin.idUsuario
       environment.telefoneUsuario = this.userLogin.telefoneUsuario
       environment.emailUsuario = this.userLogin.emailUsuario
+      environment.tipoUsuario = this.userLogin.tipoUsuario
       console.log(environment.token)
       console.log(environment.emailUsuario)
       this.router.navigate(['/userpage'])
