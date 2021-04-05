@@ -16,7 +16,8 @@ export class CadastrarComponent implements OnInit {
 
   user: User = new User();
   confirmarSenha: string;
-  
+  isDisabled: boolean = false
+  isDisabled2: boolean = false
   tipoUser: string;
 
 
@@ -57,6 +58,8 @@ export class CadastrarComponent implements OnInit {
   tipoDeUsuario(event: any) {
     this.tipoUser = event.target.value;
   }
+  
+
   cadastrar() {
     
     if (this.user.senhaUsuario != this.confirmarSenha) {
@@ -191,5 +194,11 @@ export class CadastrarComponent implements OnInit {
       : this.tipoS.invalid
       ? 'warn'
       : 'primary';
+  }
+  disableButton() {
+    this.isDisabled = true
+  }
+  disableButton2() {
+    this.isDisabled2 = true
   }
 }

@@ -16,7 +16,7 @@
         <div fxLayout="row" fxLayoutGap="21px grid" fxLayoutAlign="center center">
 
           <div class="col" fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
-            <mat-card class="mat-elevation-z5" (click)="move(1)">
+            <mat-card class="mat-elevation-z5" (click)="move(1)" (click)="disableButton2()">
               <!--função para mover para o step 1-->
               <mat-card-header>
                 <mat-card-title class="text-center">Empreendedor</mat-card-title>
@@ -34,7 +34,7 @@
             </mat-card>
           </div>
           <div class="col" fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%">
-            <mat-card class="mat-elevation-z5" (click)="move(2)">
+            <mat-card class="mat-elevation-z5" (click)="move(2)" (click)="disableButton()">
               <!--função para mover para o step 2-->
               <mat-card-header>
                 <mat-card-title>Colaborador</mat-card-title>
@@ -226,8 +226,8 @@
             <mat-icon matSuffix>safety_divider</mat-icon>
             <!--Estabelecer um controle no atributo tipodeUsuario-->
             <mat-select matNativeControl required id="tipo" name="tipo" [(ngModel)]='user.tipoUsuario'>
-              <mat-option value="Colaborador">Colaborador</mat-option>
-              <mat-option value="Empreendedor">Empreendedor</mat-option>
+              <mat-option value="Colaborador" [disabled]="isDisabled2">Colaborador</mat-option>
+              <mat-option value="Empreendedor" [disabled]="isDisabled">Empreendedor</mat-option>
             </mat-select>
             <!--função para mostrar o erro por uma caracteristica no controle do atributo tipodeUsuario //ngif tem o mesmo sintaxe que o if da programação-->
 
