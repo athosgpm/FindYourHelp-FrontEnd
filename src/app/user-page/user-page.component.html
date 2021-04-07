@@ -55,7 +55,75 @@
     <!--DivCentral-->
     <!-- <div fxFlex="60" class="py-5"> -->
     <div class="col-md-6 mt-5 gedf-main">
-      <!--CardIdeias-->
+
+
+
+
+      <div id="carouselExampleControls" class="carousel slide" style="width: 100%;" data-ride="carousel">
+
+        <div class="carousel-inner">
+
+          <div class="row w-100">
+
+
+            <div class="col-md-4" data-toggle="modal" data-target="#novaPostagem">
+              <div class="card bg-dark border-radius: 10px; text-white">
+                <img class="card-img-top" style=" opacity: 65%;height: 250px; background: rgba(50, 50, 50, 0.8);"
+                  src="https://i.imgur.com/CpJD5Ym.jpeg" alt="Card image cap">
+                <div class="card-img-overlay d-flex align-items-start flex-column">
+                  <img class="rounded-circle mb-auto" width="50" height="50" style="border: 3px solid #008cff;"
+                    src="https://i.imgur.com/HVNFeRx.jpg" alt="">
+                  <h4 class="card-title">Card title</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block" href="#">
+              <div class="card bg-dark border-radius: 10px; text-white">
+                <img class="card-img-top" style="opacity: 65%; height: 250px; background: rgba(50, 50, 50, 0.8);"
+                  src="https://i.imgur.com/CpJD5Ym.jpeg" alt="Card image cap">
+                <div class="card-img-overlay d-flex align-items-start flex-column">
+                  <img class="rounded-circle mb-auto" width="50" height="50" style="border: 3px solid #008cff;"
+                    src="https://i.imgur.com/HVNFeRx.jpg" alt="">
+                  <h4 class="card-title">Card title Card title Card title Card title Card title</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 clearfix d-none d-md-block" href="">
+              <div class="card bg-dark border-radius: 10px; text-white">
+                <img class="card-img-top" style="opacity: 65%; height: 250px;" src="https://i.imgur.com/CpJD5Ym.jpeg"
+                  alt="Card image cap">
+                <div class="card-img-overlay d-flex align-items-start flex-column">
+                  <img class="rounded-circle mb-auto" width="50" height="50" style="border: 3px solid #008cff;"
+                    src="https://i.imgur.com/HVNFeRx.jpg" alt="">
+                  <h4 class="card-title">Card title</h4>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+
+
+
+
+
+
+
+      <!--CardIdeias
 
       <h1 class="fs-1"> Ideias mais Populares</h1>
       <div class="row row-cols-1 row-cols-md-3 g-3">
@@ -128,7 +196,10 @@
         </div>
 
       </div>
-      <!--/CardIdeias-->
+
+      /CardIdeias-->
+
+
       <!--CardBotao-->
       <mat-card class="mat-elevation-z4 mt-4">
         <mat-card-header class="row mt-2">
@@ -139,7 +210,7 @@
 
           <div class="col-md-11">
             <mat-card-subtitle><button
-                style="font-size: 14pt; height: 45px; width: 100%; border-radius: 23px; font-weight: normal; text-align: start;"
+                style="font-size: 14pt; height: 45px; width: 100%; color: gray; border-radius: 23px; font-weight: normal; text-align: start;"
                 mat-button class="mat-elevation-z3 botaodahora ml-1" data-toggle="modal" data-target="#novaPostagem">
                 Qual ideia está em sua mente, <span>{{nomeUsuario}}</span>
                 <mat-icon class="ml-3 mb-2" matSuffix aria-hidden="false" aria-label="Example home icon">
