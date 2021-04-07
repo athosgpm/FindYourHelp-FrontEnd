@@ -119,6 +119,8 @@
 
 
   /*---------- Sobre Find your Help------------ */
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
   p, h1 {
     font-family: 'Roboto', sans-serif;
 
@@ -218,3 +220,13 @@
 /* .altura{
   height: 250px;
 } */
+
+button:hover {
+transform: scale(0.95);
+}
+
+.gradient{
+  background: linear-gradient(50deg, #CB4B69, #E0963F);
+	   animation: gradient 2s ease infinite;
+}
+

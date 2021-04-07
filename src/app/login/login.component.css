@@ -1,9 +1,9 @@
 .gradient-background {
 	height: 700px;
-	 background: linear-gradient(62deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	   animation: gradient 15s ease infinite; 
+	 background: linear-gradient(62deg, #865074, #E6515F, #E0923E);
+	   animation: gradient 15s ease infinite;
 		background-size: 400% 400%;
-	
+
   }
   @-webkit-keyframes gradient{
 	0% {
@@ -106,7 +106,7 @@ input {
 .container {
 	background-color: #fff;
 	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(78, 43, 143, 0.25), 
+  	box-shadow: 0 14px 28px rgba(78, 43, 143, 0.25),
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
