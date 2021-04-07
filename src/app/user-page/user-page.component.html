@@ -257,11 +257,11 @@
           <!--- \\\\\\\ todos os Post-->
           <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
             aria-labelledby="nav-todasPostagens-tab">
-            
+
             <div class="row">
               <div class="form-group">
-
-                <input [(ngModel)]='tituloPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo" name="titulo" class="form-control"  (keyup)='findByTituloPostagem()'>
+                <input [(ngModel)]='tituloPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo"
+                  name="titulo" class="form-control" (keyup)='findByTituloPostagem()'>
               </div>
             </div>
 
@@ -372,53 +372,57 @@
 
           <!--- \\\\\\\ tema Post -->
 
-          <div class="tab-pane fade" id="porTema" role="tabpanel" aria-labelledby="nav-porTema-tab"
-            *ngFor='let tema of listaTemas'>
+          <div class="tab-pane fade" id="porTema" role="tabpanel" aria-labelledby="nav-porTema-tab">
 
             <div class="row">
               <div class="form-group">
-  
-                <input [(ngModel)]='nomeTema' type="text" placeholder="Digite um tema para pesquisar" id="nomeTema" name="nomeTema" class="form-control"  (keyup)='findByNomeTema()'>
+                <input [(ngModel)]='nomeTema' type="text" placeholder="Digite um tema para pesquisar" id="nomeTema"
+                  name="nomeTema" class="form-control" (keyup)='findByNomeTema()'>
               </div>
             </div>
 
-            <div class="card gedf-card mb-4" *ngFor='let item of tema.postagem | orderBy: key: reverse'>
+            <div *ngFor='let tema of listaTemas'>
 
-              <div class="card-header">
-                <div class="d-flex justify-content-between align-items-center">
+              <div class="card gedf-card mb-4" *ngFor='let item of tema.postagem | orderBy: key: reverse'>
+
+                <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center">
-                    <div class="mr-2">
-                      <img class="rounded-circle" width="45" height="45" src="{{item.usuario.imagemUsuario}}" alt="">
-                    </div>
-                    <div class="ml-2">
-                      <div class="h5 m-0">{{item.usuario.nomeUsuario}}</div>
-                      <div class="text-muted h7Post">
-                        <i class="fa fa-clock-o"></i> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às {{item.dataPostagem
-                        | date: 'HH:mm'}} |
-                        <i class="fa fa-tag"></i> {{tema.categoriaTema}}
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="mr-2">
+                        <img class="rounded-circle" width="45" height="45" src="{{item.usuario.imagemUsuario}}" alt="">
+                      </div>
+                      <div class="ml-2">
+                        <div class="h5 m-0">{{item.usuario.nomeUsuario}}</div>
+                        <div class="text-muted h7Post">
+                          <i class="fa fa-clock-o"></i> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às
+                          {{item.dataPostagem
+                          | date: 'HH:mm'}} |
+                          <i class="fa fa-tag"></i> {{tema.categoriaTema}}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <img height="450px" width="100%" src="{{item.urlImagemPostagem}}" alt="">
+                <img height="450px" width="100%" src="{{item.urlImagemPostagem}}" alt="">
 
-              <div class="card-body">
-                <h2 class="card-title">{{item.tituloPostagem}}</h2>
-                <p class="card-text">
-                  {{item.descricaoPostagem}}
-                </p>
-                <div class="badge badge-danger mr-1" style="font-size: 10pt; font-weight: normal">
-                  <i class="fa fa-handshake-o" style="color: white; font-size: 10pt;"></i>
-                  {{item.tipoAjudaPostagem}}
+                <div class="card-body">
+                  <h2 class="card-title">{{item.tituloPostagem}}</h2>
+                  <p class="card-text">
+                    {{item.descricaoPostagem}}
+                  </p>
+                  <div class="badge badge-danger mr-1" style="font-size: 10pt; font-weight: normal">
+                    <i class="fa fa-handshake-o" style="color: white; font-size: 10pt;"></i>
+                    {{item.tipoAjudaPostagem}}
+                  </div>
                 </div>
-              </div>
 
-              <div class="card-footer d-flex bd-highlight align-items-center">
-                <a href="" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
-                <a href="" class="card-link bd-highlight"><i class="fa fa-comment"></i> Comment</a>
-                <div class="ml-auto bd-highlight"><button type="button" class="btn btn-warning">Colaborar</button></div>
+                <div class="card-footer d-flex bd-highlight align-items-center">
+                  <a href="" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
+                  <a href="" class="card-link bd-highlight"><i class="fa fa-comment"></i> Comment</a>
+                  <div class="ml-auto bd-highlight"><button type="button" class="btn btn-warning">Colaborar</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

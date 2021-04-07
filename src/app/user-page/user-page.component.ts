@@ -9,6 +9,8 @@ import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 import Swal from 'sweetalert2';
+import { ComentarioService } from '../service/comentario.service';
+import { Comentario } from '../model/Comentario';
 
 @Component({
   selector: 'app-user-page',
@@ -36,6 +38,9 @@ export class UserPageComponent implements OnInit {
   idUser = environment.idUsuario
   tipoA :string
 
+  comentario: Comentario = new Comentario()
+  listaComentarios: Comentario[]
+
   key = 'data'
   reverse = true
 
@@ -43,7 +48,8 @@ export class UserPageComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private temaService:TemaService,
-    private authService:AuthService
+    private authService:AuthService,
+    private comentarioService: ComentarioService
   ) { }
 
   ngOnInit() {
@@ -69,8 +75,10 @@ export class UserPageComponent implements OnInit {
   getAllPostagens(){
     this.postagemService.getAllPostagens().subscribe((resp:Postagem[])=>{
       this.listaPostagens = resp
+      console.log(this.listaPostagens)
+    }, err => {
+      console.log(this.listaPostagens)
     })
-
   }
 
   getAllTemas(){
@@ -141,5 +149,34 @@ export class UserPageComponent implements OnInit {
     console.log(environment.token)
     console.log(environment.idUsuario)
     console.log(environment.nomeUsuario)
+  }
+
+  comentar(id: number){
+
+    this.user.idUsuario = this.idUsuario;
+    this.comentario.usuario = this.user;
+
+    this.postagem.idPostagem = id;
+    this.comentario.postagem = this.postagem;
+
+    this.comentarioService.postComentario(this.comentario).subscribe((resp: Comentario) => {
+      this.comentario = resp
+      Swal.fire({
+        icon: 'success',
+        title: 'Show',
+        text: 'Comentario realizado com sucesso!',
+      });
+      this.comentario = new Comentario();
+      this.getAllPostagens();
+    }, err => {
+      console.log(this.comentario)
+    })
+
+  }
+
+  findallComentarios(){
+    this.comentarioService.getAllComentarios().subscribe((resp: Comentario[])=>{
+      this.listaComentarios = resp
+    })
   }
 }
