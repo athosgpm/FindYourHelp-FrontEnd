@@ -1,53 +1,56 @@
-<nav class="navbar navbar-expand-lg navbar-light gris fixed-top" style="height: 50px;">
+<!-- Barra de navegação -->
 
-  <div class="container-fluid">
-    <img class="img-fluid rounded-circle" width="40" alt="Logo da Escape" src="https://i.imgur.com/tF84Tak.png">
-    <a class="navbar-brand mx-4 letra" style="font-size: 20pt;" href="#" style="color: white;">FindYourHelp</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+<header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white;">
+      <img src="https://i.imgur.com/tF84Tak.png" width="55" class="d-inline-block align-top rounded-circle img-fluid" alt="Logo da Find Your Help">
+      <a class="navbar-brand mx-4 letra" style="font-size: 20pt;" href="#">FindYourHelp
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#conteudoNavbarSuportado"   aria-controls="conteudoNavbarSuportado"  aria-expanded="false"  aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarTogglerDemo02">
-      <ul class="navbar-nav me-2 mb-2 mb-lg-0">
-        <li class="nav-item letra">
-          <a class="nav-link active fs-14 mx-3 cor" aria-current="page" href="#" style="color: white;">Home</a>
+
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link fs-14 cor" routerLink='/homepage'> Home <span class="sr-only">(página atual)</span></a>
         </li>
       </ul>
+
     </div>
-  </div>
-</nav>
+  </nav>
+
+</header>
 
 
 <!--Pagina do feed-->
-<div class="container-fluid gedf-wrapper">
+<div class="container-fluid gedf-wrapper margin">
 
   <div class="row justify-content-between">
     <!--CardPerfil-->
     <div class="col-md-2 mt-5 ml-5">
       <div class="text-center" style="position: fixed;">
-        <mat-card class="mat-elevation-z5">
-
-          <mat-card-header>
-            <mat-card-title class="text-center">{{nomeUsuario}}</mat-card-title>
-            <mat-icon aria-hidden="false" aria-label="Example home icon" class="">edit</mat-icon>
-          </mat-card-header>
-
-          <div class="circulo">
-            <img mat-card-image src="{{imagemUsuario}}">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid rounded-circle img-size" src="{{imagemUsuario}}">
           </div>
-          <mat-card-content class="py-2">
-            <small class="lead">
-              {{emailUsuario}}
-            </small>
-            <a [routerLink]="['/user-edit',idUsuario]">
-              <mat-icon aria-hidden="false" aria-label="Example home icon" class="">edit</mat-icon>
-            </a>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button color="warn">{{tipoUsuario}}</button>
-            <button mat-button color="warn" (click)='sair()'>Sair</button>
-          </mat-card-actions>
-        </mat-card>
+          <div class="team-content">
+            <h3 class="name m-0">{{nomeUsuario}}</h3>
+             <h4 class="title">{{tipoUsuario}}</h4>
+
+          </div>
+          <ul class="social">
+            <li><a [routerLink]="['/user-edit',idUsuario]" ><i class="fa fa-pencil-square-o mr-2 mt-3" aria-hidden="true"></i>
+              Editar usuário</a>
+
+            </li>
+            <li><a href="" ><i class="fas fa-mail-bulk mr-2"></i>
+              Minhas postagens</a>
+            </li>
+
+          </ul>
+          <button type="button" class="btn btn-danger" routerLink='/homepage' (click)='sair()'>Sair</button>
+        </div>
       </div>
     </div>
     <!--/CardPerfil-->
@@ -56,15 +59,9 @@
     <!-- <div fxFlex="60" class="py-5"> -->
     <div class="col-md-6 mt-5 gedf-main">
 
-
-
-
       <div id="carouselExampleControls" class="carousel slide" style="width: 100%;" data-ride="carousel">
-
         <div class="carousel-inner">
-
           <div class="row w-100">
-
 
             <div class="col-md-4" data-toggle="modal" data-target="#novaPostagem">
               <div class="card bg-dark border-radius: 10px; text-white">
@@ -300,7 +297,7 @@
               </div>
 
               <div class="card-footer d-flex bd-highlight align-items-center">
-             
+
                 <!-- ///////////////comentarios -->
 
               <div class="accordion" [attr.id]="'coment' + item.idPostagem">
@@ -330,7 +327,7 @@
                       </div>
                     </div>
 
-                    
+
                   </div>
 
 
@@ -364,7 +361,7 @@
                   </div>
                 </div>
               </div>
-              
+
 
               <!-- comentarios///////// -->
 

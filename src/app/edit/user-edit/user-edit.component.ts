@@ -13,10 +13,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./user-edit.component.css']
 })
 export class UserEditComponent implements OnInit {
+
   user:User = new User()
   idUser:number
   confirmarSenha: string
   tipoUsuario: string
+
+
   hide:true
   aceitomesmo: number = 0; // Esse atributo é para mudar o valor do slider
   /*injetar form control nos atributos e suas validações , essas validações baseadas no banco de dados*/
@@ -40,7 +43,7 @@ export class UserEditComponent implements OnInit {
     Validators.maxLength(11),
   ]);
 
-  
+
   constructor(
     private authService:AuthService,
     private route:ActivatedRoute,
@@ -58,12 +61,21 @@ export class UserEditComponent implements OnInit {
     this.confirmarSenha = event.target.value
   }
 
+  tipoDeUsuario(event: any) {
+    this.tipoUsuario = event.target.value;
+  }
+
   tipoUser(event: any) {
     this.tipoUsuario = event.target.value
   }
 
+  findByIdUser(id: number) {
+    this.authService.getByIdUser(id).subscribe((resp: User) => {
+      this.user = resp
+    })
+  }
+
   atualizar() {
-    
 
     if(this.user.senhaUsuario != this.confirmarSenha){
       Swal.fire({
@@ -78,35 +90,28 @@ export class UserEditComponent implements OnInit {
           Swal.fire({
             icon: 'success',
             title: 'Show',
-            text: 'Usuario atualizada com sucesso!Faça login novamente',
+            text: 'Usuario atualizada com sucesso! Faça login novamente.',
           });
-          
+
           environment.token = ''
           environment.nomeUsuario = ''
           environment.imagemUsuario = ''
           environment.idUsuario = 0
           environment.telefoneUsuario =''
           environment.emailUsuario =''
-          environment.tipoUsuario ='' 
+          environment.tipoUsuario =''
 
-          this.router.navigate(['/homepage'])
+          this.router.navigate(['/login'])
       })
     }
   }
-  tipoDeUsuario(event: any) {
-    this.tipoUser = event.target.value;
-  }
 
-  findByIdUser(id: number) {
-    this.authService.getByIdUser(id).subscribe((resp: User) => {
-      this.user = resp
-    })
-  }
+
     /*funcao que muda de cor usando referencia do styles.scss*/
     get controlColor() {
       return this.nome.valid ? 'accent' : this.nome.invalid ? 'warn' : 'primary';
     }
-  
+
     /*funcao que muda de cor usando referencia do styles.scss*/
     get controlColor1() {
       return this.email.valid
@@ -115,7 +120,7 @@ export class UserEditComponent implements OnInit {
         ? 'warn'
         : 'primary';
     }
-  
+
     /*funcao que muda de cor usando referencia do styles.scss*/
     get controlColor2() {
       return this.telefone.valid
@@ -124,7 +129,7 @@ export class UserEditComponent implements OnInit {
         ? 'warn'
         : 'primary';
     }
-  
+
     /*funcao que muda de cor usando referencia do styles.scss*/
     get controlColor3() {
       return this.senha.valid
@@ -133,7 +138,7 @@ export class UserEditComponent implements OnInit {
         ? 'warn'
         : 'primary';
     }
-  
+
     /*funcao que muda de cor usando referencia do styles.scss*/
     get controlColor4() {
       return this.tipoS.valid
