@@ -257,7 +257,15 @@
           <!--- \\\\\\\ todos os Post-->
           <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
             aria-labelledby="nav-todasPostagens-tab">
-            <div class="card gedf-card mb-4" *ngFor='let item of listaPostagens'>
+            
+            <div class="row">
+              <div class="form-group">
+
+                <input [(ngModel)]='tituloPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo" name="titulo" class="form-control"  (keyup)='findByTituloPostagem()'>
+              </div>
+            </div>
+
+            <div class="card gedf-card mb-4" *ngFor='let item of listaPostagens | orderBy: key: reverse'>
 
               <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
@@ -303,7 +311,7 @@
           <!--- \\\\\\\ meus Post-->
           <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
 
-            <div class="card gedf-card mb-4" *ngFor='let userPost of user.postagem'>
+            <div class="card gedf-card mb-4" *ngFor='let userPost of user.postagem | orderBy: key: reverse'>
 
               <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
@@ -363,9 +371,18 @@
           <!-- Post /////-->
 
           <!--- \\\\\\\ tema Post -->
+
           <div class="tab-pane fade" id="porTema" role="tabpanel" aria-labelledby="nav-porTema-tab"
             *ngFor='let tema of listaTemas'>
-            <div class="card gedf-card mb-4" *ngFor='let item of tema.postagem'>
+
+            <div class="row">
+              <div class="form-group">
+  
+                <input [(ngModel)]='nomeTema' type="text" placeholder="Digite um tema para pesquisar" id="nomeTema" name="nomeTema" class="form-control"  (keyup)='findByNomeTema()'>
+              </div>
+            </div>
+
+            <div class="card gedf-card mb-4" *ngFor='let item of tema.postagem | orderBy: key: reverse'>
 
               <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">

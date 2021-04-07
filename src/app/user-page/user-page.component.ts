@@ -25,14 +25,19 @@ export class UserPageComponent implements OnInit {
   
   postagem:Postagem = new Postagem()
   listaPostagens :Postagem[]
+  tituloPost: string
 
   idTema :number
   listaTemas : Tema[]
   tema:Tema = new Tema()
+  nomeTema: string
 
   user:User = new User()
   idUser = environment.idUsuario
   tipoA :string
+
+  key = 'data'
+  reverse = true
 
   constructor(
     private router: Router,
@@ -78,6 +83,29 @@ export class UserPageComponent implements OnInit {
     this.authService.getByIdUser(this.idUser).subscribe((resp:User)=>{
       this.user = resp
     })
+  }
+  findByTituloPostagem(){
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+
+    }
+    else{
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
+        this.listaPostagens = resp
+      })
+    }
+  }
+  findByNomeTema(){
+    if(this.nomeTema == ''){
+      this.getAllTemas()
+
+    }
+    else{
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[])=>{
+        this.listaTemas = resp
+      })
+    }
+
   }
 
 
