@@ -13,9 +13,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./cadastrar.component.css'],
 })
 export class CadastrarComponent implements OnInit {
+
   user: User = new User();
   confirmarSenha: string;
+  isDisabled: boolean = false
+  isDisabled2: boolean = false
   tipoUser: string;
+
+
+
   @ViewChild('stepper') stepper: any; // esse atributo é para uso de index nos steps
   hide = true; // Esse atributo é para revelar a senha
 
@@ -52,8 +58,10 @@ export class CadastrarComponent implements OnInit {
   tipoDeUsuario(event: any) {
     this.tipoUser = event.target.value;
   }
+  
+
   cadastrar() {
-    this.user.tipoUsuario = this.tipoUser;
+    
     if (this.user.senhaUsuario != this.confirmarSenha) {
       Swal.fire({
         icon: 'error',
@@ -186,5 +194,11 @@ export class CadastrarComponent implements OnInit {
       : this.tipoS.invalid
       ? 'warn'
       : 'primary';
+  }
+  disableButton() {
+    this.isDisabled = true
+  }
+  disableButton2() {
+    this.isDisabled2 = true
   }
 }

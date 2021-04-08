@@ -1,5 +1,6 @@
 
 <div class="gradient-background d-flex align-items-center">
+<<<<<<< HEAD
     <div class="container " id="container" [ngClass]="{'right-panel-active':activeClass}">
         <div class="form-container sign-up-container">
           <form action="#">
@@ -43,3 +44,48 @@
         </div>
       </div>
     </div>
+=======
+  <div class="container " id="container" [ngClass]="{'right-panel-active':activeClass}">
+      <div class="form-container sign-up-container">
+        <form action="#">
+          <h1>Crie uma conta</h1>
+          <br>
+
+
+          <input type="email" placeholder="Email"  [(ngModel)]='userLogin.emailUsuario'  id="email" name="email"  />
+          <input type="password"  [(ngModel)]='userLogin.senhaUsuario'  id="senha" name="senha" placeholder="Digite sua senha" />
+          <br>
+          <button>Cadastrar-se</button>
+      </form>
+      </div>
+
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>Entrar</h1>
+          <input type="email" placeholder="Email"  [(ngModel)]='userLogin.emailUsuario'  id="email" name="email"  />
+          <input type="password"  [(ngModel)]='userLogin.senhaUsuario'  id="senha" name="senha" placeholder="Digite sua senha" />
+
+          <a href="#">Esqueceu sua senha?</a>
+          <button (click)='entrar()'>Entrar</button>
+      </form>
+      </div>
+      <div class="overlay-container">
+
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+              <h1>Bem-vinde de volta!</h1>
+              <p>
+                  Para se manter conectado conosco, faça o login com suas informações pessoais
+              </p>
+              <button class="ghost" id="signIn" (click)="toggleClass()" >Entrar</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+              <h1>Olá, Amigo!</h1>
+              <p>Insira seus dados pessoais e comece a inovar conosco!</p>
+              <button class="ghost" id="signUp" (click)="toggleClass()" >Cadastrar-se</button>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> 737d2a7d85953a4ccd2715015aac7f947bc567fc

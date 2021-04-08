@@ -1,0 +1,156 @@
+<div class="container mb-5 mt-5">
+    <div class="row">
+        <div class="col-md-10 ">
+
+            <h1 class="text-center">Atualizar Cadastro</h1>
+            <form class="example-form">
+                <div>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Find your Help</mat-label>
+                    <input matInput disabled value="Cadastre-se">
+                  </mat-form-field>
+                </div>
+                <!--Nome-->
+                <div class="formlado py-4">
+                  <p>
+                    <mat-form-field appearance="outline" [color]="controlColor" class="mr-3">
+                      <mat-label>Nome</mat-label>
+                      <!--Estabelecer um controle no atributo nome-->
+                      <input matInput placeholder="Placeholder" [formControl]="nome" required [(ngModel)]='user.nomeUsuario'
+                        id="nomeUsuario" name="nomeUsuario">
+                      <!--função para mostrar o erro por uma caracteristica no controle do atributo nome//ngif tem o mesmo sintaxe que o if da programação-->
+                      <mat-error *ngIf="nome.invalid ">{{getErrorMessageNome()}} </mat-error>
+                      <mat-error *ngIf=" nome.hasError('minlength') ">
+                        <mat-icon matSuffix class="icone" aria-hidden="false" aria-label="Example home icon">block</mat-icon>
+                        <span>Nome
+                          precisa ter mais de 2 caracteres </span>
+                      </mat-error>
+                      <mat-error *ngIf=" nome.hasError('maxlength') "><span>Nome precisa ter menos de 6 caracteres </span>
+                      </mat-error>
+                      <mat-icon matSuffix>public</mat-icon>
+
+                    </mat-form-field>
+                  </p>
+                  <p>
+                    <!--Email-->
+                    <mat-form-field appearance="outline" [color]="controlColor1">
+                      <mat-label>Email</mat-label>
+                      <!--Estabelecer um controle no atributo email-->
+                      <input matInput placeholder="pat@example.com" [formControl]="email" required
+                        [(ngModel)]='user.emailUsuario' id="emailUsuario" name="emailUsuario">
+                      <!--função para mostrar o erro por uma caracteristica no controle do atributo email //ngif tem o mesmo sintaxe que o if da programação-->
+                      <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}} </mat-error>
+                      <mat-icon matSuffix>alternate_email</mat-icon>
+
+                    </mat-form-field>
+
+
+                  </p>
+                </div>
+                <!--Imagem-->
+                <div class="formlado">
+                  <p>
+
+                    <mat-form-field appearance="outline" [color]="controlColor" class="mr-3">
+                      <mat-label>Imagem</mat-label>
+                      <input matInput placeholder="Placeholder" [(ngModel)]='user.imagemUsuario' id="imagemUsuario"
+                        name="imagemUsuario">
+                      <mat-icon matSuffix>add_photo_alternate</mat-icon>
+
+                    </mat-form-field>
+                  </p>
+                  <p>
+
+                    <mat-form-field appearance="outline" [color]="controlColor2">
+                      <mat-label>Telefone</mat-label>
+                      <input matInput placeholder="xxxxxxxxxxx" [formControl]="telefone" required
+                        [(ngModel)]='user.telefoneUsuario' id="telefoneUsuario" name="telefoneUsuario">
+                      <mat-icon matSuffix>local_phone</mat-icon>
+                      <mat-error *ngIf="telefone.invalid ">{{getErrorMessageTelefone()}} </mat-error>
+                      <mat-error *ngIf=" telefone.hasError('minlength') ">
+                        <mat-icon matSuffix class="icone" aria-hidden="false" aria-label="Example home icon">block</mat-icon>
+                        <span>Telefone
+                          precisa ter 11 caracteres </span>
+                      </mat-error>
+                      <mat-error *ngIf=" telefone.hasError('maxlength') "><span>Telefone precisa ter 11 caracteres </span>
+                      </mat-error>
+                      <mat-error *ngIf=" telefone.hasError('pattern') "><span>Telefone precisa ser numeros </span>
+                      </mat-error>
+
+                    </mat-form-field>
+                  </p>
+                </div>
+                <!--Senha-->
+                <div class="formlado">
+                  <p>
+
+
+                    <mat-form-field appearance="outline" [color]="controlColor3" class="mr-3">
+                      <mat-label>Senha</mat-label>
+                      <!--Estabelecer um controle no atributo senha-->
+                      <!--Atributo hide que condiciona a mudança do input type password para input text condicioando a visualização da senha-->
+                      <input matInput [type]="hide ? 'password' : 'text'" [formControl]="senha" required
+                        (input)='confirmSenha($event)' name="senha" id="senha" placeholder="Digite sua senha!">
+                      <!--função para mostrar o erro por uma caracteristica no controle do atributo senha //ngif tem o mesmo sintaxe que o if da programação-->
+
+        <!-- -----------------------
+                      <mat-error *ngIf="senha.invalid ">{{getErrorMessageSenha()}} </mat-error>
+                      <mat-error *ngIf=" senha.hasError('minlength') "><span>Senha precisa ter mais de 2 caracteres </span>
+                      </mat-error>
+                      <mat-error *ngIf=" senha.hasError('maxlength') "><span>Senha precisa ter menos de 6 caracteres </span>
+                      </mat-error>
+        ------------------------ -->
+
+
+
+                    </mat-form-field>
+
+                  </p>
+                  <p>
+
+
+                    <mat-form-field appearance="outline" [color]="controlColor3">
+                      <mat-label>Confirmar Senha</mat-label>
+                      <!--Estabelecer um controle no atributo senha-->
+                      <!--Atributo hide que condiciona a mudança do input type password para input text condicioando a visualização da senha-->
+                      <input matInput [type]="hide ? 'password' : 'text'" [formControl]="senha" required
+                        [(ngModel)]='user.senhaUsuario' id="confirmeSenha" name="confirmeSenha">
+                      <!--função para mostrar o erro por uma caracteristica no controle do atributo senha //ngif tem o mesmo sintaxe que o if da programação-->
+                      <mat-error *ngIf="senha.invalid ">{{getErrorMessageSenha()}} </mat-error>
+
+                    </mat-form-field>
+
+                  </p>
+
+
+                </div>
+                <p>
+                  <!--TipodeUsuario-->
+                  <mat-form-field appearance="outline" [color]="controlColor4">
+                    <mat-label>Tipo de Usuario</mat-label>
+                    <mat-icon matSuffix>safety_divider</mat-icon>
+                    <!--Estabelecer um controle no atributo tipodeUsuario-->
+                    <mat-select [formControl]="tipoS" required [(ngModel)]='user.tipoUsuario'>
+                      <mat-option>Selecione uma opção</mat-option>
+                      <mat-option value="Colaborador">Colaborador</mat-option>
+                      <mat-option value="Empreendedor">Empreendedor</mat-option>
+                    </mat-select>
+                    <!--função para mostrar o erro por uma caracteristica no controle do atributo tipodeUsuario //ngif tem o mesmo sintaxe que o if da programação-->
+
+                    <mat-error *ngIf="tipoS.invalid">{{getErrorMessageTipo()}} </mat-error>
+                  </mat-form-field>
+                </p>
+              </form>
+
+            </div>
+
+
+
+            <div class=" d-flex justify-content-center">
+                <button type="submit" class="btn btn-danger mr-4" routerLink='/homepage'>Cancelar</button>
+                <button type="submit" class="btn btn-success" (click)='atualizar()'>Atualizar</button>
+            </div>
+
+
+    </div>
+</div>

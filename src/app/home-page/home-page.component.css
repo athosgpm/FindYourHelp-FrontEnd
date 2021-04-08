@@ -217,8 +217,9 @@
 }
  /* -----------/Cards---------------- */
 
-/* .altura{
+ .altura{
   height: 250px;
+<<<<<<< HEAD
 } */
 
 button:hover {
@@ -230,3 +231,6 @@ transform: scale(0.95);
 	   animation: gradient 2s ease infinite;
 }
 
+=======
+} 
+>>>>>>> 737d2a7d85953a4ccd2715015aac7f947bc567fc

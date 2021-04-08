@@ -8,7 +8,6 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { MenuComponent } from './menu/menu.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { LoginComponent } from './login/login.component';
-import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,6 +27,13 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {HashLocationStrategy,LocationStrategy} from '@angular/common';
+import { TemaComponent } from './tema/tema.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
+import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 
@@ -38,9 +44,14 @@ import {HashLocationStrategy,LocationStrategy} from '@angular/common';
     MenuComponent,
     LoginComponent,
     CadastrarComponent,
-    SobreNosComponent,
     HomePageComponent,
-    UserPageComponent
+    UserPageComponent,
+    TemaComponent,
+    TemaEditComponent,
+    TemaDeleteComponent,
+    PostagemEditComponent,
+    PostagemDeleteComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +71,8 @@ import {HashLocationStrategy,LocationStrategy} from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    OrderModule
   ],
   providers: [ {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
