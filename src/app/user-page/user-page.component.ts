@@ -119,7 +119,7 @@ export class UserPageComponent implements OnInit {
   }
 
   findByTipoPostagem(){
-    this.postagemService.getByTipoPostagem('Financeiro').subscribe((resp:Postagem[])=>{
+    this.postagemService.getByTipoPostagem(this.tipoPost).subscribe((resp:Postagem[])=>{
       this.listaPostagens = resp
 
     })
