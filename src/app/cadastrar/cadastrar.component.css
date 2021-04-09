@@ -26,6 +26,11 @@
   box-shadow: 4px 7px #888888;
 }
 
+ 
+.descer2{
+ 
+}
+
 
 
 /*Scrollbar*/
@@ -98,6 +103,58 @@ background-color: rgb(119, 0, 255);
 .formlado{
   display: inline-flex;
 }
+
+@media screen and (min-width: 320px) {
+  body {
+  font-size: 80%;
+ }
+/*disposição do header*/
+ ::ng-deep .mat-horizontal-stepper-header  {
+  padding: 10px 8px 4px 0px !important;
+ margin-right: 0px;
+ position: relative;
+ 
+  
+}
+.mat-card{
+  height: 350px;
+  width: 250px;
+  
+}
+/*disposição dos form*/
+.formlado{
+  display: inline-flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+   padding: 0px 12px 0px 0px
+}
+
+
+/*disposição do botao colaborador*/
+.formladomesmo{
+  display: inline-flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+   padding: 0px 12px 0px 0px
+}
+
+
+ /*disposição do container*/
+.back{
+  position: relative;
+  
+  
+} 
+/*tamanhodoput*/
+.mat-form-field{
+  min-width: 100px ;
+  }
+
+
+
+}
+
+
 
 
 
