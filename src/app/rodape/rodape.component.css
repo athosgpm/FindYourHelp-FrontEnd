@@ -1,22 +1,12 @@
 .foot {
-  background-image: url(https://media.discordapp.net/attachments/801479206424412170/826835085298761738/fotter.jpg?width=1025&height=257);
-  height: 150px;
-  background-position: center;
+  background-image: url(https://i.imgur.com/gruk0uK.png);
   background-repeat: no-repeat;
-  background-size: cover;
   width: auto;
-}
-
-.btn {
-  float: right;
-  margin-right: 50px;
-}
-
-.fs {
-  font-size: 24px;
+  background-size: cover;
+  background-position: center;
 }
 
  .container{
   flex-wrap: wrap;
 }
-
+ 
