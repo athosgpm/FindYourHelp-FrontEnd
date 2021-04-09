@@ -178,6 +178,13 @@
               </div>
             </div>
 
+            <div class="row">
+              <div class="form-group">
+                <input [(ngModel)]='tipoPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo"
+                  name="titulo" class="form-control" (keyup)='findByTipoPostagem()'>
+              </div>
+            </div>
+
             <div class="card gedf-card mb-4" *ngFor='let item of listaPostagens | orderBy: key: reverse'>
 
               <div class="card-header">

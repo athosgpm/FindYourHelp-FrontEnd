@@ -75,13 +75,20 @@ export class CadastrarComponent implements OnInit {
       });
     } else {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
+        if(resp == null){
+          alert('esse usuario ja existe')
+        }else{
+
+        
         this.user = resp;
+
         this.router.navigate(['/login']);
         Swal.fire({
           icon: 'success',
           title: 'show',
           text: 'Usuário cadastrado com sucesso!',
         });
+      }
       });
     }
   }

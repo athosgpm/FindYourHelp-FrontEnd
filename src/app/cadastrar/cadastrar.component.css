@@ -124,7 +124,7 @@ background-color: rgb(119, 0, 255);
 /*disposição dos form*/
 .formlado{
   display: inline-flex;
-  flex-direction:column;
+  flex-direction:row;
   flex-wrap: wrap;
    padding: 0px 12px 0px 0px
 }
