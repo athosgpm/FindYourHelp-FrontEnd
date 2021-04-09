@@ -1,12 +1,52 @@
 .foot {
-  background-image: url(https://i.imgur.com/gruk0uK.png);
+  background-image: url(https://i.imgur.com/YZcnN5B.png);
   background-repeat: no-repeat;
   width: auto;
   background-size: cover;
-  background-position: center;
+  
 }
 
  .container{
   flex-wrap: wrap;
 }
- 
+
+
+#text{
+  justify-content: left;
+  align-items: flex-start;
+  position: relative;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  z-index: 1;
+}
+#text2{
+  justify-content: left;
+  position: relative;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3.3em;
+  z-index: 1;
+  margin-left: 0.8cm;
+  line-height: 1.0;
+}
+#text3{
+  justify-content: left;
+  align-items: flex-start;
+  position: relative;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.3em;
+  z-index: 1;
+}
+
+
+.m-row{
+  margin-left: 4.5cm;
+
+}
+
+.m-col{
+  margin-top: 1cm;
+}
+
