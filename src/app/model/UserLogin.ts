@@ -8,6 +8,6 @@ export class UserLogin{
     public imagemUsuario: string
     public telefoneUsuario: string
 
-    //TODO criar um atributo admin e setar ele como falso 
-    
+    //TODO criar um atributo admin e setar ele como falso pra fazer
+
 }
