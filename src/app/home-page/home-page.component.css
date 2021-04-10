@@ -15,14 +15,14 @@
   width: 100%;
 }
 .sombra{
-  background: rgb(0, 0, 0);
+  background: linear-gradient(360deg, rgba(15, 82, 138, 0.2), rgba(0, 0, 0, 0.2));
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.1;
+  opacity: 1;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
 }
 .ban{
   position: relative;
@@ -40,13 +40,15 @@
   background: linear-gradient(to top, aliceblue, transparent);
   z-index: 3;
 }
-.ban .parallax-window{
+
+.ban .imagens{
   position:absolute;
   background: transparent;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 2;
   object-fit: cover;
   pointer-events: none;
   transform-style: preserve-3d;
@@ -63,15 +65,16 @@
   pointer-events: none;
   transform-style: preserve-3d;
 }
+
 .ban .efehov{
   position: absolute;
+  width: 270px;
+  height: 360px;
   top: 42%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
   z-index: 3;
-  width: 270px;
-  height: 360px;
 }
 
 .image{
@@ -80,14 +83,23 @@
   backface-visibility: hidden;
   z-index: 2;
 }
-.middle{
+
+.luz{
   opacity: 0;
   z-index: 2;
+  transition: 2s;
 }
-.magic:hover .middle{
+.magic:hover .luz{
   opacity: 1;
-
+  transition: 1s;
 }
+
+.lampada{
+  position: fixed;
+  transform: translatez(600px) scale(1);
+  z-index: 2;
+}
+
 #text{
   justify-content: left;
   align-items: flex-start;
@@ -114,6 +126,8 @@
   font-family: 'Roboto', sans-serif;
   font-size: 2.3em;
   z-index: 1;
+
+  
 }
 /*------------/Banner-------------- */
 
