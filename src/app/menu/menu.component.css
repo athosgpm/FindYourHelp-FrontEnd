@@ -4,10 +4,11 @@
 header .gris {
  /*  background: linear-gradient(to bottom, #000, transparent); */
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);;
-  transition: background-color 1s ease 0s;
+  transition: background-color 1s;
 }
 .header_change .gris{
   background: #fff;
+  transition: background-color 3s;
 }
 
 header .letra{
