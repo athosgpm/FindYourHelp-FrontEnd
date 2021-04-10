@@ -43,6 +43,7 @@ export class UserPageComponent implements OnInit {
 
   comentario: Comentario = new Comentario()
   listaComentarios: Comentario[]
+  idComentario: number
 
   key = 'data'
   reverse = true
@@ -52,7 +53,8 @@ export class UserPageComponent implements OnInit {
     private postagemService: PostagemService,
     private temaService:TemaService,
     private authService:AuthService,
-    private comentarioService: ComentarioService
+    private comentarioService: ComentarioService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -63,6 +65,8 @@ export class UserPageComponent implements OnInit {
     this.findByTipoPostagem()
      this.getAllTemas()
     this.getAllPostagens()
+
+    let idComentario = this.route.snapshot.params['id']
   }
   tipoDeAjuda(event:any){
     this.tipoA = event.target.value
@@ -188,5 +192,18 @@ export class UserPageComponent implements OnInit {
     this.comentarioService.getAllComentarios().subscribe((resp: Comentario[])=>{
       this.listaComentarios = resp
     })
+  }
+  apagarComentario(id: number){
+    this.comentarioService.deleteComentario(id).subscribe(() =>{
+      Swal.fire({
+        icon: 'success',
+        title: 'Show',
+        text: 'Comentario apagado com sucesso!'
+      });
+      this.getAllPostagens()
+      
+    
+    })
+    
   }
 }

@@ -283,6 +283,13 @@
                                     height="30px" />
                                   {{coment.usuario.nomeUsuario}} comentou: </p>
                               </div>
+
+                               <!-- Adicionando o apagar comentario-->
+                          <div class="di">
+                            <button (click)='apagarComentario(coment.idComentario)' class="text-danger">Apagar</button>
+                           </div>
+                           <!-- Fim apagar comentario-->
+
                             </div>
                             <div class="row">
                               <div class="col">
