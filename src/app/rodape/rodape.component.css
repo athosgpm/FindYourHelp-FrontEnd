@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   width: auto;
   background-size: cover;
-  
+
 }
 
  .container{
@@ -25,7 +25,7 @@
   position: relative;
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  font-size: 3.3em;
+  font-size: 3.0em;
   z-index: 1;
   margin-left: 0.8cm;
   line-height: 1.0;
@@ -55,7 +55,7 @@
     position: relative;
     right: 120px;
     font-size: 8pt;
-  
+
   }
 
   #text2{

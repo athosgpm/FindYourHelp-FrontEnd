@@ -1,22 +1,10 @@
-/* .circulo {
-    background-color: #aaa;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    position: relative;
-    margin:10px;
 
-    }
+/* Background home page */
+.bg{
+  background-color: aliceblue;
+}
 
-.circulo img {
-  background-color: #ddd;
-  border-radius: 100%;
-  height: 200px;
-  object-fit: cover;
-  width: 200px;
-}*/
-
+/* CARD postar IDEIA */
 .botaodacor {
   background-color: #f4af1b;
   position: relative;
@@ -63,7 +51,10 @@
   margin: 5px;
 }
 
-/* navBar */
+/* FIM do CARD postar IDEIA */
+
+
+/* Menu */
 .fs-14 {
   font-size: 14pt;
 }
@@ -71,7 +62,9 @@
   background-color: rgb(38, 45, 59);
 }
 
-/* postagems */
+/* Fim do Menu */
+
+/* CARD das Postagens */
 body {
   background-color: #eeeeee;
 }
@@ -94,23 +87,26 @@ body {
   }
 }
 
+/* FIM do CARD das Postagens */
+
 /**Reset Bootstrap*/
 .dropdown-toggle::after {
   content: none;
   display: none;
 }
 
-/* ----------CARD USUARIO------------ */
+/* --CARD USUARIO-- */
 
 .our-team {
   padding: 30px 0 40px;
   margin-bottom: 30px;
-  background-color: #f4e189;
+  background-color: white;
   text-align: center;
   overflow: hidden;
   border-radius: 10px;
   width: 200px;
   height: 400px;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05);
 
 }
 
@@ -173,8 +169,9 @@ body {
 
 .our-team .title {
   display: block;
-  font-size: 14px;
+  font-size: 15px;
   color: #4e5052;
+  font-weight: bold;
 }
 
 .our-team .social li {
@@ -194,5 +191,36 @@ body {
   .our-team {
     display: none;
   }
+}
+
+button {
+	border-radius: 10px;
+	border: 1px solid #f3ecec;
+	background-color: #1369ce;
+	color: #FFFFFF;
+	font-size: 11pt;
+	padding: 8px 60px;
+
+}
+/* Fim do CARD Usuario */
+
+
+.margin{
+  margin-top: 2cm;
+}
+
+.cor{
+  color: #f4af1b;
+  font-size: 20px;
+}
+
+
+
+#banner{
+  margin-bottom: 50px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
