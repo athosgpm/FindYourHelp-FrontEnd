@@ -3,10 +3,12 @@
 <header>
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: white;">
-      <img src="https://i.imgur.com/tF84Tak.png" width="55" class="d-inline-block align-top rounded-circle img-fluid" alt="Logo da Find Your Help">
-      <a class="navbar-brand mx-4 letra" style="font-size: 20pt;" href="#">FindYourHelp
+    <img src="https://i.imgur.com/tF84Tak.png" width="55" class="d-inline-block align-top rounded-circle img-fluid"
+      alt="Logo da Find Your Help">
+    <a class="navbar-brand mx-4 letra" style="font-size: 20pt;" href="#">FindYourHelp
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"  data-target="#conteudoNavbarSuportado"   aria-controls="conteudoNavbarSuportado"  aria-expanded="false"  aria-label="Alterna navegação">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+      aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -36,16 +38,17 @@
           </div>
           <div class="team-content">
             <h3 class="name m-0">{{nomeUsuario}}</h3>
-             <h4 class="title">{{tipoUsuario}}</h4>
+            <h4 class="title">{{tipoUsuario}}</h4>
 
           </div>
           <ul class="social">
-            <li><a [routerLink]="['/user-edit',idUsuario]" ><i class="fa fa-pencil-square-o mr-2 mt-3" aria-hidden="true"></i>
-              Editar usuário</a>
+            <li><a [routerLink]="['/user-edit',idUsuario]"><i class="fa fa-pencil-square-o mr-2 mt-3"
+                  aria-hidden="true"></i>
+                Editar usuário</a>
 
             </li>
-            <li><a href="" ><i class="fas fa-mail-bulk mr-2"></i>
-              Minhas postagens</a>
+            <li><a href=""><i class="fas fa-mail-bulk mr-2"></i>
+                Minhas postagens</a>
             </li>
 
           </ul>
@@ -221,235 +224,399 @@
 
               <div class="card-footer d-flex bd-highlight align-items-center">
 
+
                 <!-- ///////////////comentarios -->
 
-              <div class="accordion" [attr.id]="'coment' + item.idPostagem">
+                <div class="accordion" [attr.id]="'coment' + item.idPostagem">
 
-                <div class="mt-2" id="headingTwo">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse"
-                      [attr.data-target]="'#' + 'comentButton' + item.idPostagem" aria-expanded="false" aria-controls="collapseTwo">
-                      <p class="text-primary font-weight-bold mb-2">
-                        <i class="fa fa-commenting-o" aria-hidden="true"></i> Comentar
-                      </p>
-                    </button>
-                  </h5>
-                </div>
-
-                <div [attr.id]="'comentButton' + item.idPostagem" class="collapse" aria-labelledby="headingTwo"
-                  [attr.data-parent]="'#' + 'coment' + item.idPostagem">
-
-                  <div class="row mb-3">
-                    <div class="col d-flex justify-content-center align-items-center p-4">
-                      <img class="rounded-circle mr-3" src={{imagemUsuario}} width="30px" height="30px" />
-                      <div class="input-group w-100">
-                        <input type="text" class="form-control mr-2" placeholder="Digite aqui seu comentário" aria-label="Recipient's username" aria-describedby="button-addon2" [(ngModel)]='comentario.comentario' id='inputComentario'>
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-primary" (click)='comentar(item.idPostagem)' id="button-addon2">Comentar</button>
-                        </div>
-                      </div>
-                    </div>
-
-
+                  <div class="mt-2" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse"
+                        [attr.data-target]="'#' + 'comentButton' + item.idPostagem" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        <p class="text-primary font-weight-bold mb-2">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i> Comentar
+                        </p>
+                      </button>
+                    </h5>
                   </div>
 
+                  <div [attr.id]="'comentButton' + item.idPostagem" class="collapse" aria-labelledby="headingTwo"
+                    [attr.data-parent]="'#' + 'coment' + item.idPostagem">
 
-                  <div class="row d-flex justify-content-center"
-                    *ngFor='let coment of item.comentario | orderBy : key : reverse'>
-                    <div class="col-md-11">
-                      <div class="card mb-3 shadow border-0 rounded">
-                        <div class="card-body">
-                          <div class="row">
-                            <div class="col d-flex justify-content-start">
-                              <p> <img class=rounded-circle src={{coment.usuario.imagemUsuario}} width="30px" height="30px" />
-                                {{coment.usuario.nomeUsuario}} comentou: </p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col">
-                              <p class="card-text ml-4" aria-describedby="texto">{{coment.comentario}} </p>
-                            </div>
-                          </div>
-
-                          <hr>
-
-                          <div class="d-flex justify-content-end">
-                            <small id="texto" class="form-text m-0 text-muted text-monospace">
-                              Comentado em {{ coment.dataComentario | date:'dd/MM/yyyy'}} às {{coment.dataComentario | date:'HH:mm'}}
-                            </small>
+                    <div class="row mb-3">
+                      <div class="col d-flex justify-content-center align-items-center p-4">
+                        <img class="rounded-circle mr-3" src={{imagemUsuario}} width="30px" height="30px" />
+                        <div class="input-group w-100">
+                          <input type="text" class="form-control mr-2" placeholder="Digite aqui seu comentário"
+                            aria-label="Recipient's username" aria-describedby="button-addon2"
+                            [(ngModel)]='comentario.comentario' id='inputComentario'>
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-primary" (click)='comentar(item.idPostagem)'
+                              id="button-addon2">Comentar</button>
                           </div>
                         </div>
                       </div>
+
+
                     </div>
-                  </div>
-                </div>
-              </div>
 
 
-              <!-- comentarios///////// -->
+                    <div class="row d-flex justify-content-center"
+                      *ngFor='let coment of item.comentario | orderBy : key : reverse'>
+                      <div class="col-md-11">
+                        <div class="card mb-3 shadow border-0 rounded">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col d-flex justify-content-start">
+                                <p> <img class=rounded-circle src={{coment.usuario.imagemUsuario}} width="30px"
+                                    height="30px" />
+                                  {{coment.usuario.nomeUsuario}} comentou: </p>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <p class="card-text ml-4" aria-describedby="texto">{{coment.comentario}} </p>
+                              </div>
+                            </div>
 
-              <div class="ml-auto bd-highlight">
-                <button type="button" class="btn btn-warning">Colaborar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Post /////-->
+                            <hr>
 
-        <!--- \\\\\\\ meus Post-->
-        <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
-
-          <div class="card gedf-card mb-4" *ngFor='let userPost of user.postagem | orderBy: key: reverse'>
-
-            <div class="card-header">
-              <div class="d-flex justify-content-between align-items-center">
-
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="mr-2">
-                    <img class="rounded-circle" width="45" height="45" src="{{imagemUsuario}}" alt="">
-                  </div>
-                  <div class="ml-2">
-                    <div class="h5 m-0">{{nomeUsuario}}</div>
-                    <div class="text-muted h7Post">
-                      <i class="fa fa-clock-o"></i> {{userPost.dataPostagem | date: 'dd/MM/yyyy'}} às
-                      {{userPost.dataPostagem | date: 'HH:mm'}} |
-                      <i class="fa fa-tag"></i> {{userPost.tema.categoriaTema}}
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="dropdown">
-                    <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown"
-                      aria-haspopup="true" aria-expanded="false">
-                      <i class="fa fa-ellipsis-h"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
-                      <div class="h6 dropdown-header">Configurações</div>
-                      <a class="dropdown-item" [routerLink]="['/postagem-edit',userPost.idPostagem]">Editar</a>
-                      <a class="dropdown-item" [routerLink]="['/postagem-delete',userPost.idPostagem]">Deletar</a>
+                            <div class="d-flex justify-content-end">
+                              <small id="texto" class="form-text m-0 text-muted text-monospace">
+                                Comentado em {{ coment.dataComentario | date:'dd/MM/yyyy'}} às {{coment.dataComentario |
+                                date:'HH:mm'}}
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
 
+
+                <!-- comentarios///////// -->
+
+
+                <div class="ml-auto bd-highlight">
+                  <a href="https://web.whatsapp.com/send?phone=55+{{item.usuario.telefoneUsuario}}&text=Olá,%20vi%20sua%20ideia%20na%20FindYourHelp%20e%20achei%20ela%20incrível!%20Gostaria%20de%20colaborar%20com%20você%20:D"
+                    target="_blank">
+                    <button type="button" class="btn btn-warning">Colaborar <img style="height: 20px; width: 20px;"
+                        src="https://i.imgur.com/ChmtyPt.png" alt=""> </button></a>
+                </div>
               </div>
-            </div>
-
-            <img height="450px" width="100%" src="{{userPost.urlImagemPostagem}}" alt="">
-
-            <div class="card-body">
-              <h2 class="card-title">{{userPost.tituloPostagem}}</h2>
-              <p class="card-text">
-                {{userPost.descricaoPostagem}}
-              </p>
-              <div class="badge badge-danger mr-1" style="font-size: 10pt; font-weight: normal">
-                <i class="fa fa-handshake-o" style="color: white; font-size: 10pt;"></i>
-                {{userPost.tipoAjudaPostagem}}
-              </div>
-            </div>
-
-            <div class="card-footer d-flex bd-highlight align-items-center">
-              <a href="#" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
-              <a href="#" class="card-link bd-highlight"><i class="fa fa-comment"></i> Comment</a>
-              <div class="ml-auto bd-highlight"><button type="button" class="btn btn-warning">Colaborar</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <!-- Post /////-->
-
-        <!--- \\\\\\\ tema Post -->
-
-        <div class="tab-pane fade" id="porTema" role="tabpanel" aria-labelledby="nav-porTema-tab">
-
-          <div class="row">
-            <div class="form-group">
-              <input [(ngModel)]='nomeTema' type="text" placeholder="Digite um tema para pesquisar" id="nomeTema"
-                name="nomeTema" class="form-control" (keyup)='findByNomeTema()'>
             </div>
           </div>
+          <!-- Post /////-->
 
-          <div *ngFor='let tema of listaTemas'>
+          <!--- \\\\\\\ meus Post-->
+          <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
 
-            <div class="card gedf-card mb-4" *ngFor='let item of tema.postagem | orderBy: key: reverse'>
+            <div class="card gedf-card mb-4" *ngFor='let userPost of user.postagem | orderBy: key: reverse'>
 
               <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center">
+
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="mr-2">
-                      <img class="rounded-circle" width="45" height="45" src="{{item.usuario.imagemUsuario}}" alt="">
+                      <img class="rounded-circle" width="45" height="45" src="{{imagemUsuario}}" alt="">
                     </div>
                     <div class="ml-2">
-                      <div class="h5 m-0">{{item.usuario.nomeUsuario}}</div>
+                      <div class="h5 m-0">{{nomeUsuario}}</div>
                       <div class="text-muted h7Post">
-                        <i class="fa fa-clock-o"></i> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às
-                        {{item.dataPostagem
-                        | date: 'HH:mm'}} |
-                        <i class="fa fa-tag"></i> {{tema.categoriaTema}}
+                        <i class="fa fa-clock-o"></i> {{userPost.dataPostagem | date: 'dd/MM/yyyy'}} às
+                        {{userPost.dataPostagem | date: 'HH:mm'}} |
+                        <i class="fa fa-tag"></i> {{userPost.tema.categoriaTema}}
                       </div>
                     </div>
                   </div>
+
+                  <div>
+                    <div class="dropdown">
+                      <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-ellipsis-h"></i>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                        <div class="h6 dropdown-header">Configurações</div>
+                        <a class="dropdown-item" [routerLink]="['/postagem-edit',userPost.idPostagem]">Editar</a>
+                        <a class="dropdown-item" [routerLink]="['/postagem-delete',userPost.idPostagem]">Deletar</a>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
-              <img height="450px" width="100%" src="{{item.urlImagemPostagem}}" alt="">
+              <img height="450px" width="100%" src="{{userPost.urlImagemPostagem}}" alt="">
 
               <div class="card-body">
-                <h2 class="card-title">{{item.tituloPostagem}}</h2>
+                <h2 class="card-title">{{userPost.tituloPostagem}}</h2>
                 <p class="card-text">
-                  {{item.descricaoPostagem}}
+                  {{userPost.descricaoPostagem}}
                 </p>
                 <div class="badge badge-danger mr-1" style="font-size: 10pt; font-weight: normal">
                   <i class="fa fa-handshake-o" style="color: white; font-size: 10pt;"></i>
-                  {{item.tipoAjudaPostagem}}
+                  {{userPost.tipoAjudaPostagem}}
                 </div>
               </div>
 
               <div class="card-footer d-flex bd-highlight align-items-center">
-                <a href="" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
-                <a href="" class="card-link bd-highlight"><i class="fa fa-comment"></i> Comment</a>
-                <div class="ml-auto bd-highlight"><button type="button" class="btn btn-warning">Colaborar</button>
+
+                <a href="#" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
+
+                <!-- ///////////////comentarios -->
+
+                <div class="accordion" [attr.id]="'coment' + userPost.idPostagem">
+
+                  <div class="mt-2" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse"
+                        [attr.data-target]="'#' + 'comentButton' + userPost.idPostagem" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        <p class="text-primary font-weight-bold mb-2">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i> Comentar
+                        </p>
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div [attr.id]="'comentButton' + userPost.idPostagem" class="collapse" aria-labelledby="headingTwo"
+                    [attr.data-parent]="'#' + 'coment' + userPost.idPostagem">
+
+                    <div class="row mb-3">
+                      <div class="col d-flex justify-content-center align-items-center p-4">
+                        <img class="rounded-circle mr-3" src={{imagemUsuario}} width="30px" height="30px" />
+                        <div class="input-group w-100">
+                          <input type="text" class="form-control mr-2" placeholder="Digite aqui seu comentário"
+                            aria-label="Recipient's username" aria-describedby="button-addon2"
+                            [(ngModel)]='comentario.comentario' id='inputComentario'>
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-primary" (click)='comentar(userPost.idPostagem)'
+                              id="button-addon2">Comentar</button>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </div>
+
+
+                    <div class="row d-flex justify-content-center"
+                      *ngFor='let coment of userPost.comentario | orderBy : key : reverse'>
+                      <div class="col-md-11">
+                        <div class="card mb-3 shadow border-0 rounded">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col d-flex justify-content-start">
+                                <p> <img class=rounded-circle src={{coment.usuario.imagemUsuario}} width="30px"
+                                    height="30px" />
+                                  {{coment.usuario.nomeUsuario}} comentou: </p>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <p class="card-text ml-4" aria-describedby="texto">{{coment.comentario}} </p>
+                              </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="d-flex justify-content-end">
+                              <small id="texto" class="form-text m-0 text-muted text-monospace">
+                                Comentado em {{ coment.dataComentario | date:'dd/MM/yyyy'}} às {{coment.dataComentario |
+                                date:'HH:mm'}}
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- comentarios///////// -->
+
+
+              </div>
+
+            </div>
+          </div>
+          <!-- Post /////-->
+
+          <!--- \\\\\\\ tema Post -->
+
+          <div class="tab-pane fade" id="porTema" role="tabpanel" aria-labelledby="nav-porTema-tab">
+
+            <div class="row">
+              <div class="form-group">
+                <input [(ngModel)]='nomeTema' type="text" placeholder="Digite um tema para pesquisar" id="nomeTema"
+                  name="nomeTema" class="form-control" (keyup)='findByNomeTema()'>
+              </div>
+            </div>
+
+            <div *ngFor='let tema of listaTemas'>
+
+              <div class="card gedf-card mb-4" *ngFor='let item of tema.postagem | orderBy: key: reverse'>
+
+                <div class="card-header">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="mr-2">
+                        <img class="rounded-circle" width="45" height="45" src="{{item.usuario.imagemUsuario}}" alt="">
+                      </div>
+                      <div class="ml-2">
+                        <div class="h5 m-0">{{item.usuario.nomeUsuario}}</div>
+                        <div class="text-muted h7Post">
+                          <i class="fa fa-clock-o"></i> {{item.dataPostagem | date: 'dd/MM/yyyy'}} às
+                          {{item.dataPostagem
+                          | date: 'HH:mm'}} |
+                          <i class="fa fa-tag"></i> {{tema.categoriaTema}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <img height="450px" width="100%" src="{{item.urlImagemPostagem}}" alt="">
+
+                <div class="card-body">
+                  <h2 class="card-title">{{item.tituloPostagem}}</h2>
+                  <p class="card-text">
+                    {{item.descricaoPostagem}}
+                  </p>
+                  <div class="badge badge-danger mr-1" style="font-size: 10pt; font-weight: normal">
+                    <i class="fa fa-handshake-o" style="color: white; font-size: 10pt;"></i>
+                    {{item.tipoAjudaPostagem}}
+                  </div>
+                </div>
+
+                <div class="card-footer d-flex bd-highlight align-items-center">
+                  <a href="" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
+                  
+                  
+                <!-- ///////////////comentarios -->
+
+                <div class="accordion" [attr.id]="'coment' + item.idPostagem">
+
+                  <div class="mt-2" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse"
+                        [attr.data-target]="'#' + 'comentButton' + item.idPostagem" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        <p class="text-primary font-weight-bold mb-2">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i> Comentar
+                        </p>
+                      </button>
+                    </h5>
+                  </div>
+
+                  <div [attr.id]="'comentButton' + item.idPostagem" class="collapse" aria-labelledby="headingTwo"
+                    [attr.data-parent]="'#' + 'coment' + item.idPostagem">
+
+                    <div class="row mb-3">
+                      <div class="col d-flex justify-content-center align-items-center p-4">
+                        <img class="rounded-circle mr-3" src={{imagemUsuario}} width="30px" height="30px" />
+                        <div class="input-group w-100">
+                          <input type="text" class="form-control mr-2" placeholder="Digite aqui seu comentário"
+                            aria-label="Recipient's username" aria-describedby="button-addon2"
+                            [(ngModel)]='comentario.comentario' id='inputComentario'>
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-primary" (click)='comentar(item.idPostagem)'
+                              id="button-addon2">Comentar</button>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </div>
+
+
+                    <div class="row d-flex justify-content-center"
+                      *ngFor='let coment of item.comentario | orderBy : key : reverse'>
+                      <div class="col-md-11">
+                        <div class="card mb-3 shadow border-0 rounded">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col d-flex justify-content-start">
+                                <p> <img class=rounded-circle src={{coment.usuario.imagemUsuario}} width="30px"
+                                    height="30px" />
+                                  {{coment.usuario.nomeUsuario}} comentou: </p>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <p class="card-text ml-4" aria-describedby="texto">{{coment.comentario}} </p>
+                              </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="d-flex justify-content-end">
+                              <small id="texto" class="form-text m-0 text-muted text-monospace">
+                                Comentado em {{ coment.dataComentario | date:'dd/MM/yyyy'}} às {{coment.dataComentario |
+                                date:'HH:mm'}}
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- comentarios///////// -->
+
+
+                  <div class="ml-auto bd-highlight">
+                    <a href="https://web.whatsapp.com/send?phone=55+{{item.usuario.telefoneUsuario}}&text=Olá,%20vi%20sua%20ideia%20na%20FindYourHelp%20e%20achei%20ela%20incrível!%20Gostaria%20de%20colaborar%20com%20você%20:D"
+                      target="_blank">
+                      <button type="button" class="btn btn-warning">Colaborar <img style="height: 20px; width: 20px;"
+                          src="https://i.imgur.com/ChmtyPt.png" alt=""> </button></a>
+                  </div>
+
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <!--  Post /////-->
+          <!--  Post /////-->
 
-      </div>
-    </div>
-    <!-- Posts /////-->
-  </div>
-  <!-- /////cards a direita -->
-  <div class="col-md-3 mt-5">
-    <div class="mr-5" style="position: fixed; ">
-      <h2>Notícias FindYourHelp</h2>
-      <hr>
-      <div class="card gedf-card">
-        <div class="card-body">
-          <h5 class="card-title">Generation Brasil</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Centenas de novos Dev's no mercado </h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-            card's content.</p>
-          <a href="#" class="card-link">Site Generation</a>
-          <a href="#" class="card-link">Site PI-FindYourHelp</a>
         </div>
       </div>
-      <div class="card gedf-card">
-        <div class="card-body">
-          <h5 class="card-title">Find Your Help!</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Melhor Projeto do Brasil</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-            card's content.</p>
-          <a href="#" class="card-link">Site Generation</a>
-          <a href="#" class="card-link">Site PI-FindYourHelp</a>
+      <!-- Posts /////-->
+    </div>
+    <!-- /////cards a direita -->
+    <div class="col-md-3 mt-5">
+      <div class="mr-5" style="position: fixed; ">
+        <h2>Notícias FindYourHelp</h2>
+        <hr>
+        <div class="card gedf-card">
+          <div class="card-body">
+            <h5 class="card-title">Generation Brasil</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Centenas de novos Dev's no mercado </h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a href="#" class="card-link">Site Generation</a>
+            <a href="#" class="card-link">Site PI-FindYourHelp</a>
+          </div>
+        </div>
+        <div class="card gedf-card">
+          <div class="card-body">
+            <h5 class="card-title">Find Your Help!</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Melhor Projeto do Brasil</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a href="#" class="card-link">Site Generation</a>
+            <a href="#" class="card-link">Site PI-FindYourHelp</a>
+          </div>
         </div>
       </div>
     </div>
+    <!-- cards a direita///// -->
   </div>
-  <!-- cards a direita///// -->
-</div>
 </div>
 
 
@@ -470,8 +637,8 @@
           <div class="form-group">
             <label for="Tema">Tema</label>
             <select class="form-control" id="Tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
-              <option *ngFor='let item of listaTemas' value="{{item.idTema}}"> 
-              {{item.categoriaTema}}
+              <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
+                {{item.categoriaTema}}
               </option>
             </select>
           </div>

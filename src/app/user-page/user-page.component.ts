@@ -24,6 +24,7 @@ export class UserPageComponent implements OnInit {
   idUsuario = environment.idUsuario
   imagemUsuario = environment.imagemUsuario
   tipoUsuario = environment.tipoUsuario
+  telefoneUsuario = environment.telefoneUsuario
   
   postagem:Postagem = new Postagem()
   listaPostagens :Postagem[]
