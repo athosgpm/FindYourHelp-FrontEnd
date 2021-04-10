@@ -132,7 +132,6 @@
     width: 60px;
     height: 3px;
     background-color: #F4AF1B;
-
   }
 
   .bg{
@@ -217,11 +216,16 @@
 
 .sobreNos{
   position: relative;
-  bottom:130px;
+  bottom:10px;
 }
  /* -----------/Cards---------------- */
+ .img-size{
+  width: 300px;
 
- /* -----------Depoimentos---------------- */
+}
+
+
+/* -----------Depoimentos---------------- */
 #myCarousel .carousel-item .mask {
   position: relative;
   top: 0;
@@ -291,16 +295,15 @@
  background-image: url(https://imgur.com/4IY0fz3.png);
   height: 70px;
   width: 29px;
-  position: relative;
-  bottom:100px;
+  
+  
 }
 
 .carousel .carousel-control-prev-icon {
   background-image: url(https://imgur.com/LmlnZ6I.png);
   height: 70px;
   width: 29px;
-  position: relative;
-  bottom:100px;
+  
 
 }
 
@@ -348,18 +351,33 @@
   height: 50px;
 }
 #myCarousel .textCom {
-  font-size: 15px;
+  font-size: 14px;
   position: absolute;
-  left: 100px;
-  
+  left: 120px;
   color:black;
+  width:140px;
+ top:20px;
+  
+
 }
 
+
 .celesquerda{
+
   position: absolute;
   right:160px;
   top:120px;
 }
+#myCarousel .bannerProf {
+  font-size: 18px;
+}
 
+.carousel .carousel-control-next-icon {
+  background-image: url(https://imgur.com/4IY0fz3.png);
+   height: 70px;
+   width: 29px;
+  position: relative; 
+  right:75px;   
+ }
 }
  /* -----------Depoimentosversaomobile---------------- */
