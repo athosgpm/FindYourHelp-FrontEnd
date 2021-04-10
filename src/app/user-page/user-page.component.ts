@@ -36,10 +36,13 @@ export class UserPageComponent implements OnInit {
   listaTemas : Tema[]
   tema:Tema = new Tema()
   nomeTema: string
+  categoriaTema:string
 
   user:User = new User()
   idUser = environment.idUsuario
   tipoA :string
+  
+  tags: string
 
   comentario: Comentario = new Comentario()
   listaComentarios: Comentario[]
@@ -61,7 +64,7 @@ export class UserPageComponent implements OnInit {
     window.scroll(0,0)
     if(environment.token == ''){
       this.router.navigate(['/login'])
-    }
+   }
     this.findByTipoPostagem()
      this.getAllTemas()
     this.getAllPostagens()
@@ -120,6 +123,14 @@ export class UserPageComponent implements OnInit {
         this.listaTemas = resp
       })
     }
+
+  }
+  tipoTema(event: any){
+    this.categoriaTema = event.target.value
+    console.log(this.categoriaTema)
+    this.temaService.getByNomeTema(this.categoriaTema).subscribe((resp:Tema[])=>{
+      this.listaTemas = resp
+    })
 
   }
 
@@ -206,4 +217,17 @@ export class UserPageComponent implements OnInit {
     })
     
   }
+
+  tipoTag(event: any){
+    this.tags = event.target.value
+    console.log(this.tags)
+    this.postagemService.getByTipoPostagem(this.tags).subscribe((resp:Postagem[])=>{
+      this.listaPostagens = resp
+    })
+
+    this.getAllPostagens()
+      
+
+  }
+
 }

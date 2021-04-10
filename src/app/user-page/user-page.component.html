@@ -183,20 +183,36 @@
           <!--- \\\\\\\ todos os Post-->
           <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
             aria-labelledby="nav-todasPostagens-tab">
-
-            <div class="row">
-              <div class="form-group">
-                <input [(ngModel)]='tituloPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo"
-                  name="titulo" class="form-control" (keyup)='findByTituloPostagem()'>
+          
+            <div class="row backbordinha">
+              <div class="col-md-6">
+              <div class="form-group d-flex descer">
+                <input  [(ngModel)]='tituloPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo"
+                  name="titulo" class="form-control searchTerm" (keyup)='findByTituloPostagem()'>
+                  <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                 </button>
               </div>
             </div>
-
-            <div class="row">
-              <div class="form-group">
-                <input [(ngModel)]='tipoPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo"
-                  name="titulo" class="form-control" (keyup)='findByTipoPostagem()'>
-              </div>
-            </div>
+            <div class="col-md-6">
+            <div class="form-group select descer">
+              
+              <select class="form-control" name="tipo" id="tipo" (change)='tipoTag($event)'>
+                  <option>Tags de tipo de ajuda</option>
+                  <option value="Servico">Serviço</option>
+                  <option value="Financeiro">Financeiro</option>
+              </select>
+          </div>
+        </div>
+        </div>
+         <!-- <div class="form-group">
+            <label for="Tema">Tema</label>
+            <select class="form-control" id="nomeTema" name="nomeTema" (change)='tipoTema($event)'>
+              <option *ngFor='let item of listaTemas' value="{{item.categoriaTema}}">
+                {{item.categoriaTema}}
+              </option>
+            </select>
+          </div>-->
 
             <div class="card gedf-card mb-4" *ngFor='let item of listaPostagens | orderBy: key: reverse'>
 

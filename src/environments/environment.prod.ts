@@ -10,4 +10,5 @@ export const environment = {
   senhaUsuario: '',
   imagemUsuario: '',
   telefoneUsuario: '',
+  tags:'',
 };
