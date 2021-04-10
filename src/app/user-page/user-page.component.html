@@ -664,50 +664,76 @@
       </div>
       <div class="modal-body">
 
-        <div class="formlado mt-4">
-          <div class="form-group">
-            <label for="Tema">Tema</label>
-            <select class="form-control" id="Tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
-              <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
-                {{item.categoriaTema}}
-              </option>
-            </select>
-          </div>
+        <mat-horizontal-stepper #stepper>
+          <mat-step >
+             <form >
+               <div class="d-flex text-center ">
+              
+                <p class="mb-5 mr-3"><mat-icon aria-hidden="false" aria-label="Example home icon">emoji_events</mat-icon>Como fazer uma postagem <strong>campeã</strong></p>
+                <div class="text-danger mt-3 ideia">
+                  <p class="juntinho"> Necessário informar qual tipo de serviço você deseja para sua ideia</p>
+                  <p class="juntinho"> Necessário informar qual valor você deseja para a realização da ideia</p>
+                  <img class="img-fluid " width="23" alt="Logo da Find Your Help" src="https://i.imgur.com/dtR8Hgp.png"><span class="ml-2 mt-1 text-primary">Dica: Find your help</span>
+                </div>
 
-          <div class="form-group ml-3">
-            <label for="tipoAjudaPostagem">Tipo de Ajuda</label>
-            <select class="form-control" id="tipoAjudaPostagem" (change)='tipoDeAjuda($event)' name="tipoAjudaPostagem">
-              <option style="opacity: 0.5;">Selecione uma opção</option>
-              <option value="Financeiro">Financeiro</option>
-              <option value="Servico">Serviço</option>
 
-            </select>
-          </div>
-
-        </div>
-        <p>
-          Por acaso voce quer fazer um novo tema? <a data-dismiss="modal" routerLink="/tema">Cadastre</a>
-        </p>
-
-        <form>
-          <div class="form-group">
-            <label for="tituloPostagem">Titulo:</label>
-            <input [(ngModel)]='postagem.tituloPostagem' type="text" class="form-control" id="tituloPostagem"
-              placeholder="Insira o título da postagem" name="tituloPostagem">
-          </div>
-          <div class="form-group">
-            <label for="urlImagemPostagem">Imagem:</label>
-            <input [(ngModel)]='postagem.urlImagemPostagem' type="text" class="form-control" id="urlImagemPostagem"
-              placeholder="Insira a imagem da postagem" name="urlImagemPostagem">
-          </div>
-
-          <div class="form-group">
-            <label for="descricaoPostagem">Descrição:</label>
-            <textarea [(ngModel)]='postagem.descricaoPostagem' class="form-control" id="descricaoPostagem" rows="3"
-              name="descricaoPostagem" placeholder="Insira o texto da postagem"></textarea>
-          </div>
-
-        </form>
+               </div>
+                <div>
+                  <button type="button" class=" prala btn btn-secondary mt-2" mat-button matStepperNext>Next</button>
+                </div>
+             </form>
+          </mat-step>
+          <mat-step>
+            <div class="formlado mt-4">
+              <div class="form-group">
+                <label for="Tema">Tema</label>
+                <select class="form-control" id="Tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                  <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
+                    {{item.categoriaTema}}
+                  </option>
+                </select>
+              </div>
+    
+              <div class="form-group ml-3">
+                <label for="tipoAjudaPostagem">Tipo de Ajuda</label>
+                <select class="form-control" id="tipoAjudaPostagem" (change)='tipoDeAjuda($event)' name="tipoAjudaPostagem">
+                  <option style="opacity: 0.5;">Selecione uma opção</option>
+                  <option value="Financeiro">Financeiro</option>
+                  <option value="Servico">Serviço</option>
+    
+                </select>
+              </div>
+    
+            </div>
+            <p>
+              Por acaso voce quer fazer um novo tema? <a data-dismiss="modal" routerLink="/tema">Cadastre</a>
+            </p>
+    
+            <form>
+              <div class="form-group">
+                <label for="tituloPostagem">Titulo:</label>
+                <input [(ngModel)]='postagem.tituloPostagem' type="text" class="form-control" id="tituloPostagem"
+                  placeholder="Insira o título da postagem" name="tituloPostagem">
+              </div>
+              <div class="form-group">
+                <label for="urlImagemPostagem">Imagem:</label>
+                <input [(ngModel)]='postagem.urlImagemPostagem' type="text" class="form-control" id="urlImagemPostagem"
+                  placeholder="Insira a imagem da postagem" name="urlImagemPostagem">
+              </div>
+    
+              <div class="form-group">
+                <label for="descricaoPostagem">Descrição:</label>
+                <textarea [(ngModel)]='postagem.descricaoPostagem' class="form-control" id="descricaoPostagem" rows="3"
+                  name="descricaoPostagem" placeholder="Insira o texto da postagem"></textarea>
+              </div>
+     </form>
+     <div>
+      <button type="button" class=" btn btn-secondary mt-2" mat-button matStepperPrevious>Back</button>
+      
+   </div>
+          </mat-step>
+         
+       </mat-horizontal-stepper>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
           <button type="button" class="btn btn-success" data-dismiss="modal" (click)='publicar()'>Publicar</button>

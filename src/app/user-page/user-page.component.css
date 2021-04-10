@@ -210,45 +210,6 @@ body {
 /*Search */
 
 
-/* Remove IE arrow */
-select::-ms-expand {
-  display: none;
-}
-/* Custom Select */
-.select {
-  position: relative;
-  display: flex;
-  width: 10em;
-  height: 38px;
-  line-height: 3;
-  overflow: hidden;
-  border-radius: .25em;
-  left: 80px;
-}
-select {
-  flex: 1;
-  padding: 0 .5em;
-  color: #fff;
-  cursor: pointer;
-}
-/* Arrow */
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0 1em;
-  background: #70c2cc;
-  cursor: pointer;
-  pointer-events: none;
-  -webkit-transition: .25s all ease;
-  -o-transition: .25s all ease;
-  transition: .25s all ease;
-}
-/* Transition */
-.select:hover::after {
-  color: #f39c12;
-}
 
 body{
   background: #f2f2f2;
@@ -299,3 +260,22 @@ border-radius: 10px;
   position: relative;
   top: 10px;
 }
+
+/* modal */
+.juntinho{
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ideia{
+  background-color: azure;
+  border-style: dotted;
+  
+}
+
+.prala{
+  float: right;
+}
+/* //modal */
