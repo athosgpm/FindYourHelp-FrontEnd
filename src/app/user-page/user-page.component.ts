@@ -225,7 +225,7 @@ export class UserPageComponent implements OnInit {
       this.listaPostagens = resp
     })
 
-    this.getAllPostagens()
+    
       
 
   }
