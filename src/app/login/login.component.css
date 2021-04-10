@@ -1,81 +1,82 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 .titulo {
-	font-family: Trebuchet MS, sans-serif;
+  color: #3d4a4c;
+  font-family: Trebuchet MS, sans-serif;
   font-weight: bold;
-	margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-size: 35px;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-.bg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url("https://i.imgur.com/LGxG7cG.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*height: ; */
+  background-image: url("https://i.imgur.com/LGxG7cG.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-
-.container{
+.container {
   width: 500px;
   margin: 200px auto;
   text-align: center;
   letter-spacing: 2px;
   border-radius: 10px;
+
 }
 
-
-.glass{
-  background: linear-gradient(175deg, rgba(255, 255, 255, 0.1), rgba(10, 27, 57, 0.3));
+.glass {
+  background: linear-gradient(
+    175deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(71, 73, 76, 0.3)
+  );
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  border:1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(117, 104, 104, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 form {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 50px 50px;
-	height: 100%;
-	text-align: center;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 50px;
+  height: 100%;
+  text-align: center;
 }
 
 input {
-	background-color: #eee;
-	border: none;
-	padding: 12px 17px;
-	margin: 8px 0;
-	width: 100%;
+  background-color: #eee;
+  border: none;
+  padding: 12px 17px;
+  margin: 8px 0;
+  width: 100%;
 }
 
-
 button {
-	border: 1px solid #f3ecec;
-	background-color: #3D4A4C;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 9px 12px;
-  border-radius: 10px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+  border: 1px solid #f3ecec;
+  background-color: #3d4a4c;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 9px 12px;
+  border-radius: 7px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
 }
 
 button:hover {
-    color: white;
-	transform: scale(0.95);
+  color: white;
+  transform: scale(0.95);
 }
-
-
