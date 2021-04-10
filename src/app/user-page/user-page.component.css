@@ -209,17 +209,7 @@ body {
 
 /*Search */
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background: #2c3e50;
-  background-image: none;
-}
+
 /* Remove IE arrow */
 select::-ms-expand {
   display: none;
@@ -231,7 +221,6 @@ select::-ms-expand {
   width: 10em;
   height: 38px;
   line-height: 3;
-  background: #2c3e50;
   overflow: hidden;
   border-radius: .25em;
   left: 80px;
