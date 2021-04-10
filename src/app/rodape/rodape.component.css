@@ -1,22 +1,66 @@
 .foot {
-  background-image: url(https://media.discordapp.net/attachments/801479206424412170/826835085298761738/fotter.jpg?width=1025&height=257);
-  height: 150px;
-  background-position: center;
+  background-image: url(https://i.imgur.com/YZcnN5B.png);
   background-repeat: no-repeat;
-  background-size: cover;
   width: auto;
-}
-
-.btn {
-  float: right;
-  margin-right: 50px;
-}
-
-.fs {
-  font-size: 24px;
+  background-size: cover;
+  
 }
 
  .container{
   flex-wrap: wrap;
 }
 
+
+#text{
+  justify-content: left;
+  align-items: flex-start;
+  position: relative;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  z-index: 1;
+}
+#text2{
+  justify-content: left;
+  position: relative;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3.3em;
+  z-index: 1;
+  margin-left: 0.8cm;
+  line-height: 1.0;
+}
+#text3{
+  justify-content: left;
+  align-items: flex-start;
+  position: relative;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.3em;
+  z-index: 1;
+}
+
+
+.marow{
+  margin-left: 4.5cm;
+
+}
+
+.mar{
+  margin-top: 1cm;
+}
+
+@media(max-width: 574px) {
+  .marow{
+    position: relative;
+    right: 120px;
+    font-size: 8pt;
+  
+  }
+
+  #text2{
+    position: relative;
+    top:35px;
+  }
+
+}

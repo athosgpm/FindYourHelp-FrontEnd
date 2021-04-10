@@ -108,9 +108,10 @@ body {
   background-color: #f4e189;
   text-align: center;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 200px;
   height: 400px;
+
 }
 
 .our-team .picture {

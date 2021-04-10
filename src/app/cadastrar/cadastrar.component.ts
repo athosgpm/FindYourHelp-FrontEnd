@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-cadastrar',
@@ -18,7 +19,7 @@ export class CadastrarComponent implements OnInit {
   confirmarSenha: string;
   isDisabled: boolean = false
   isDisabled2: boolean = false
-  tipoUser: string;
+  tipoUser = environment.tipoUsuario
 
 
 
@@ -32,13 +33,13 @@ export class CadastrarComponent implements OnInit {
   nome = new FormControl('', [
     Validators.required,
     Validators.minLength(2),
-    Validators.maxLength(7),
+    Validators.maxLength(50),
   ]);
   tipoS = new FormControl('', [Validators.required]);
   senha = new FormControl('', [
     Validators.required,
     Validators.minLength(2),
-    Validators.maxLength(7),
+    Validators.maxLength(100),
   ]);
   telefone = new FormControl('', [
     Validators.required,
@@ -55,12 +56,16 @@ export class CadastrarComponent implements OnInit {
   confirmSenha(event: any) {
     this.confirmarSenha = event.target.value;
   }
-  tipoDeUsuario(event: any) {
-    this.tipoUser = event.target.value;
-  }
   
+  disableButton() {
+    this.tipoUser = 'Colaborador'
+  }
+  disableButton2() {
+    this.tipoUser = 'Empreendedor'
+  }
 
   cadastrar() {
+    this.user.tipoUsuario = this.tipoUser
     
     if (this.user.senhaUsuario != this.confirmarSenha) {
       Swal.fire({
@@ -70,13 +75,20 @@ export class CadastrarComponent implements OnInit {
       });
     } else {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
+        if(resp == null){
+          alert('esse usuario ja existe')
+        }else{
+
+        
         this.user = resp;
+
         this.router.navigate(['/login']);
         Swal.fire({
           icon: 'success',
           title: 'show',
           text: 'Usuário cadastrado com sucesso!',
         });
+      }
       });
     }
   }
@@ -195,10 +207,5 @@ export class CadastrarComponent implements OnInit {
       ? 'warn'
       : 'primary';
   }
-  disableButton() {
-    this.isDisabled = true
-  }
-  disableButton2() {
-    this.isDisabled2 = true
-  }
+ 
 }

@@ -26,6 +26,12 @@ export class PostagemService {
       return this.http.get<Postagem[]>(`${this.baseUrl}/postagens/tituloPostagem/${tituloPostagem}`, this.token)
 
     }
+    getByTipoPostagem(tipoPostagem: string): Observable<Postagem[]>{
+      return this.http.get<Postagem[]>(`${this.baseUrl}/postagens/tipo/postagem/portipo/${tipoPostagem}`, this.token)
+
+    }
+
+
 
     postPostagem(postagem:Postagem){
       return this.http.post<Postagem>(`${this.baseUrl}/postagens/`,postagem, this.token)

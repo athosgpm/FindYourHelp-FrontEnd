@@ -29,6 +29,8 @@ export class UserPageComponent implements OnInit {
   listaPostagens :Postagem[]
   tituloPost: string
 
+  tipoPost:string
+
   idTema :number
   listaTemas : Tema[]
   tema:Tema = new Tema()
@@ -57,8 +59,8 @@ export class UserPageComponent implements OnInit {
     if(environment.token == ''){
       this.router.navigate(['/login'])
     }
-
-    this.getAllTemas()
+    this.findByTipoPostagem()
+     this.getAllTemas()
     this.getAllPostagens()
   }
   tipoDeAjuda(event:any){
@@ -114,6 +116,13 @@ export class UserPageComponent implements OnInit {
       })
     }
 
+  }
+
+  findByTipoPostagem(){
+    this.postagemService.getByTipoPostagem(this.tipoPost).subscribe((resp:Postagem[])=>{
+      this.listaPostagens = resp
+
+    })
   }
 
 

@@ -2,7 +2,7 @@
 
 <header>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: white;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: white;">
       <img src="https://i.imgur.com/tF84Tak.png" width="55" class="d-inline-block align-top rounded-circle img-fluid" alt="Logo da Find Your Help">
       <a class="navbar-brand mx-4 letra" style="font-size: 20pt;" href="#">FindYourHelp
     </a>
@@ -24,7 +24,7 @@
 
 
 <!--Pagina do feed-->
-<div class="container-fluid gedf-wrapper margin">
+<div class="container-fluid gedf-wrapper margin mt-5">
 
   <div class="row justify-content-between">
     <!--CardPerfil-->
@@ -113,90 +113,6 @@
         </a>
       </div>
 
-
-
-
-
-
-
-
-      <!--CardIdeias
-
-      <h1 class="fs-1"> Ideias mais Populares</h1>
-      <div class="row row-cols-1 row-cols-md-3 g-3">
-        <div class="col">
-          <mat-card class="mat-elevation-z5 fundo">
-
-            <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
-            <mat-card-header>
-              <mat-card-title class="text-start">Energia Renovavel Parque Eolico</mat-card-title>
-            </mat-card-header>
-            <mat-card-content class="py-2">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
-                quidem laboriosam corporis qui perferendis cupiditate reprehenderit
-              </p>
-            </mat-card-content>
-            <hr>
-            <mat-card-actions>
-              <button mat-button class="botaodacor">Colaborar</button>
-
-            </mat-card-actions>
-          </mat-card>
-        </div>
-        <div class="col">
-          <mat-card class="mat-elevation-z5 fundo">
-
-
-
-
-            <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
-            <mat-card-header>
-              <mat-card-title class="text-start">Mercado Financeiro para todos</mat-card-title>
-            </mat-card-header>
-            <mat-card-content class="py-2">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
-                quidem laboriosam corporis qui perferendis cupiditate reprehenderit
-              </p>
-            </mat-card-content>
-            <hr>
-            <mat-card-actions>
-              <button mat-button class="botaodacor">Colaborar</button>
-
-            </mat-card-actions>
-          </mat-card>
-
-        </div>
-        <div class="col">
-          <mat-card class="mat-elevation-z5 fundo">
-
-
-
-
-            <img mat-card-image src="https://i.imgur.com/CpJD5Ym.jpeg">
-            <mat-card-header>
-              <mat-card-title class="text-start">Empreendedorismo Feminino</mat-card-title>
-            </mat-card-header>
-            <mat-card-content class="py-2">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam placeat esse commodi error
-                quidem laboriosam corporis qui perferendis cupiditate reprehenderit
-              </p>
-            </mat-card-content>
-            <hr>
-            <mat-card-actions>
-              <button mat-button class="botaodacor">Colaborar</button>
-
-            </mat-card-actions>
-          </mat-card>
-        </div>
-
-      </div>
-
-      /CardIdeias-->
-
-
       <!--CardBotao-->
       <mat-card class="mat-elevation-z4 mt-4">
         <mat-card-header class="row mt-2">
@@ -208,16 +124,16 @@
           <div class="col-md-11">
             <mat-card-subtitle><button
                 style="font-size: 14pt; height: 45px; width: 100%; color: gray; border-radius: 23px; font-weight: normal; text-align: start;"
-                mat-button class="mat-elevation-z3 botaodahora ml-1" data-toggle="modal" data-target="#novaPostagem">
-                Qual ideia está em sua mente, <span>{{nomeUsuario}}</span>
+                mat-button class="mat-elevation-z3 botaodahora ml-2" data-toggle="modal" data-target="#novaPostagem">
+                Qual ideia está em sua mente, <span>{{nomeUsuario}}?</span>
                 <mat-icon class="ml-3 mb-2" matSuffix aria-hidden="false" aria-label="Example home icon">
                   create</mat-icon>
               </button></mat-card-subtitle>
           </div>
 
         </mat-card-header>
-        <mat-card-content class="mt-1 mb-2" style="color: gray;">
-          <hr>
+        <hr>
+        <mat-card-content class="text-center" style="color: gray;">
           Poste uma ideia para iluminar o mundo com o apoio dos colaboradores.
         </mat-card-content>
       </mat-card>
@@ -259,6 +175,13 @@
               <div class="form-group">
                 <input [(ngModel)]='tituloPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo"
                   name="titulo" class="form-control" (keyup)='findByTituloPostagem()'>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group">
+                <input [(ngModel)]='tipoPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo"
+                  name="titulo" class="form-control" (keyup)='findByTipoPostagem()'>
               </div>
             </div>
 
@@ -365,7 +288,9 @@
 
               <!-- comentarios///////// -->
 
-              <div class="ml-auto bd-highlight"><button type="button" class="btn btn-warning">Colaborar</button></div>
+              <div class="ml-auto bd-highlight">
+                <button type="button" class="btn btn-warning">Colaborar</button>
+              </div>
             </div>
           </div>
         </div>
@@ -528,15 +453,14 @@
 </div>
 
 
-
 <!-- Modal -->
 <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header d-flex align-items-center">
         <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+        <button type="button" class="close mb-3" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -546,9 +470,9 @@
           <div class="form-group">
             <label for="Tema">Tema</label>
             <select class="form-control" id="Tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
-              <option *ngFor='let item of listaTemas' value="{{item.idTema}}"> {{item.categoriaTema}}
+              <option *ngFor='let item of listaTemas' value="{{item.idTema}}"> 
+              {{item.categoriaTema}}
               </option>
-
             </select>
           </div>
 
@@ -562,35 +486,33 @@
             </select>
           </div>
 
-
-
         </div>
         <p>
-          Por acaso voce quer fazer um novo tema! <a data-dismiss="modal" routerLink="/tema">Cadastre</a>
+          Por acaso voce quer fazer um novo tema? <a data-dismiss="modal" routerLink="/tema">Cadastre</a>
         </p>
 
         <form>
           <div class="form-group">
-            <label for="tituloPostagem">Titulo</label>
+            <label for="tituloPostagem">Titulo:</label>
             <input [(ngModel)]='postagem.tituloPostagem' type="text" class="form-control" id="tituloPostagem"
-              placeholder="titulo da Postagem" name="tituloPostagem">
+              placeholder="Insira o título da postagem" name="tituloPostagem">
           </div>
           <div class="form-group">
-            <label for="urlImagemPostagem">Imagem</label>
+            <label for="urlImagemPostagem">Imagem:</label>
             <input [(ngModel)]='postagem.urlImagemPostagem' type="text" class="form-control" id="urlImagemPostagem"
-              placeholder="Imagem da Postagem" name="urlImagemPostagem">
+              placeholder="Insira a imagem da postagem" name="urlImagemPostagem">
           </div>
 
           <div class="form-group">
-            <label for="descricaoPostagem">Descrição</label>
+            <label for="descricaoPostagem">Descrição:</label>
             <textarea [(ngModel)]='postagem.descricaoPostagem' class="form-control" id="descricaoPostagem" rows="3"
-              name="descricaoPostagem"></textarea>
+              name="descricaoPostagem" placeholder="Insira o texto da postagem"></textarea>
           </div>
 
         </form>
         <div class="modal-footer">
-          <button type="button" class="btn" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn" data-dismiss="modal" (click)='publicar()'>Publicar</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal" (click)='publicar()'>Publicar</button>
         </div>
 
       </div>
