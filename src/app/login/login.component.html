@@ -1,36 +1,42 @@
 <div class="container-fluid bg">
   <div class="row d-flex align-itens-center">
-    <div class="">
-      <div class="row d-flex justify-content-center container glass">
+<div class="">
+    <div class="row d-flex justify-content-center container glass">
 
-        <div class="col-md-6 align-items-center ">
-          <div class="row">
+      <div class="col-md-6 align-items-center ">
+        <div class="row">
 
-            <h1 class="text-center mb-3 mt-4 titulo">Entrar</h1>
+          <h1 class="text-center mb-3 mt-4 titulo">Entrar</h1>
 
-            <div class="form-group">
-              <label for="usuario"></label>
-              <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <label for="senha"></label>
-              <input class="form-control" type="password" name="senha" id="senha" placeholder="Senha">
-            </div>
-
+          <div class="form mt-2">
+            <label for="usuario"></label>
+            <input class="form-control focus" type="text" name="usuario" id="usuario" placeholder="Email">
           </div>
-          <div class="row mt-3">
-
-            <div class="d-flex justify-content-center">
-              <button type="submit" class="btn mr-1">Entrar</button>
-            </div>
+          <div class="form">
+            <label for="senha"></label>
+            <input class="form-control focus" type="password" name="senha" id="senha" placeholder="Senha">
           </div>
-          <hr class="mt-5 mb-2">
-          <p class="text-center" style="font-weight: bold;">
-            Não tem uma conta? <a href="" style="color: rgb(224, 146, 62);">Cadastre-se</a>
-          </p>
+
         </div>
+        <div class="row mt-3">
+
+          <div class="d-flex justify-content-center">
+            <button type="button" class="btn mr-3 glass"
+              style="z-index: 1;position: relative; background-color: #3D4A4C; color: white;"
+              routerLink='/homepage'>Voltar</button>
+            <button type="submit" class="btn mr-1 glass"
+              style="z-index: 1;position: relative; background-color: #3D4A4C; color: white;"
+              routerLink='/userpage'>Entrar</button>
+          </div>
+        </div>
+        <hr class="mt-5 mb-2">
+        <p class="text-center" style="font-weight: bold; font-size: 18px;">
+          Não tem uma conta? <a href="#cadastro" style="color: rgb(224, 146, 62);">Cadastre-se</a>
+        </p>
       </div>
     </div>
   </div>
+
+  </div>
 </div>
-<app-rodape></app-rodape>
+
