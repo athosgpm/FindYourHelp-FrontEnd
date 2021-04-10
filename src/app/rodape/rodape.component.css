@@ -41,12 +41,26 @@
 }
 
 
-.m-row{
+.marow{
   margin-left: 4.5cm;
 
 }
 
-.m-col{
+.mar{
   margin-top: 1cm;
 }
 
+@media(max-width: 574px) {
+  .marow{
+    position: relative;
+    right: 120px;
+    font-size: 8pt;
+  
+  }
+
+  #text2{
+    position: relative;
+    top:35px;
+  }
+
+}
