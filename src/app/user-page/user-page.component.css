@@ -46,23 +46,12 @@
   color: #fff;
   height: 80px;
 }
+
 .close {
-  color: red;
   margin: 5px;
 }
 
 /* FIM do CARD postar IDEIA */
-
-
-/* Menu */
-.fs-14 {
-  font-size: 14pt;
-}
-.gris {
-  background-color: rgb(38, 45, 59);
-}
-
-/* Fim do Menu */
 
 /* CARD das Postagens */
 body {
@@ -193,7 +182,7 @@ body {
   }
 }
 
-button {
+.button-style {
 	border-radius: 10px;
 	border: 1px solid #f3ecec;
 	background-color: #1369ce;
@@ -205,6 +194,7 @@ button {
 /* Fim do CARD Usuario */
 
 
+/* menu */
 .margin{
   margin-top: 2cm;
 }
@@ -213,15 +203,8 @@ button {
   color: #f4af1b;
   font-size: 20px;
 }
-
-
-
-#banner{
-  margin-bottom: 50px;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
+.fs-14 {
+  font-size: 14pt;
 }
 
 /*Search */

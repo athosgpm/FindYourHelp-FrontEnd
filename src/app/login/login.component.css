@@ -17,11 +17,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*height: ; */
   background-image: url("https://i.imgur.com/LGxG7cG.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
