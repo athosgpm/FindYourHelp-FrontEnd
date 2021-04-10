@@ -10,11 +10,11 @@
 
           <div class="form mt-2">
             <label for="usuario"></label>
-            <input class="form-control focus" type="text" name="usuario" id="usuario" placeholder="Email">
+            <input [(ngModel)]='userLogin.emailUsuario' class="form-control focus" type="text" name="usuario" id="usuario" placeholder="Email">
           </div>
           <div class="form">
             <label for="senha"></label>
-            <input class="form-control focus" type="password" name="senha" id="senha" placeholder="Senha">
+            <input [(ngModel)]='userLogin.senhaUsuario' class="form-control focus" type="password" name="senha" id="senha" placeholder="Senha">
           </div>
 
         </div>
@@ -26,7 +26,7 @@
               routerLink='/homepage'>Voltar</button>
             <button type="submit" class="btn mr-1 glass"
               style="z-index: 1;position: relative; background-color: #3D4A4C; color: white;"
-              routerLink='/userpage'>Entrar</button>
+              (click)='entrar()'>Entrar</button>
           </div>
         </div>
         <hr class="mt-5 mb-2">
