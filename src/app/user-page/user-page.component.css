@@ -279,6 +279,8 @@ border-radius: 10px;
   float: right;
 }
 /* //modal */
+.card-img-top
+{opacity: 65%; height: 250px; background: rgba(50, 50, 50, 0.8);}
 /* comentario */
 .mexer{
   position: absolute;
@@ -303,7 +305,8 @@ border-radius: 10px;
   width: 400px;
 }
 
-/* //comentario */
+
+
 
 @media(max-width: 574px) {
 
@@ -347,5 +350,11 @@ border-radius: 10px;
   justify-content: center;
   align-items: flex-end;
  }
+
+ /* //comentario */
+ /* carrousel */
+ .card-img-top
+ {opacity: 65%; height: 250px; width: 170px !important; background: rgba(50, 50, 50, 0.8);}
+ /* //carrousel */
 
 }
