@@ -181,7 +181,7 @@
           <!--- \\\\\\\ todos os Post-->
           <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
             aria-labelledby="nav-todasPostagens-tab">
-          
+
             <div class="row backbordinha">
               <div class="col-md-6">
               <div class="form-group d-flex descer">
@@ -194,7 +194,7 @@
             </div>
             <div class="col-md-6">
             <div class="form-group select descer">
-              
+
               <select class="form-control cordif" name="tipo" id="tipo" (change)='tipoTag($event)'>
                   <option>Tags de tipo de ajuda</option>
                   <option value="Servico">Serviço</option>
@@ -659,7 +659,7 @@
       <div class="modal-header d-flex align-items-center">
         <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
         <button type="button" class="close mb-3" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true"><i class="fas fa-times-circle"></i></span>
         </button>
       </div>
       <div class="modal-body">
@@ -668,7 +668,7 @@
           <mat-step >
              <form >
                <div class="d-flex text-center ">
-              
+
                 <p class="mb-5 mr-3"><mat-icon aria-hidden="false" aria-label="Example home icon">emoji_events</mat-icon>Como fazer uma postagem <strong>campeã</strong></p>
                 <div class="text-danger mt-3 ideia">
                   <p class="juntinho"> Necessário informar qual tipo de serviço você deseja para sua ideia</p>
@@ -693,22 +693,22 @@
                   </option>
                 </select>
               </div>
-    
+
               <div class="form-group ml-3">
                 <label for="tipoAjudaPostagem">Tipo de Ajuda</label>
                 <select class="form-control" id="tipoAjudaPostagem" (change)='tipoDeAjuda($event)' name="tipoAjudaPostagem">
                   <option style="opacity: 0.5;">Selecione uma opção</option>
                   <option value="Financeiro">Financeiro</option>
                   <option value="Servico">Serviço</option>
-    
+
                 </select>
               </div>
-    
+
             </div>
             <p>
               Por acaso voce quer fazer um novo tema? <a data-dismiss="modal" routerLink="/tema">Cadastre</a>
             </p>
-    
+
             <form>
               <div class="form-group">
                 <label for="tituloPostagem">Titulo:</label>
@@ -720,7 +720,7 @@
                 <input [(ngModel)]='postagem.urlImagemPostagem' type="text" class="form-control" id="urlImagemPostagem"
                   placeholder="Insira a imagem da postagem" name="urlImagemPostagem">
               </div>
-    
+
               <div class="form-group">
                 <label for="descricaoPostagem">Descrição:</label>
                 <textarea [(ngModel)]='postagem.descricaoPostagem' class="form-control" id="descricaoPostagem" rows="3"
@@ -729,10 +729,10 @@
      </form>
      <div>
       <button type="button" class=" btn btn-secondary mt-2" mat-button matStepperPrevious>Back</button>
-      
+
    </div>
           </mat-step>
-         
+
        </mat-horizontal-stepper>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
