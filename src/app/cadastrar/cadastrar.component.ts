@@ -76,7 +76,11 @@ export class CadastrarComponent implements OnInit {
     } else {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         if(resp == null){
-          alert('Esse usuário ja existe.')
+          Swal.fire({
+            icon: 'error',
+            title: 'ops',
+            text: 'Esse usuario ja existe!',
+          });
         }else{
 
 

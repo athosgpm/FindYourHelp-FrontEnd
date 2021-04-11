@@ -10,7 +10,7 @@
             <form>
               <div class="form-group">
                 <label for="Tema">Tema</label>
-                <select class="form-control text-input" id="Tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                <select class="form-control text-input" id="Tema" name="Tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
                   <option *ngFor='let item of listaTemas' value="{{item.idTema}}"> {{item.categoriaTema}}
                   </option>
                 </select>
