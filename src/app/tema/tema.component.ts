@@ -41,6 +41,7 @@ listaTemas: Tema[]
       this.tema=resp
       if(this.tema.categoriaTema == null){
        alert('Digite um tema válido')
+       console.log(this.tema.categoriaTema)
       }else{
         alert('Tema cadastrado com sucesso')
         this.findAllTemas()
