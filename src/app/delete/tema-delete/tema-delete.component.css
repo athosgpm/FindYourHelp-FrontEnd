@@ -39,6 +39,7 @@
   box-sizing: border-box;
   outline: none;
 }
+
 ::placeholder {
   color: black;
   font-size: 15px;
@@ -48,8 +49,8 @@
 .card-body {
   overflow: hidden;
   position: relative;
-  /* width: 100%;
-  height: 100%; */
+  width: 100%;
+  height: 100%;
 }
 
 .form-group {
@@ -60,3 +61,4 @@
 .btn{
   width: 100px;
 }
+

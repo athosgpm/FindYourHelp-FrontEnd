@@ -4,6 +4,7 @@ import { Subscriber } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tema',
@@ -40,16 +41,35 @@ listaTemas: Tema[]
     this.temaService.postTema(this.tema).subscribe((resp:Tema)=>{
       this.tema=resp
       if(this.tema.categoriaTema == null){
-       alert('Digite um tema válido')
-       console.log(this.tema.categoriaTema)
+        Swal.fire({
+          icon: 'error',
+          title: 'ops...',
+          text: 'Digite um tema válido.'
+
+        })
+
       }else{
-        alert('Tema cadastrado com sucesso')
+        Swal.fire({
+          icon: 'success',
+          title: 'Show...',
+          text: 'Tema cadastrado com sucesso!'
+
+        })
         this.findAllTemas()
         this.tema= new Tema()
-        console.log(this.tema.categoriaTema)
       }
-    })
-  }
+    },erro =>{
+      if(erro.status == 500){
+        Swal.fire({
+          icon: 'error',
+          title: 'Ops...',
+          text: 'Não é possível cadastrar um tema vazio!'
 
+        })
+
+
+      }
+  })
+}
 
 }

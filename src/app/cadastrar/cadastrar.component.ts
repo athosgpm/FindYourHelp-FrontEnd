@@ -56,7 +56,7 @@ export class CadastrarComponent implements OnInit {
   confirmSenha(event: any) {
     this.confirmarSenha = event.target.value;
   }
-  
+
   disableButton() {
     this.tipoUser = 'Colaborador'
   }
@@ -66,7 +66,7 @@ export class CadastrarComponent implements OnInit {
 
   cadastrar() {
     this.user.tipoUsuario = this.tipoUser
-    
+
     if (this.user.senhaUsuario != this.confirmarSenha) {
       Swal.fire({
         icon: 'error',
@@ -76,10 +76,10 @@ export class CadastrarComponent implements OnInit {
     } else {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         if(resp == null){
-          alert('esse usuario ja existe')
+          alert('Esse usuário ja existe.')
         }else{
 
-        
+
         this.user = resp;
 
         this.router.navigate(['/login']);
@@ -207,5 +207,5 @@ export class CadastrarComponent implements OnInit {
       ? 'warn'
       : 'primary';
   }
- 
+
 }
