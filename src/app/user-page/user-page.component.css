@@ -25,9 +25,9 @@
   display: inline-block;
   cursor: pointer;
   color: darkgray;
-  font-weight: bold;
   border-color: 1px darkgray;
   border-color: transparent;
+  font-size: 14pt; height: 45px; width: 100%; color: gray; border-radius: 23px; font-weight: normal; text-align: start;
 }
 
 .modal-title {
@@ -304,3 +304,48 @@ border-radius: 10px;
 }
 
 /* //comentario */
+
+@media(max-width: 574px) {
+
+  .grande{
+    width: 220px;
+  }
+
+  .mexer{
+    position: absolute;
+    left: 195px;
+    height: 5px;
+    width:50px;
+    margin-bottom: 15px;
+  }
+
+  .botaodahora{
+    font-size: 10pt;
+  }
+
+  .pequeno{
+    width: 200px;
+  }
+
+  .maisprala{
+    position:relative;
+    left: 20px;
+  }
+
+ .umpoucola{
+   position: relative;
+  right: 30px;
+ }
+ .umpoucolatbm{
+  position: relative;
+  right: 20px;
+ }
+
+ .juntinho{
+   width: 70px;
+   display: flex;
+  justify-content: center;
+  align-items: flex-end;
+ }
+
+}

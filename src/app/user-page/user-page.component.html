@@ -134,7 +134,6 @@
 
           <div class="col-md-11">
             <mat-card-subtitle><button
-                style="font-size: 14pt; height: 45px; width: 100%; color: gray; border-radius: 23px; font-weight: normal; text-align: start;"
                 mat-button class="mat-elevation-z3 botaodahora ml-2" data-toggle="modal" data-target="#novaPostagem">
                 Qual ideia está em sua mente, <span>{{nomeUsuario}}?</span>
                 <mat-icon class="ml-3 mb-2" matSuffix aria-hidden="false" aria-label="Example home icon">
@@ -253,7 +252,7 @@
                 <div class="accordion" [attr.id]="'coment' + item.idPostagem">
 
 
-                  <div class="mt-2" id="headingTwo">
+                  <div class="mt-3 " id="headingTwo">
                     <div class="ml-auto bd-highlight mexer">
                       <a href="https://web.whatsapp.com/send?phone=55+{{item.usuario.telefoneUsuario}}&text=Olá,%20vi%20sua%20ideia%20na%20FindYourHelp%20e%20achei%20ela%20incrível!%20Gostaria%20de%20colaborar%20com%20você%20:D"
                         target="_blank">
@@ -261,8 +260,8 @@
                             src="https://i.imgur.com/ChmtyPt.png" alt=""> </button></a>
                     </div>
                     <h5 class="mb-0">
-                      <button class="btn btn-link text-dark mb-2"><a href="" class="card-link bd-highlight akinao"><i class="fa fa-gittip"></i> Like</a></button>
-                      <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse"
+                      <button class="btn btn-link text-dark mb-2"><a href="" class="card-link bd-highlight akinao umpoucola"><i class="fa fa-gittip"></i> Like</a></button>
+                      <button class="btn btn-link collapsed text-dark umpoucolatbm" type="button" data-toggle="collapse"
                         [attr.data-target]="'#' + 'comentButton' + item.idPostagem" aria-expanded="false"
                         aria-controls="collapseTwo">
                         <p class="text-primary font-weight-bold mb-2">
@@ -275,7 +274,7 @@
 
 
                   <div [attr.id]="'comentButton' + item.idPostagem" class="collapse" aria-labelledby="headingTwo"
-                  [attr.data-parent]="'#' + 'coment' + item.idPostagem">
+                  [attr.data-parent]="'#' + 'coment' + item.idPostagem" data-parent="#accordion" id="collapseTwo">
 
                   <div class="row mb-3">
                     <div class="col d-flex justify-content-center align-items-center p-4">
