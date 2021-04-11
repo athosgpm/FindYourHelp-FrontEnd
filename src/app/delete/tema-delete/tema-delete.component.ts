@@ -11,15 +11,20 @@ import Swal from 'sweetalert2';
   styleUrls: ['./tema-delete.component.css']
 })
 export class TemaDeleteComponent implements OnInit {
+
   tema : Tema = new Tema()
   idTema:number
+
   constructor(
+
     private temaService : TemaService,
     private router : Router,
     private route : ActivatedRoute
+    
   ) { }
 
   ngOnInit(){
+
     if(environment.token == '')
     {
       Swal.fire({
@@ -29,22 +34,25 @@ export class TemaDeleteComponent implements OnInit {
       });
       this.router.navigate(['/login'])
     }
+
     this.idTema = this.route.snapshot.params['id']
     this.findByIdTema(this.idTema)
   }
+
   findByIdTema(id:number){
     this.temaService.getByIdTema(id).subscribe((resp:Tema) =>{
       this.tema = resp
 
     })
   }
+
   deletar()
   {
     this.temaService.deleteTema(this.idTema).subscribe(()=>{
       Swal.fire({
         icon: 'success',
         title: 'Show',
-        text: 'Tema deletada com sucesso!',
+        text: 'Tema deletado com sucesso!',
       });
       this.router.navigate(['/tema'])
     })
