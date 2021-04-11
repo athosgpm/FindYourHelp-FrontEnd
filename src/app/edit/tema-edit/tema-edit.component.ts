@@ -46,7 +46,7 @@ export class TemaEditComponent implements OnInit {
         Swal.fire({
           icon: 'success',
           title: 'Show',
-          text: 'Tema atualizada com sucesso!',
+          text: 'Tema atualizado com sucesso!',
         });
         this.router.navigate(['/tema'])
       })

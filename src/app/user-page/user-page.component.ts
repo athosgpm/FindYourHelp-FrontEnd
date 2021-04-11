@@ -36,13 +36,17 @@ export class UserPageComponent implements OnInit {
   listaTemas : Tema[]
   tema:Tema = new Tema()
   nomeTema: string
+  categoriaTema:string
 
   user:User = new User()
   idUser = environment.idUsuario
   tipoA :string
+  
+  tags: string
 
   comentario: Comentario = new Comentario()
   listaComentarios: Comentario[]
+  idComentario: number
 
   key = 'data'
   reverse = true
@@ -52,17 +56,20 @@ export class UserPageComponent implements OnInit {
     private postagemService: PostagemService,
     private temaService:TemaService,
     private authService:AuthService,
-    private comentarioService: ComentarioService
+    private comentarioService: ComentarioService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     window.scroll(0,0)
     if(environment.token == ''){
-      this.router.navigate(['/login'])
-    }
+     this.router.navigate(['/login'])
+   }
     this.findByTipoPostagem()
      this.getAllTemas()
     this.getAllPostagens()
+
+    let idComentario = this.route.snapshot.params['id']
   }
   tipoDeAjuda(event:any){
     this.tipoA = event.target.value
@@ -116,6 +123,14 @@ export class UserPageComponent implements OnInit {
         this.listaTemas = resp
       })
     }
+
+  }
+  tipoTema(event: any){
+    this.categoriaTema = event.target.value
+    console.log(this.categoriaTema)
+    this.temaService.getByNomeTema(this.categoriaTema).subscribe((resp:Tema[])=>{
+      this.listaTemas = resp
+    })
 
   }
 
@@ -189,4 +204,30 @@ export class UserPageComponent implements OnInit {
       this.listaComentarios = resp
     })
   }
+  apagarComentario(id: number){
+    this.comentarioService.deleteComentario(id).subscribe(() =>{
+      Swal.fire({
+        icon: 'success',
+        title: 'Show',
+        text: 'Comentario apagado com sucesso!'
+      });
+      this.getAllPostagens()
+      
+    
+    })
+    
+  }
+
+  tipoTag(event: any){
+    this.tags = event.target.value
+    console.log(this.tags)
+    this.postagemService.getByTipoPostagem(this.tags).subscribe((resp:Postagem[])=>{
+      this.listaPostagens = resp
+    })
+
+    
+      
+
+  }
+
 }

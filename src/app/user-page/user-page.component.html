@@ -1,17 +1,17 @@
 <!-- Barra de navegação-->
 <div class="bg">
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white gris fixed-top">
-      <img class="img-fluid rounded-circle ml-3" width="55" alt="Logo da Find Your Help"
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <img class="img-fluid ml-3" width="55" alt="Logo da Find Your Help"
         src="https://i.imgur.com/dtR8Hgp.png">
       <a class="navbar-brand mx-3 letra" style="font-size: 35pt; font-weight: 600; color: #FAA411;"
         routerLink='/homepage'>FyH</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#conteudoNavbarSuportado"
         aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+      <div class="navbar-collapse collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav ml-auto mr-5">
           <li class="nav-item letra">
             <a class="nav-link active fs-14 mx-1" aria-current="page" routerLink='/homepage'>Home</a>
@@ -20,10 +20,9 @@
             <a class="nav-link active fs-14">Olá, {{nomeUsuario}}</a>
           </li>
           <li class="nav-item letra">
-            <a (click)='sair()'>
+            <a href='sair()'>
               <p class="fs-14 mt-2 cor">
                 <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
-
               </p>
             </a>
           </li>
@@ -32,7 +31,6 @@
     </nav>
   </header>
   <!-- /Barra de navegação-->
-
 
 
  <!--Pagina do feed-->
@@ -62,7 +60,7 @@
             </li>
 
           </ul>
-          <button type="button" class="button" routerLink='/homepage' (click)='sair()'>Sair</button>
+          <button type="button" class="button-style" routerLink='/homepage' (click)='sair()'>Sair</button>
         </div>
       </div>
     </div>
@@ -184,19 +182,35 @@
           <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
             aria-labelledby="nav-todasPostagens-tab">
 
-            <div class="row">
-              <div class="form-group">
-                <input [(ngModel)]='tituloPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo"
-                  name="titulo" class="form-control" (keyup)='findByTituloPostagem()'>
+            <div class="row backbordinha">
+              <div class="col-md-6">
+              <div class="form-group d-flex descer">
+                <input  [(ngModel)]='tituloPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo"
+                  name="titulo" class="form-control searchTerm" (keyup)='findByTituloPostagem()'>
+                  <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                 </button>
               </div>
             </div>
+            <div class="col-md-6">
+            <div class="form-group select descer">
 
-            <div class="row">
-              <div class="form-group">
-                <input [(ngModel)]='tipoPost' type="text" placeholder="Digite um titulo para pesquisar" id="titulo"
-                  name="titulo" class="form-control" (keyup)='findByTipoPostagem()'>
-              </div>
-            </div>
+              <select class="form-control cordif" name="tipo" id="tipo" (change)='tipoTag($event)'>
+                  <option>Tags de tipo de ajuda</option>
+                  <option value="Servico">Serviço</option>
+                  <option value="Financeiro">Financeiro</option>
+              </select>
+          </div>
+        </div>
+        </div>
+         <!-- <div class="form-group">
+            <label for="Tema">Tema</label>
+            <select class="form-control" id="nomeTema" name="nomeTema" (change)='tipoTema($event)'>
+              <option *ngFor='let item of listaTemas' value="{{item.categoriaTema}}">
+                {{item.categoriaTema}}
+              </option>
+            </select>
+          </div>-->
 
             <div class="card gedf-card mb-4" *ngFor='let item of listaPostagens | orderBy: key: reverse'>
 
@@ -236,11 +250,18 @@
 
 
                 <!-- ///////////////comentarios -->
-
                 <div class="accordion" [attr.id]="'coment' + item.idPostagem">
 
+
                   <div class="mt-2" id="headingTwo">
+                    <div class="ml-auto bd-highlight mexer">
+                      <a href="https://web.whatsapp.com/send?phone=55+{{item.usuario.telefoneUsuario}}&text=Olá,%20vi%20sua%20ideia%20na%20FindYourHelp%20e%20achei%20ela%20incrível!%20Gostaria%20de%20colaborar%20com%20você%20:D"
+                        target="_blank">
+                        <button type="button" class="btn btn-warning ">Colaborar <img style="height: 20px; width: 20px;"
+                            src="https://i.imgur.com/ChmtyPt.png" alt=""> </button></a>
+                    </div>
                     <h5 class="mb-0">
+                      <button class="btn btn-link text-dark mb-2"><a href="" class="card-link bd-highlight akinao"><i class="fa fa-gittip"></i> Like</a></button>
                       <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse"
                         [attr.data-target]="'#' + 'comentButton' + item.idPostagem" aria-expanded="false"
                         aria-controls="collapseTwo">
@@ -249,40 +270,54 @@
                         </p>
                       </button>
                     </h5>
+
                   </div>
 
-                  <div [attr.id]="'comentButton' + item.idPostagem" class="collapse" aria-labelledby="headingTwo"
-                    [attr.data-parent]="'#' + 'coment' + item.idPostagem">
 
-                    <div class="row mb-3">
-                      <div class="col d-flex justify-content-center align-items-center p-4">
-                        <img class="rounded-circle mr-3" src={{imagemUsuario}} width="30px" height="30px" />
-                        <div class="input-group w-100">
-                          <input type="text" class="form-control mr-2" placeholder="Digite aqui seu comentário"
-                            aria-label="Recipient's username" aria-describedby="button-addon2"
-                            [(ngModel)]='comentario.comentario' id='inputComentario'>
-                          <div class="input-group-append">
-                            <button class="btn btn-outline-primary" (click)='comentar(item.idPostagem)'
-                              id="button-addon2">Comentar</button>
-                          </div>
+                  <div [attr.id]="'comentButton' + item.idPostagem" class="collapse" aria-labelledby="headingTwo"
+                  [attr.data-parent]="'#' + 'coment' + item.idPostagem">
+
+                  <div class="row mb-3">
+                    <div class="col d-flex justify-content-center align-items-center p-4">
+                      <img class="rounded-circle mr-3" src={{imagemUsuario}} width="30px" height="30px" />
+                      <div class="input-group w-100">
+                        <input type="text" class="form-control mr-2" placeholder="Digite aqui seu comentário"
+                          aria-label="Recipient's username" aria-describedby="button-addon2"
+                          [(ngModel)]='comentario.comentario' id='inputComentario'>
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-primary" (click)='comentar(item.idPostagem)'
+                            id="button-addon2">Comentar</button>
                         </div>
                       </div>
-
-
                     </div>
 
 
-                    <div class="row d-flex justify-content-center"
-                      *ngFor='let coment of item.comentario | orderBy : key : reverse'>
-                      <div class="col-md-11">
-                        <div class="card mb-3 shadow border-0 rounded">
-                          <div class="card-body">
-                            <div class="row">
-                              <div class="col d-flex justify-content-start">
-                                <p> <img class=rounded-circle src={{coment.usuario.imagemUsuario}} width="30px"
-                                    height="30px" />
-                                  {{coment.usuario.nomeUsuario}} comentou: </p>
-                              </div>
+                  </div>
+
+
+                  <div class="row d-flex justify-content-center"
+                    *ngFor='let coment of item.comentario | orderBy : key : reverse'>
+                    <div class="col-md-11 w-100">
+                      <div class="card mb-3 shadow border-0 rounded">
+                        <div class="card-body grande">
+                          <div class="row ">
+                            <div class="col d-flex justify-content-start ">
+                              
+                              <p> <img class=rounded-circle src={{coment.usuario.imagemUsuario}} width="30px"
+                                  height="30px" />
+                                {{coment.usuario.nomeUsuario}} comentou: </p>
+                                <div class="d-flex justify-content-end maisprala">
+                          
+                                  <mat-icon aria-hidden="false" aria-label="Example delete" (click)='apagarComentario(coment.idComentario)' class="text-danger">delete</mat-icon>
+                                 
+                                </div>
+                            </div>
+
+                             <!-- Adicionando o apagar comentario-->
+                  
+                        
+                           <!-- Fim apagar comentario-->
+
                             </div>
                             <div class="row">
                               <div class="col">
@@ -290,10 +325,10 @@
                               </div>
                             </div>
 
-                            <hr>
+                            <hr class="pequeno">
 
                             <div class="d-flex justify-content-end">
-                              <small id="texto" class="form-text m-0 text-muted text-monospace">
+                              <small id="texto" class="form-text m-0 mr-5 text-muted text-monospace">
                                 Comentado em {{ coment.dataComentario | date:'dd/MM/yyyy'}} às {{coment.dataComentario |
                                 date:'HH:mm'}}
                               </small>
@@ -301,20 +336,17 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+</div>
+
                   </div>
+
                 </div>
-                <a href="#" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
+
 
                 <!-- comentarios///////// -->
 
 
-                <div class="ml-auto bd-highlight">
-                  <a href="https://web.whatsapp.com/send?phone=55+{{item.usuario.telefoneUsuario}}&text=Olá,%20vi%20sua%20ideia%20na%20FindYourHelp%20e%20achei%20ela%20incrível!%20Gostaria%20de%20colaborar%20com%20você%20:D"
-                    target="_blank">
-                    <button type="button" class="btn btn-warning">Colaborar <img style="height: 20px; width: 20px;"
-                        src="https://i.imgur.com/ChmtyPt.png" alt=""> </button></a>
-                </div>
+
               </div>
             </div>
           </div>
@@ -638,55 +670,81 @@
       <div class="modal-header d-flex align-items-center">
         <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
         <button type="button" class="close mb-3" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true"><i class="fas fa-times-circle"></i></span>
         </button>
       </div>
       <div class="modal-body">
 
-        <div class="formlado mt-4">
-          <div class="form-group">
-            <label for="Tema">Tema</label>
-            <select class="form-control" id="Tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
-              <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
-                {{item.categoriaTema}}
-              </option>
-            </select>
-          </div>
+        <mat-horizontal-stepper #stepper>
+          <mat-step >
+             <form >
+               <div class="d-flex text-center ">
 
-          <div class="form-group ml-3">
-            <label for="tipoAjudaPostagem">Tipo de Ajuda</label>
-            <select class="form-control" id="tipoAjudaPostagem" (change)='tipoDeAjuda($event)' name="tipoAjudaPostagem">
-              <option style="opacity: 0.5;">Selecione uma opção</option>
-              <option value="Financeiro">Financeiro</option>
-              <option value="Servico">Serviço</option>
+                <p class="mb-5 mr-3"><mat-icon aria-hidden="false" aria-label="Example home icon">emoji_events</mat-icon>Como fazer uma postagem <strong>campeã</strong></p>
+                <div class="text-danger mt-3 ideia">
+                  <p class="juntinho"> Necessário informar qual tipo de serviço você deseja para sua ideia</p>
+                  <p class="juntinho"> Necessário informar qual valor você deseja para a realização da ideia</p>
+                  <img class="img-fluid " width="23" alt="Logo da Find Your Help" src="https://i.imgur.com/dtR8Hgp.png"><span class="ml-2 mt-1 text-primary">Dica: Find your help</span>
+                </div>
 
-            </select>
-          </div>
 
-        </div>
-        <p>
-          Por acaso voce quer fazer um novo tema? <a data-dismiss="modal" routerLink="/tema">Cadastre</a>
-        </p>
+               </div>
+                <div>
+                  <button type="button" class=" prala btn btn-secondary mt-2" mat-button matStepperNext>Next</button>
+                </div>
+             </form>
+          </mat-step>
+          <mat-step>
+            <div class="formlado mt-4">
+              <div class="form-group">
+                <label for="Tema">Tema</label>
+                <select class="form-control" id="Tema" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                  <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
+                    {{item.categoriaTema}}
+                  </option>
+                </select>
+              </div>
 
-        <form>
-          <div class="form-group">
-            <label for="tituloPostagem">Titulo:</label>
-            <input [(ngModel)]='postagem.tituloPostagem' type="text" class="form-control" id="tituloPostagem"
-              placeholder="Insira o título da postagem" name="tituloPostagem">
-          </div>
-          <div class="form-group">
-            <label for="urlImagemPostagem">Imagem:</label>
-            <input [(ngModel)]='postagem.urlImagemPostagem' type="text" class="form-control" id="urlImagemPostagem"
-              placeholder="Insira a imagem da postagem" name="urlImagemPostagem">
-          </div>
+              <div class="form-group ml-3">
+                <label for="tipoAjudaPostagem">Tipo de Ajuda</label>
+                <select class="form-control" id="tipoAjudaPostagem" (change)='tipoDeAjuda($event)' name="tipoAjudaPostagem">
+                  <option style="opacity: 0.5;">Selecione uma opção</option>
+                  <option value="Financeiro">Financeiro</option>
+                  <option value="Servico">Serviço</option>
 
-          <div class="form-group">
-            <label for="descricaoPostagem">Descrição:</label>
-            <textarea [(ngModel)]='postagem.descricaoPostagem' class="form-control" id="descricaoPostagem" rows="3"
-              name="descricaoPostagem" placeholder="Insira o texto da postagem"></textarea>
-          </div>
+                </select>
+              </div>
 
-        </form>
+            </div>
+            <p>
+              Por acaso voce quer fazer um novo tema? <a data-dismiss="modal" routerLink="/tema">Cadastre</a>
+            </p>
+
+            <form>
+              <div class="form-group">
+                <label for="tituloPostagem">Titulo:</label>
+                <input [(ngModel)]='postagem.tituloPostagem' type="text" class="form-control" id="tituloPostagem"
+                  placeholder="Insira o título da postagem" name="tituloPostagem">
+              </div>
+              <div class="form-group">
+                <label for="urlImagemPostagem">Imagem:</label>
+                <input [(ngModel)]='postagem.urlImagemPostagem' type="text" class="form-control" id="urlImagemPostagem"
+                  placeholder="Insira a imagem da postagem" name="urlImagemPostagem">
+              </div>
+
+              <div class="form-group">
+                <label for="descricaoPostagem">Descrição:</label>
+                <textarea [(ngModel)]='postagem.descricaoPostagem' class="form-control" id="descricaoPostagem" rows="3"
+                  name="descricaoPostagem" placeholder="Insira o texto da postagem"></textarea>
+              </div>
+     </form>
+     <div>
+      <button type="button" class=" btn btn-secondary mt-2" mat-button matStepperPrevious>Back</button>
+
+   </div>
+          </mat-step>
+
+       </mat-horizontal-stepper>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
           <button type="button" class="btn btn-success" data-dismiss="modal" (click)='publicar()'>Publicar</button>

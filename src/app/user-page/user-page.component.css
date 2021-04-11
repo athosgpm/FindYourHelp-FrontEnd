@@ -46,23 +46,12 @@
   color: #fff;
   height: 80px;
 }
+
 .close {
-  color: red;
   margin: 5px;
 }
 
 /* FIM do CARD postar IDEIA */
-
-
-/* Menu */
-.fs-14 {
-  font-size: 14pt;
-}
-.gris {
-  background-color: rgb(38, 45, 59);
-}
-
-/* Fim do Menu */
 
 /* CARD das Postagens */
 body {
@@ -193,7 +182,7 @@ body {
   }
 }
 
-button {
+.button-style {
 	border-radius: 10px;
 	border: 1px solid #f3ecec;
 	background-color: #1369ce;
@@ -205,6 +194,7 @@ button {
 /* Fim do CARD Usuario */
 
 
+/* menu */
 .margin{
   margin-top: 2cm;
 }
@@ -213,14 +203,104 @@ button {
   color: #f4af1b;
   font-size: 20px;
 }
-
-
-
-#banner{
-  margin-bottom: 50px;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
+.fs-14 {
+  font-size: 14pt;
 }
 
+/*Search */
+
+
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #70c2cc;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  line-height: 35px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 343px;
+  border: none;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  
+  height: 38px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.backbordinha{
+background-color: #015ad1;
+border-radius: 10px;
+}
+
+.descer{
+  position: relative;
+  top: 10px;
+}
+
+/* modal */
+.juntinho{
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ideia{
+  background-color: azure;
+  border-style: dotted;
+  
+}
+
+.prala{
+  float: right;
+}
+/* //modal */
+/* comentario */
+.mexer{
+  position: absolute;
+  left: 390px;
+  height: 60px;
+}
+
+.akinao{
+  pointer-events: none;
+}
+
+.maisprala{
+  position:relative;
+  left: 200px;
+}
+
+.grande{
+  width: 480px;
+}
+
+.pequeno{
+  width: 400px;
+}
+
+/* //comentario */
