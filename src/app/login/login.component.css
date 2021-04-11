@@ -1,36 +1,88 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.bg{
+  background-image: url("https://i.imgur.com/LGxG7cG.png");
+  /* min-height: 695px; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .titulo {
-  color: #3d4a4c;
-  font-family: Trebuchet MS, sans-serif;
+  color: #212525;
   font-weight: bold;
   font-size: 35px;
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
 
-.bg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*height: ; */
-  background-image: url("https://i.imgur.com/LGxG7cG.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.placeholder{
+  color: #3d4a4c;
 }
 
-.container {
-  width: 500px;
-  margin: 200px auto;
-  text-align: center;
-  letter-spacing: 2px;
-  border-radius: 10px;
 
+.card{
+box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
+border-radius: 20px;
+width: 400px;
+height: 400px;
+
+}
+
+.card-body{
+overflow: hidden;
+position: relative;
+width: 100%;
+height: 300%;
+}
+
+.form-control{
+width: 100%;
+background: transparent;
+border: 0px solid rgb(149, 150, 151);
+margin: 6px 0;
+height: 32px;
+border-radius: 7px;
+padding: 0 10px;
+box-sizing: border-box;
+outline: none;
+backdrop-filter: blur(10px);
+box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+
+button{
+  width: 45%;
+  border: 1px solid rgb(37, 52, 63);
+  margin: 35px 0 10px;
+  height: 32px;
+  font-size: 18px;
+  border-radius: 7px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  outline: none;
+  color: rgb(46, 50, 53);
+  cursor: pointer;
+}
+
+
+::placeholder{
+color: rgb(56, 51, 51);
+font-size: 14px;
+}
+
+.btn{
+align-items: center;
+margin-left: 3px;
+}
+
+
+.btn:hover{
+  color: white;
+  transform: scale(0.95);
 }
 
 .glass {
@@ -45,38 +97,3 @@
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 50px 50px;
-  height: 100%;
-  text-align: center;
-}
-
-input {
-  background-color: #eee;
-  border: none;
-  padding: 12px 17px;
-  margin: 8px 0;
-  width: 100%;
-}
-
-button {
-  border: 1px solid #f3ecec;
-  background-color: #3d4a4c;
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 9px 12px;
-  border-radius: 7px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: transform 80ms ease-in;
-}
-
-button:hover {
-  color: white;
-  transform: scale(0.95);
-}
