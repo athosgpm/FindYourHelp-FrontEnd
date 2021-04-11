@@ -5,7 +5,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: auto;
-    /* filter:blur(2px) */
+   
   }
 
   .bg-2{
@@ -18,18 +18,6 @@
 
     color:white;
   }
-
-  /* .btn{
-    color:#9900a6;
-    background-color: transparent;
-    border-color: #9900a6;
-  }
-
-  .btn:hover{
-    background-color: #9900a6;
-    color: white;
-  }
- */
 
  .form-control{
   width: 400px;
