@@ -274,44 +274,48 @@
                   </div>
 
 
-
                   <div [attr.id]="'comentButton' + item.idPostagem" class="collapse" aria-labelledby="headingTwo"
-                    [attr.data-parent]="'#' + 'coment' + item.idPostagem">
+                  [attr.data-parent]="'#' + 'coment' + item.idPostagem">
 
-                    <div class="row mb-3">
-                      <div class="col d-flex justify-content-center align-items-center p-4">
-                        <img class="rounded-circle mr-3" src={{imagemUsuario}} width="30px" height="30px" />
-                        <div class="input-group w-100">
-                          <input type="text" class="form-control mr-2" placeholder="Digite aqui seu comentário"
-                            aria-label="Recipient's username" aria-describedby="button-addon2"
-                            [(ngModel)]='comentario.comentario' id='inputComentario'>
-                          <div class="input-group-append">
-                            <button class="btn btn-outline-primary" (click)='comentar(item.idPostagem)'
-                              id="button-addon2">Comentar</button>
-                          </div>
+                  <div class="row mb-3">
+                    <div class="col d-flex justify-content-center align-items-center p-4">
+                      <img class="rounded-circle mr-3" src={{imagemUsuario}} width="30px" height="30px" />
+                      <div class="input-group w-100">
+                        <input type="text" class="form-control mr-2" placeholder="Digite aqui seu comentário"
+                          aria-label="Recipient's username" aria-describedby="button-addon2"
+                          [(ngModel)]='comentario.comentario' id='inputComentario'>
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-primary" (click)='comentar(item.idPostagem)'
+                            id="button-addon2">Comentar</button>
                         </div>
                       </div>
-
-
                     </div>
 
 
-                    <div class="row d-flex justify-content-center"
-                      *ngFor='let coment of item.comentario | orderBy : key : reverse'>
-                      <div class="col-md-11 w-100">
-                        <div class="card mb-3 shadow border-0 rounded">
-                          <div class="card-body">
-                            <div class="row">
-                              <div class="col d-flex justify-content-start">
-                                <p> <img class=rounded-circle src={{coment.usuario.imagemUsuario}} width="30px"
-                                    height="30px" />
-                                  {{coment.usuario.nomeUsuario}} comentou: </p>
-                              </div>
+                  </div>
 
-                               <!-- Adicionando o apagar comentario-->
-                          <div class="di">
-                            <button (click)='apagarComentario(coment.idComentario)' class="text-danger">Apagar</button>
-                           </div>
+
+                  <div class="row d-flex justify-content-center"
+                    *ngFor='let coment of item.comentario | orderBy : key : reverse'>
+                    <div class="col-md-11 w-100">
+                      <div class="card mb-3 shadow border-0 rounded">
+                        <div class="card-body grande">
+                          <div class="row ">
+                            <div class="col d-flex justify-content-start ">
+                              
+                              <p> <img class=rounded-circle src={{coment.usuario.imagemUsuario}} width="30px"
+                                  height="30px" />
+                                {{coment.usuario.nomeUsuario}} comentou: </p>
+                                <div class="d-flex justify-content-end maisprala">
+                          
+                                  <mat-icon aria-hidden="false" aria-label="Example delete" (click)='apagarComentario(coment.idComentario)' class="text-danger">delete</mat-icon>
+                                 
+                                </div>
+                            </div>
+
+                             <!-- Adicionando o apagar comentario-->
+                  
+                        
                            <!-- Fim apagar comentario-->
 
                             </div>
@@ -321,10 +325,10 @@
                               </div>
                             </div>
 
-                            <hr>
+                            <hr class="pequeno">
 
                             <div class="d-flex justify-content-end">
-                              <small id="texto" class="form-text m-0 text-muted text-monospace">
+                              <small id="texto" class="form-text m-0 mr-5 text-muted text-monospace">
                                 Comentado em {{ coment.dataComentario | date:'dd/MM/yyyy'}} às {{coment.dataComentario |
                                 date:'HH:mm'}}
                               </small>
@@ -332,7 +336,7 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+</div>
 
                   </div>
 

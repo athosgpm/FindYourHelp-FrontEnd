@@ -290,4 +290,17 @@ border-radius: 10px;
   pointer-events: none;
 }
 
+.maisprala{
+  position:relative;
+  left: 200px;
+}
+
+.grande{
+  width: 480px;
+}
+
+.pequeno{
+  width: 400px;
+}
+
 /* //comentario */
