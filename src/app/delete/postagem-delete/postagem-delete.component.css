@@ -16,10 +16,18 @@
   box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
   width: 400px;
-  height: 200px;
-  background: transparent;
+  height: 250px;
   display: flex;
   align-items: center;
+  background: linear-gradient(
+    175deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(71, 73, 76, 0.3)
+  );
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(117, 104, 104, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
 }
 
