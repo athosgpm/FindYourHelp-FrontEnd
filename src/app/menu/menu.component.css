@@ -27,6 +27,20 @@ header .letra .cor{
 
 .header_change .letra .cor{
   color: rgb(0, 0, 0);
- 
- 
+
+
+}
+
+/* .imagem{
+  max-width:80px;
+  max-height:80px;
+  width: auto;
+  height: auto;
+} */
+
+.imagem{
+  max-width: 120px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
 }
