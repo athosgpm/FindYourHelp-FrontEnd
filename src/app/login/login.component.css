@@ -1,15 +1,3 @@
-.bg{
-  background-image: url("https://i.imgur.com/wa7u91c.png");
-  /* min-height: 695px; */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
 .titulo {
   color: #212525;
@@ -19,54 +7,49 @@
   font-family: "Roboto", sans-serif;
 }
 
-.placeholder{
+.placeholder {
   color: #3d4a4c;
 }
 
-
-.card{
-box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
-border-radius: 20px;
-width: 400px;
-height: 400px;
-
+.card {
+  box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
+  border-radius: 20px;
+  width: 400px;
+  height: 400px;
 }
 
-.card-body{
-overflow: hidden;
-position: relative;
-width: 100%;
-height: 300%;
+.card-body {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 300%;
 }
 
-.form-control{
-width: 100%;
-background: transparent;
-border: 0px solid rgb(149, 150, 151);
-margin: 6px 0;
-height: 32px;
-border-radius: 7px;
-padding: 0 10px;
-box-sizing: border-box;
-outline: none;
-backdrop-filter: blur(10px);
-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+.form-control {
+  width: 100%;
+  background: transparent;
+  border: 0px solid rgb(149, 150, 151);
+  margin: 6px 0;
+  height: 32px;
+  border-radius: 7px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  outline: none;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 }
 
-
-
-::placeholder{
-color: rgb(56, 51, 51);
-font-size: 14px;
+::placeholder {
+  color: rgb(56, 51, 51);
+  font-size: 14px;
 }
 
-.btn{
-align-items: center;
-margin-left: 3px;
+.btn {
+  align-items: center;
+  margin-left: 3px;
 }
 
-
-.btn:hover{
+.btn:hover {
   color: white;
   transform: scale(0.95);
 }
@@ -83,3 +66,90 @@ margin-left: 3px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+/*------------ Banner-------------- */
+
+#banner {
+  margin-bottom: 50px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.sombra {
+  background: linear-gradient(
+    360deg,
+    rgba(15, 82, 138, 0.2),
+    rgba(0, 0, 0, 0.2)
+  );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.ban {
+  position: relative;
+  width: 100%;
+  height: 120vh;
+  overflow: hidden;
+}
+.ban:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, aliceblue, transparent);
+  z-index: 3;
+}
+
+.ban .imagens {
+  position: absolute;
+  background: transparent;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  object-fit: cover;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+.ban .luz {
+  position: absolute;
+  background: transparent;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  object-fit: cover;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.ban .efehov {
+  position: absolute;
+  width: 270px;
+  height: 360px;
+  top: 42%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.image {
+  opacity: 0;
+  display: block;
+  backface-visibility: hidden;
+  z-index: 2;
+}
+
+
+.blackiconcolor {
+  color:#212525;
+}

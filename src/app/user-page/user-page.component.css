@@ -207,6 +207,13 @@ body {
   font-size: 14pt;
 }
 
+.imagem{
+  max-width: 140px;
+  max-height: 140px;
+  width: auto;
+  height: auto;
+}
+
 /*Search */
 
 
@@ -238,7 +245,7 @@ body{
 }
 
 .searchButton {
-  
+
   height: 38px;
   border: 1px solid #00B4CC;
   background: #00B4CC;
@@ -272,7 +279,7 @@ border-radius: 10px;
 .ideia{
   background-color: azure;
   border-style: dotted;
-  
+
 }
 
 .prala{
