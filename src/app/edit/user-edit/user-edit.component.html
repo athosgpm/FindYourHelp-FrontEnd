@@ -91,6 +91,10 @@
                       <!--Atributo hide que condiciona a mudança do input type password para input text condicioando a visualização da senha-->
                       <input matInput [type]="hide ? 'password' : 'text'" [formControl]="senha" required
                         (input)='confirmSenha($event)' name="senha" id="senha" placeholder="Digite sua senha!">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
                       <!--função para mostrar o erro por uma caracteristica no controle do atributo senha //ngif tem o mesmo sintaxe que o if da programação-->
 
         <!-- -----------------------
@@ -115,6 +119,10 @@
                       <!--Atributo hide que condiciona a mudança do input type password para input text condicioando a visualização da senha-->
                       <input matInput [type]="hide ? 'password' : 'text'" [formControl]="senha" required
                         [(ngModel)]='user.senhaUsuario' id="confirmeSenha" name="confirmeSenha">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
                       <!--função para mostrar o erro por uma caracteristica no controle do atributo senha //ngif tem o mesmo sintaxe que o if da programação-->
                       <mat-error *ngIf="senha.invalid ">{{getErrorMessageSenha()}} </mat-error>
 

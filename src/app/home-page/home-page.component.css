@@ -373,6 +373,11 @@
 
 }
 
+.pequeno{
+  font-size: 9px;
+  
+}
+
 
 .celesquerda{
 
@@ -389,7 +394,7 @@
    height: 70px;
    width: 29px;
   position: relative; 
-  right:75px;   
+  right: 0px;   
  }
 }
  /* -----------Depoimentosversaomobile---------------- */

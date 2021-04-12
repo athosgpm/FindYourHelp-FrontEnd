@@ -27,8 +27,9 @@
 }
 
  
-.descer2{
- 
+.sair{
+ position: relative;
+ left: 500px;
 }
 
 
@@ -58,7 +59,6 @@ min-width: 300px;
 
 /*Resposta do ngif icone*/
 
-
 /*cards do 1 Step*/
 .mat-card:hover{
 transform: translateY(-10px);
@@ -66,14 +66,21 @@ transform: translateY(-10px);
 -moz-box-shadow: -2px 19px 11px 6px rgba(0,0,0,0.56);
 box-shadow: -2px 19px 11px 6px rgba(0,0,0,0.56);
 }
-
-
-
-/*
-::ng-deep .mat-horizontal-stepper-header-container {
-border: solid 1px red; 
+.logo{
+  position: fixed;
+  width: 55px;
+  right: 1250px;
+  top: 30px !important;
 }
 
+.descer{
+  margin: 10px;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+padding:8px;
+}
+/*
 ::ng-deep mat-stepper-horizontal, mat-stepper-horizontal {
 border: dashed 1px blue; 
 padding: 1em;
@@ -96,7 +103,7 @@ cursor: not-allowed;
 }
 /*cor do step  ativa*/
 ::ng-deep .mat-step-header .mat-step-icon-selected {
-background-color: rgb(119, 0, 255); 
+background-color:#F4AF1B;
 }
 
 /*disposição dos form*/
@@ -150,8 +157,31 @@ background-color: rgb(119, 0, 255);
   min-width: 100px ;
   }
 
+   
 
 
+
+
+}
+
+
+@media( max-width: 540px){
+  .sair{
+    position: absolute;
+    left: 240px;
+    bottom: 10px;
+   }
+  
+   .descer{
+    margin: 0px;
+  }
+
+  .logo{
+    position: fixed;
+    width: 35px;
+    left: 20px;
+    top: 10px !important;
+  }
 }
 
 

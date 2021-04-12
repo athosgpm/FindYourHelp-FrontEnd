@@ -18,9 +18,10 @@ export class UserEditComponent implements OnInit {
   idUser:number
   confirmarSenha: string
   tipoUsuario: string
+  hide:boolean = true
 
 
-  hide:true
+  
   aceitomesmo: number = 0; // Esse atributo é para mudar o valor do slider
   /*injetar form control nos atributos e suas validações , essas validações baseadas no banco de dados*/
   renda = new FormControl('', [Validators.required]);
