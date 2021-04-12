@@ -48,4 +48,16 @@ export class AuthService {
     
 
   }
+
+  Colaborador(){
+    let ok :boolean = false
+    if(environment.tipoUsuario == 'Empreendedor')
+    {
+      ok = true
+    }
+    
+
+    return ok
+
+  }
 }

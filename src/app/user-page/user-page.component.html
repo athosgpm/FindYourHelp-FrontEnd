@@ -143,7 +143,8 @@
       </div>
 
       <!--CardBotao-->
-      <mat-card class="mat-elevation-z4 mt-4">
+     
+      <mat-card class="mat-elevation-z4 mt-4" *ngIf='authService.Colaborador()'>
         <mat-card-header class="row mt-2">
 
           <div class="col-md-1">
