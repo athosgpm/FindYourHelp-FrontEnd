@@ -65,7 +65,7 @@ export class UserPageComponent implements OnInit {
     if(environment.token == ''){
      this.router.navigate(['/login'])
    }
-    this.findByTipoPostagem()
+   
      this.getAllTemas()
     this.getAllPostagens()
 
@@ -219,11 +219,19 @@ export class UserPageComponent implements OnInit {
   }
 
   tipoTag(event: any){
+    
+   
     this.tags = event.target.value
-    console.log(this.tags)
-    this.postagemService.getByTipoPostagem(this.tags).subscribe((resp:Postagem[])=>{
-      this.listaPostagens = resp
-    })
+    if(this.tags == undefined)
+    {
+      this.getAllPostagens()
+    }else{
+      this.postagemService.getByTipoPostagem(this.tags).subscribe((resp:Postagem[])=>{
+        this.listaPostagens = resp
+      })
+    }
+    
+    
 
     
       

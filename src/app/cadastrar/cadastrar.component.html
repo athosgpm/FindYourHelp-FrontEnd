@@ -5,22 +5,25 @@
 <!--
   Bibliotecas usadas: Angular Material , Font Awesome , Flex Layout , Bootstrap
 -->
+
 <div class="container back">
   <mat-horizontal-stepper #stepper class="mt-5 mb-5" >
     <div class="container d-flex justify-content-center align-items-center">
       <div fxLayout="row" fxLayoutGap="21px grid" fxLayoutAlign="center center">
-      
+        
       
       
       </div>
       </div>
     <!--Primeiro Step-->
     <form class="d-flex justify-content-center align-items-center">
+      
       <mat-step label="Passo 1" state="quemevc">
-        <h1 class="display-4 mt-3 text-center">Quem é você?</h1>
+        <img class="img-fluid logo" alt="Logo da Find Your Help" src="https://i.imgur.com/dtR8Hgp.png">
+        <h1 class="display-4  text-center">Quem é você?</h1>
         <div class="formladomesmo">
-        <div class="col descer2">
-          <mat-card class="mat-elevation-z5" (click)="move(1)" (click)="disableButton2()">
+        <div class="col mt-2">
+          <mat-card class="mat-elevation-z5 imgTam" (click)="move(1)" (click)="disableButton2()">
             <!--função para mover para o step 1-->
             <mat-card-header>
               <mat-card-title class="text-center">Empreendedor</mat-card-title>
@@ -38,7 +41,7 @@
           </mat-card>
         </div>
         <div class="col">
-          <mat-card class="mat-elevation-z5 descer" (click)="move(2)" (click)="disableButton()">
+          <mat-card class="mat-elevation-z5 descer " (click)="move(2)" (click)="disableButton()">
             <!--função para mover para o step 2-->
             <mat-card-header>
               <mat-card-title>Colaborador</mat-card-title>
@@ -57,8 +60,8 @@
         </div>
       </div>
   
-        <div class="py-4">
-          <button mat-flat-button color="primary" class="mt-0" routerLink='/homepage'>Voltar</button>
+        <div class="sair">
+          <button mat-flat-button color="warn" class="mt-0" routerLink='/homepage'>SAIR</button>
   
         </div>
       </mat-step>
@@ -68,6 +71,7 @@
       <!--Segundo Step-->
   
       <mat-step label="Passo 2" state="phone">
+       
         <label id="opcao">
           <h1 class="display-4">Qual sua renda familiar?</h1>
         </label>
@@ -84,7 +88,11 @@
           <!--Desabilitar o botao usando o parametro do controle e resposta da funcao testarrenda pelo clique do botao-->
   
           <button mat-flat-button color="primary" matStepperNext (click)="testarRenda()"
-            [disabled]="renda.invalid">Next</button>
+            [disabled]="renda.invalid">Próximo</button>
+  
+        </div>
+        <div class="sair">
+          <button mat-flat-button color="warn" class="mt-0" routerLink='/homepage'>SAIR</button>
   
         </div>
       </mat-step>
@@ -94,6 +102,7 @@
     <!--Terceiro Step-->
   
     <mat-step label="Passo 3" state="chat" class="py-3">
+     
       <div class="container">
         <form class="example-form">
           <div>
@@ -231,13 +240,18 @@
   
   
         <div class="btn-group" role="group" aria-label="Second group">
-          <button mat-flat-button color="primary" matStepperNext >Next</button>
+          <button mat-flat-button color="primary" matStepperNext >Proximo</button>
         </div>
+      </div>
+      <div class="sair">
+        <button mat-flat-button color="warn" class="mt-0" routerLink='/homepage'>SAIR</button>
+
       </div>
     </mat-step>
     <!--/Terceiro Step-->
   
     <mat-step label="Passo 4">
+      
       <div class="container" fxLayoutAlign="center center">
         <div class="termo">
           <h2>Política Privacidade</h2>
@@ -297,16 +311,20 @@
         </div>
       </div>
       <div class="py-4">
-        <mat-slide-toggle name="aceitomesmo" (change)="Mudando($event)">Accept Terms & Conditions</mat-slide-toggle>
+        <mat-slide-toggle name="aceitomesmo" (change)="Mudando($event)">Aceito termos e condições</mat-slide-toggle>
       </div>
       <div class="btn-toolbar centro" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">
-          <button mat-flat-button matStepperPrevious class="btn btn-secondary">Back</button>
+          <button mat-flat-button matStepperPrevious class="btn btn-secondary">Voltar</button>
         </div>
   
         <div class="btn-group" role="group" aria-label="Second group">
           <button mat-flat-button color="primary"  [disabled]="aceitomesmo==0" (click)='cadastrar()'>Enviar</button>
         </div>
+      </div>
+      <div class="sair">
+        <button mat-flat-button color="warn" class="mt-0" routerLink='/homepage'>SAIR</button>
+
       </div>
   
     </mat-step>

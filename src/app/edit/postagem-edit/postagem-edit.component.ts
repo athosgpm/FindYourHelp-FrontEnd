@@ -62,6 +62,7 @@ export class PostagemEditComponent implements OnInit {
     this.postagem.tipoAjudaPostagem = this.tipoA
     this.tema.idTema = this.idTema
     this.postagem.tema = this.tema
+   
 
     this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem)=> {
       this.postagem = resp
@@ -71,6 +72,10 @@ export class PostagemEditComponent implements OnInit {
         text: 'Postagem atualizada com sucesso!',
       });
       this.router.navigate(['/userpage'])
-    })
+
+    },erro=>{
+      console.log(this.postagem)
+    }
+    )
   }
 }

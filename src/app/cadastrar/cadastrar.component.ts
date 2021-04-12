@@ -81,6 +81,7 @@ export class CadastrarComponent implements OnInit {
             title: 'ops',
             text: 'Esse usuario ja existe!',
           });
+          this.router.navigate(['/homepage'])
         }else{
 
 

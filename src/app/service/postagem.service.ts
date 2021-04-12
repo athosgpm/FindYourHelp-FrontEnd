@@ -38,7 +38,7 @@ export class PostagemService {
     }
 
     putPostagem(postagem:Postagem):Observable<Postagem>{
-      return this.http.put<Postagem>(`${this.baseUrl}/postagens/`,postagem, this.token)
+      return this.http.put<Postagem>(`${this.baseUrl}/postagens`,postagem, this.token)
     }
 
     deletePostagem(id:number){
