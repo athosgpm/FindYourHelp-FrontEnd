@@ -375,7 +375,7 @@
 
 .pequeno{
   font-size: 9px;
-  display: none;
+  
 }
 
 
@@ -394,7 +394,7 @@
    height: 70px;
    width: 29px;
   position: relative; 
-  right:75px;   
+  right: 0px;   
  }
 }
  /* -----------Depoimentosversaomobile---------------- */
