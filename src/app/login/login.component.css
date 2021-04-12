@@ -54,20 +54,6 @@ box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 }
 
 
-button{
-  width: 45%;
-  border: 1px solid rgb(37, 52, 63);
-  margin: 35px 0 10px;
-  height: 32px;
-  font-size: 18px;
-  border-radius: 7px;
-  padding: 0 10px;
-  box-sizing: border-box;
-  outline: none;
-  color: rgb(46, 50, 53);
-  cursor: pointer;
-}
-
 
 ::placeholder{
 color: rgb(56, 51, 51);
