@@ -19,6 +19,10 @@
   background-color: #f2bc94;
 }
 
+#texto2{
+  position: relative;
+  right:30px;
+}
 .botaodahora {
   background-color: transparent;
   border-radius: 8px;

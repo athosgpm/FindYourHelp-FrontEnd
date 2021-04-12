@@ -279,7 +279,7 @@
                             src="https://i.imgur.com/ChmtyPt.png" alt=""> </button></a>
                     </div>
                     <h5 class="mb-0">
-                      <button class="btn btn-link text-dark mb-2"><a href="" class="card-link bd-highlight akinao umpoucola"><i class="fa fa-gittip"></i> Like</a></button>
+                   
                       <button class="btn btn-link collapsed text-dark umpoucolatbm" type="button" data-toggle="collapse"
                         [attr.data-target]="'#' + 'comentButton' + item.idPostagem" aria-expanded="false"
                         aria-controls="collapseTwo">
@@ -424,7 +424,7 @@
 
               <div class="card-footer d-flex bd-highlight align-items-center">
 
-                <a href="#" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
+                
 
                 <!-- ///////////////comentarios -->
 
@@ -554,7 +554,7 @@
                 </div>
 
                 <div class="card-footer d-flex bd-highlight align-items-center">
-                  <a href="" class="card-link bd-highlight"><i class="fa fa-gittip"></i> Like</a>
+                  
 
 
                 <!-- ///////////////comentarios -->
@@ -562,6 +562,13 @@
                 <div class="accordion" [attr.id]="'coment' + item.idPostagem">
 
                   <div class="mt-2" id="headingTwo">
+                    <div class="ml-auto bd-highlight mexer">
+                      <a href="https://web.whatsapp.com/send?phone=55+{{item.usuario.telefoneUsuario}}&text=Olá,%20vi%20sua%20ideia%20na%20FindYourHelp%20e%20achei%20ela%20incrível!%20Gostaria%20de%20colaborar%20com%20você%20:D"
+                        target="_blank">
+                        <button type="button" class="btn btn-warning">Colaborar <img style="height: 20px; width: 20px;"
+                            src="https://i.imgur.com/ChmtyPt.png" alt=""> </button></a>
+                    </div>
+  
                     <h5 class="mb-0">
                       <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse"
                         [attr.data-target]="'#' + 'comentButton' + item.idPostagem" aria-expanded="false"
@@ -598,12 +605,17 @@
                       *ngFor='let coment of item.comentario | orderBy : key : reverse'>
                       <div class="col-md-11">
                         <div class="card mb-3 shadow border-0 rounded">
-                          <div class="card-body">
+                          <div class="card-body grande">
                             <div class="row">
                               <div class="col d-flex justify-content-start">
                                 <p> <img class=rounded-circle src={{coment.usuario.imagemUsuario}} width="30px"
                                     height="30px" />
                                   {{coment.usuario.nomeUsuario}} comentou: </p>
+                                   <div class="d-flex justify-content-end maisprala">
+
+                                  <mat-icon aria-hidden="false" aria-label="Example delete" (click)='apagarComentario(coment.idComentario)' class="text-danger">delete</mat-icon>
+
+                                </div>
                               </div>
                             </div>
                             <div class="row">
@@ -612,10 +624,10 @@
                               </div>
                             </div>
 
-                            <hr>
+                            <hr class="pequeno">
 
                             <div class="d-flex justify-content-end">
-                              <small id="texto" class="form-text m-0 text-muted text-monospace">
+                              <small id="texto2" class="form-text m-0 text-muted text-monospace">
                                 Comentado em {{ coment.dataComentario | date:'dd/MM/yyyy'}} às {{coment.dataComentario |
                                 date:'HH:mm'}}
                               </small>
@@ -631,13 +643,7 @@
                 <!-- comentarios///////// -->
 
 
-                  <div class="ml-auto bd-highlight">
-                    <a href="https://web.whatsapp.com/send?phone=55+{{item.usuario.telefoneUsuario}}&text=Olá,%20vi%20sua%20ideia%20na%20FindYourHelp%20e%20achei%20ela%20incrível!%20Gostaria%20de%20colaborar%20com%20você%20:D"
-                      target="_blank">
-                      <button type="button" class="btn btn-warning">Colaborar <img style="height: 20px; width: 20px;"
-                          src="https://i.imgur.com/ChmtyPt.png" alt=""> </button></a>
-                  </div>
-
+                  
                 </div>
               </div>
             </div>
