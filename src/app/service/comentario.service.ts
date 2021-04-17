@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ComentarioService {
-  baseURL = environment.server + environment.port
+  baseURL = environment.server
 
   constructor(private http: HttpClient) { }
 

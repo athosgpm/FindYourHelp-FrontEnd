@@ -247,12 +247,12 @@
   background-attachment: fixed
 }
 #myCarousel .bannerProf {
-  font-size: 30px;
+  font-size: 26px;
   margin-bottom: 15px;
   position: absolute;
-  left: 110px;
-  bottom: 30px;
-  color: rgb(240, 209, 37);
+  left: 100px;
+  top: -60px;
+  color: #F4AF1B;
   line-height: 100%;
   letter-spacing: 0.5px;
   font-weight: 600
@@ -262,8 +262,8 @@
   font-size: 20px;
   position: absolute;
   left: 100px;
-  
-  color:black;
+  top: -20px;
+  color: #f0f8ff;
 }
 
 #myCarousel .carousel-item a {
@@ -291,7 +291,7 @@
   position: relative;
   height: 350px;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(1,89,153,1) 0%, rgba(0,101,169,1) 35%, rgba(0,107,177,1) 92%);
+  background: linear-gradient(180deg, #015999 0%, #0065a9 35%, #006bb1 92%);
   background-size: cover
 }
 
@@ -299,8 +299,6 @@
   position: relative;
   bottom: 120px;
   left: 90px;
-  width: 50px;
-  height: 50px;
 }
 
 .carousel .carousel-control-next-icon {
@@ -337,8 +335,9 @@
 }
 
 .imgTam{
-  width: 230px;
-  height: 230px;
+  position: relative;
+  width: 200px;
+  height: 200px;
   
 }
  /* -----------/Depoimentos---------------- */

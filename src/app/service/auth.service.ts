@@ -9,7 +9,7 @@ import { UserLogin } from '../model/UserLogin';
   providedIn: 'root'
 })
 export class AuthService {
-  baseURL = environment.server + environment.port
+  baseURL = environment.server
 
 
 
@@ -31,11 +31,11 @@ export class AuthService {
   }
   
   findUserById(id: number): Observable<User>{
-    return this.http.get<User>(`http://localhost:8080/usuarios/${id}`, { headers: {'Authorization':environment.token}})
+    return this.http.get<User>(`${this.baseURL}/usuarios/${id}`, { headers: {'Authorization':environment.token}})
   }
 
   getByIdUser(id:number):Observable<User>{
-    return this.http.get<User>(`http://localhost:8080/usuarios/${id}`, { headers: {'Authorization':environment.token}})
+    return this.http.get<User>(`${this.baseURL}/usuarios/${id}`, { headers: {'Authorization':environment.token}})
   }
 
 

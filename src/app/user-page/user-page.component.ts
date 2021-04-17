@@ -196,7 +196,6 @@ export class UserPageComponent implements OnInit {
     }, err => {
       console.log(this.comentario)
     })
-
   }
 
   findallComentarios(){

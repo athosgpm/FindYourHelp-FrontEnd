@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  server: 'http://localhost:',
-  port: '8080',
+  //server: 'https://find-your-help.herokuapp.com',
+  server: 'http://localhost:8080',
   token: '',
   idUsuario: 0,
   nomeUsuario: '',
