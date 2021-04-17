@@ -9,7 +9,7 @@ import { Tema } from '../model/Tema';
   providedIn: 'root'
 })
 export class TemaService {
-
+  baseURL = environment.server
   constructor(
     
     private http: HttpClient
@@ -19,23 +19,23 @@ export class TemaService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
   getAllTema():Observable<Tema[]>{
-    return this.http.get<Tema[]>('http://localhost:8080/tema', this.token)
+    return this.http.get<Tema[]>(`${this.baseURL}/tema`, this.token)
   }
   getByIdTema(id:number):Observable<Tema>{
-    return this.http.get<Tema>(`http://localhost:8080/tema/${id}`, this.token)
+    return this.http.get<Tema>(`${this.baseURL}/tema/${id}`, this.token)
   }
   getByNomeTema(categoriaTema: string):Observable<Tema[]>{
-    return this.http.get<Tema[]>(`http://localhost:8080/tema/categoriaTema/${categoriaTema}`, this.token)
+    return this.http.get<Tema[]>(`${this.baseURL}/tema/categoriaTema/${categoriaTema}`, this.token)
 
   }
   postTema(tema:Tema):Observable<Tema>{
-    return this.http.post<Tema>('http://localhost:8080/tema',tema, this.token)
+    return this.http.post<Tema>(`${this.baseURL}/tema`,tema, this.token)
   }
   putTema(tema:Tema):Observable<Tema>{
-    return this.http.put<Tema>('http://localhost:8080/tema',tema, this.token)
+    return this.http.put<Tema>(`${this.baseURL}/tema`,tema, this.token)
   }
   deleteTema(id:number){
-    return this.http.delete(`http://localhost:8080/tema/${id}`,this.token)
+    return this.http.delete(`${this.baseURL}/tema/${id}`,this.token)
   }
 
 

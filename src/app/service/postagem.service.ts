@@ -8,7 +8,7 @@ import { Postagem } from '../model/Postagem';
   providedIn: 'root'
 })
 export class PostagemService {
-  baseUrl = environment.server + environment.port
+  baseURL = environment.server
   constructor(
     private http:HttpClient
   ) { }
@@ -16,32 +16,32 @@ export class PostagemService {
 
     getAllPostagens():Observable<Postagem[]>
     {
-      return this.http.get<Postagem[]>(`${this.baseUrl}/postagens/`, this.token)
+      return this.http.get<Postagem[]>(`${this.baseURL}/postagens/`, this.token)
     }
     getByIdPostagem(id:number):Observable<Postagem>
     {
-      return this.http.get<Postagem>(`${this.baseUrl}/postagens/${id}`, this.token)
+      return this.http.get<Postagem>(`${this.baseURL}/postagens/${id}`, this.token)
     }
     getByTituloPostagem(tituloPostagem: string): Observable<Postagem[]>{
-      return this.http.get<Postagem[]>(`${this.baseUrl}/postagens/tituloPostagem/${tituloPostagem}`, this.token)
+      return this.http.get<Postagem[]>(`${this.baseURL}/postagens/tituloPostagem/${tituloPostagem}`, this.token)
 
     }
     getByTipoPostagem(tipoPostagem: string): Observable<Postagem[]>{
-      return this.http.get<Postagem[]>(`${this.baseUrl}/postagens/tipo/postagem/portipo/${tipoPostagem}`, this.token)
+      return this.http.get<Postagem[]>(`${this.baseURL}/postagens/tipo/postagem/portipo/${tipoPostagem}`, this.token)
 
     }
 
 
 
     postPostagem(postagem:Postagem){
-      return this.http.post<Postagem>(`${this.baseUrl}/postagens/`,postagem, this.token)
+      return this.http.post<Postagem>(`${this.baseURL}/postagens/`,postagem, this.token)
     }
 
     putPostagem(postagem:Postagem):Observable<Postagem>{
-      return this.http.put<Postagem>(`${this.baseUrl}/postagens`,postagem, this.token)
+      return this.http.put<Postagem>(`${this.baseURL}/postagens`,postagem, this.token)
     }
 
     deletePostagem(id:number){
-      return this.http.delete(`${this.baseUrl}/postagens/${id}`,this.token)
+      return this.http.delete(`${this.baseURL}/postagens/${id}`,this.token)
     }
 }
