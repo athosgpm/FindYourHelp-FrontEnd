@@ -12,10 +12,10 @@ import Swal from 'sweetalert2';
 })
 
 export class LoginComponent implements OnInit {
-  userLogin:UserLogin = new UserLogin()
+  userLogin: UserLogin = new UserLogin()
 
   constructor(
-    private auth:AuthService,
+    private auth: AuthService,
     private router: Router
   ) { }
 
@@ -35,8 +35,6 @@ export class LoginComponent implements OnInit {
       environment.telefoneUsuario = this.userLogin.telefoneUsuario
       environment.emailUsuario = this.userLogin.emailUsuario
       environment.tipoUsuario = this.userLogin.tipoUsuario
-      console.log(environment.token)
-      console.log(environment.emailUsuario)
       this.router.navigate(['/userpage'])
     },erro =>{
         if(erro.status == 500){

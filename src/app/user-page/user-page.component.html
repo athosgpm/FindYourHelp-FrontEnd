@@ -19,9 +19,16 @@
             <a class="nav-link active fs-14">Olá, {{nomeUsuario}}</a>
           </li>
           <li class="nav-item letra">
-            <a href='sair()'>
+            <a [routerLink]="['/user-edit', idUsuario]">
               <p class="fs-14 mt-2 cor">
-                <i class="fas fa-sign-out-alt" aria-hidden="true"></i>
+                <i class="fas fa-edit"></i>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item letra">
+            <a (click)='sair()'>
+              <p class="fs-14 mt-2 ml-3"> Sair
+                <i class="fas fa-sign-out-alt cor" aria-hidden="true"></i>
               </p>
             </a>
           </li>
@@ -110,7 +117,7 @@
             </div>
 
             </div>
-            
+
             <div class="carousel-item">
             <div class="col-md-4 clearfix d-none d-md-block" href="#">
               <div class="card bg-dark border-radius: 10px; text-white ">
@@ -142,7 +149,7 @@
       </div>
 
       <!--CardBotao-->
-     
+
       <mat-card class="mat-elevation-z4 mt-4" *ngIf='authService.Colaborador()'>
         <mat-card-header class="row mt-2">
 
@@ -278,7 +285,7 @@
                             src="https://i.imgur.com/ChmtyPt.png" alt=""> </button></a>
                     </div>
                     <h5 class="mb-0">
-                   
+
                       <button class="btn btn-link collapsed text-dark umpoucolatbm" type="button" data-toggle="collapse"
                         [attr.data-target]="'#' + 'comentButton' + item.idPostagem" aria-expanded="false"
                         aria-controls="collapseTwo">
@@ -423,7 +430,7 @@
 
               <div class="card-footer d-flex bd-highlight align-items-center">
 
-                
+
 
                 <!-- ///////////////comentarios -->
 
@@ -553,7 +560,7 @@
                 </div>
 
                 <div class="card-footer d-flex bd-highlight align-items-center">
-                  
+
 
 
                 <!-- ///////////////comentarios -->
@@ -567,7 +574,7 @@
                         <button type="button" class="btn btn-warning">Colaborar <img style="height: 20px; width: 20px;"
                             src="https://i.imgur.com/ChmtyPt.png" alt=""> </button></a>
                     </div>
-  
+
                     <h5 class="mb-0">
                       <button class="btn btn-link collapsed text-dark" type="button" data-toggle="collapse"
                         [attr.data-target]="'#' + 'comentButton' + item.idPostagem" aria-expanded="false"
@@ -642,7 +649,7 @@
                 <!-- comentarios///////// -->
 
 
-                  
+
                 </div>
               </div>
             </div>
@@ -655,12 +662,12 @@
     </div>
     <!-- /////cards a direita -->
     <div class="col-md-3 mt-5">
-      <div class="mr-5" style="position: fixed; ">
+      <div class="mr-5">
         <h2>Notícias FindYourHelp</h2>
         <hr>
         <div class="card gedf-card">
           <div class="card-body">
-            <h5 class="card-title">Generation Brasil</h5>
+            <h5 class="card-title" style="font-weight: bold;">Generation Brasil</h5>
             <h6 class="card-subtitle mb-2 text-muted">Centenas de novos Dev's no mercado </h6>
             <p class="card-text">Até hoje, mais de 38 mil jovens se formaram nos programas da Generation ao redor do mundo, em 148 cidades e 13 países.</p>
             <a href="https://brazil.generation.org/" class="card-link">Site Generation</a>
@@ -669,7 +676,7 @@
         </div>
         <div class="card gedf-card">
           <div class="card-body">
-            <h5 class="card-title">Find Your Help!</h5>
+            <h5 class="card-title" style="font-weight: bold;">Find Your Help!</h5>
             <h6 class="card-subtitle mb-2 text-muted">Melhor Projeto do Brasil</h6>
             <p class="card-text">A Find your Help é uma ação que visa garantir que todas as pessoas possam se beneficiar das vantagens que o site traz</p>
             <a href="https://brazil.generation.org/"  class="card-link">Site Generation</a>

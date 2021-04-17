@@ -1,5 +1,5 @@
 .bg {
-  background-image: url("https://i.imgur.com/W7W6zVd.png");
+  background-image: url("https://i.imgur.com/PyfrXSc.png");
   min-height: 700px;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,13 +11,13 @@
   top: 0;
 }
 
-.card {
+ .card {
 
   box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
   width: 600px;
   height: 600px;
-  background: linear-gradient(
+ /*  background: linear-gradient(
     175deg,
     rgba(255, 255, 255, 0.1),
     rgba(71, 73, 76, 0.3)
@@ -25,9 +25,9 @@
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   border: 1px solid rgba(117, 104, 104, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
 
+}
 
  .form-control {
 
@@ -36,7 +36,6 @@
 
 }
 
-
 .btn{
   width: 100px;
 }
@@ -44,11 +43,13 @@
  .text-input{
   width: 300px;
   width: 100%;
-  font-weight: 900;
+
 
 }
 
 ::placeholder {
-  color: black;
+  color:black;
   font-size: 15px;
 }
+
+

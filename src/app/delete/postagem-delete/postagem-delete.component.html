@@ -1,45 +1,60 @@
+
 <div class="bg">
-  <div class="container-fluid mt-5">
-
-
+  <div class="container-fluid d-flex justify-content-end  mt-5">
     <div class="row">
-      <div class="col-md-12">
-        <h1 class="text-center text-dark" style="font-weight: 800;">Apagar Postagem</h1>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <h4 class="text-center text-dark" style="font-weight: 800;">Você tem certeza que deseja apagar essa postagem?
-        </h4>
-      </div>
-    </div>
+      <div class="col-md-6"></div>
 
-    <div class="row d-flex justify-content-center mt-4">
-      <div class="col-md-4 d-flex align-items-center">
-        <div class="card text-center">
+      <div class="col-md-6">
+        <div class="card card-style">
           <div class="card-body">
-            <h3 class="card-title m-0" style="font-size: 14pt; font-weight: bold;">
-              {{postagem.tituloPostagem}}</h3>
-            <small class="text-white text-center">Tema: <br> {{postagem.tema.categoriaTema}}</small>
-            <p class="card-text mt-3 text-center" style="font-size: 12pt; font-weight: bold;">
-              {{postagem.descricaoPostagem}}</p>
-            <p class="card-text text-center" style="font-size: 10pt; font-weight: bold;"><small class="text-white">
+            <h1 class="card-title text-center text-body">Deletar Postagem</h1>
 
-                {{postagem.dataPostagem | date: 'dd/MM/yyyy'}} às {{postagem.dataPostagem | date: 'HH:mm'}}
-              </small></p>
+            <h4 class="text-center text-dark" style="font-weight: 800;">Você tem certeza que deseja apagar essa
+              postagem?
+            </h4>
+
+            <div class="row">
+              <div class="col-md-12 d-flex justify-content-center">
+
+
+                <div class="card " style="width: 18rem;">
+                  <img class="card-img-top img-fluid" src="{{postagem.urlImagemPostagem}}" alt="Imagem da postagem">
+                  <div class="card-body text-center">
+                    <h3 class="card-title m-0" style="font-size: 14pt; font-weight: bold;">
+                    {{postagem.tituloPostagem}}</h3>
+
+                    <small class="text-body text-center"> Tema: {{postagem.tema.categoriaTema}}</small>
+                    <p class="card-text mt-3 text-center" style="font-size: 12pt;">
+                      {{postagem.descricaoPostagem}}</p>
+
+                    <p class="card-text text-center" style="font-size: 10pt; font-weight: bold;"><small
+                        class="text-body">
+                        {{postagem.dataPostagem | date: 'dd/MM/yyyy'}} às {{postagem.dataPostagem | date: 'HH:mm'}}
+                      </small></p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-2">
+              <button class="btn btn-danger mr-4" routerLink='/userpage'>
+                Cancelar
+              </button>
+
+              <button class="btn btn-success" (click)='apagar()'>
+                Deletar
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row mt-5">
-      <div class="col-md-12 d-flex justify-content-center">
-        <button class="btn btn-danger mr-4" routerLink='/userpage'>Não</button>
-        <button class="btn btn-success" (click)='apagar()'>Sim</button>
-      </div>
-    </div>
-
   </div>
-
 </div>
+
+
+
+

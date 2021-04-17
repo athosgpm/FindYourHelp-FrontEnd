@@ -1,14 +1,14 @@
-<div class="bg">
-  <div class="container-fluid  d-flex justify-content-center mt-5">
+ <div class="bg">
+  <div class="container-fluid d-flex justify-content-end  mt-5">
     <div class="card">
       <div class="card-body text-secondary">
-        <h1 class="card-title text-center text-dark" style="font-weight: 800;">Atualizar Postagem</h1>
+        <h1 class="card-title text-center text-body">Atualizar Postagem</h1>
 
-        <div class="row d-flex justify-content-center d-flex align-items-center">
+        <div class="row d-flex justify-content-center">
           <div class="col-md-12">
             <form>
               <div class="form-group">
-                <label for="Tema" class="text-dark" style="font-weight: 800;">Tema</label>
+                <label for="Tema" class="text-body">Tema</label>
                 <select class="form-control text-input" id="Tema" [(ngModel)]='idTema' name="id" (change)='findByIdTema()'>
                   <option *ngFor='let item of listaTemas' value="{{item.idTema}}"> {{item.categoriaTema}}
                   </option>
@@ -16,7 +16,7 @@
               </div>
 
               <div class="form-group">
-                <label for="tipoAjudaPostagem" class="text-dark" style="font-weight: 800;">Tipo de Ajuda</label>
+                <label for="tipoAjudaPostagem" class="text-body">Tipo de Ajuda</label>
                 <select class="form-control text-input" id="tipoAjudaPostagem" (change)='tipoDeAjuda($event)'
                   name="tipoAjudaPostagem">
                   <option>Selecione um tipo de ajuda</option>
@@ -28,20 +28,21 @@
 
 
               <div class="form-group">
-                <label for="tituloPostagem" class="text-dark" style="font-weight: 800;">Titulo</label>
+                <label for="tituloPostagem" class="text-body">Titulo</label>
                 <input [(ngModel)]='postagem.tituloPostagem' name="tituloPostagem" type="text" class="form-control text-input"
                   id="tituloPostagem" placeholder="titulo da Postagem" >
               </div>
               <div class="form-group">
-                <label for="urlImagemPostagem" class="text-dark" style="font-weight: 800;">Imagem</label>
+                <label for="urlImagemPostagem" class="text-body">Imagem</label>
                 <input [(ngModel)]='postagem.urlImagemPostagem' name="urlImagemPostagem" type="text" class="form-control text-input"
                   id="urlImagemPostagem" placeholder="Imagem da Postagem" >
               </div>
 
               <div class="form-group mb-3">
-                <label for="descricaoPostagem" class="text-dark" style="font-weight: 800;">Descrição</label>
+                <label for="descricaoPostagem" class="text-body">Descrição</label>
                 <textarea [(ngModel)]='postagem.descricaoPostagem' name="descricaoPostagem" class="form-control text-input"
-                  id="descricaoPostagem" rows="3" ></textarea>
+                  id="descricaoPostagem" rows="3" >
+                </textarea>
               </div>
 
             </form>
@@ -64,3 +65,6 @@
     </div>
   </div>
 </div>
+
+
+

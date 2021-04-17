@@ -4,6 +4,7 @@ import { Postagem } from 'src/app/model/Postagem';
 import { PostagemService } from 'src/app/service/postagem.service';
 import { environment } from './../../../environments/environment.prod';
 import Swal from 'sweetalert2';
+import { User } from 'src/app/model/User';
 
 @Component({
   selector: 'app-postagem-delete',
@@ -13,13 +14,14 @@ import Swal from 'sweetalert2';
 export class PostagemDeleteComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
+  usuario: User = new User()
   idPost:number
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private postagemService: PostagemService
-    
+
   ) { }
 
   ngOnInit(){
@@ -30,7 +32,7 @@ export class PostagemDeleteComponent implements OnInit {
     }
     this.idPost = this.route.snapshot.params['id']
     this.findByIdPostagem(this.idPost)
-    
+
   }
 
   findByIdPostagem(id:number){
@@ -39,7 +41,7 @@ export class PostagemDeleteComponent implements OnInit {
     })
   }
 
-  
+
   apagar() {
     this.postagemService.deletePostagem(this.idPost).subscribe(()=>{
       Swal.fire({
