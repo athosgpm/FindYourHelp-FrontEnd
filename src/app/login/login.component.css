@@ -12,6 +12,7 @@
 }
 
 .card {
+  margin-bottom: 20px;
   box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
   border-radius: 20px;
   width: 400px;

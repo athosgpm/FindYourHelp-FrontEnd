@@ -19,7 +19,7 @@ export class UserEditComponent implements OnInit {
   confirmarSenha: string
   tipoUsuario: string
   hide:boolean = true
-
+  imagemUsuario = environment.imagemUsuario
 
   
   aceitomesmo: number = 0; // Esse atributo é para mudar o valor do slider
@@ -29,7 +29,7 @@ export class UserEditComponent implements OnInit {
   nome = new FormControl('', [
     Validators.required,
     Validators.minLength(2),
-    Validators.maxLength(7),
+    Validators.maxLength(100),
   ]);
   tipoS = new FormControl('', [Validators.required]);
   senha = new FormControl('', [
