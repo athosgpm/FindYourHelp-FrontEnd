@@ -16,7 +16,7 @@ export class PostagemService {
 
     getAllPostagens():Observable<Postagem[]>
     {
-      return this.http.get<Postagem[]>(`${this.baseURL}/postagens/`, this.token)
+      return this.http.get<Postagem[]>(`${this.baseURL}/postagens`, this.token)
     }
     getByIdPostagem(id:number):Observable<Postagem>
     {
@@ -34,7 +34,7 @@ export class PostagemService {
 
 
     postPostagem(postagem:Postagem){
-      return this.http.post<Postagem>(`${this.baseURL}/postagens/`,postagem, this.token)
+      return this.http.post<Postagem>(`${this.baseURL}/postagens`,postagem, this.token)
     }
 
     putPostagem(postagem:Postagem):Observable<Postagem>{
