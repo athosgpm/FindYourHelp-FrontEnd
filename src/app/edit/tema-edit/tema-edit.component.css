@@ -1,5 +1,6 @@
 .bg {
-  background-image: url("https://i.imgur.com/W7W6zVd.png");
+  background-image: url("https://i.imgur.com/PyfrXSc.png");
+  min-height: 700px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,8 +13,8 @@
 
 
 .card {
- margin: 0 auto;
- margin-top: 12%;
+  margin-right: 150px;
+  margin-top: 12%;
   box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   width: 400px;
