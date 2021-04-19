@@ -1,17 +1,24 @@
-<div class="container mb-5 mt-5">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-10 ">
+<div class="container  d-flex justify-content-center align-items-center">
+    <div class="row ">
+    <div class="col-md-3 ">
+   
+    </div>
 
-            <h1 class="text-center">Atualizar Cadastro</h1>
-            <form class="example-form">
-                <div>
-                  <mat-form-field class="example-full-width">
-                    <mat-label>Find your Help</mat-label>
-                    <input matInput disabled value="Atualizar Cadastro">
-                  </mat-form-field>
-                </div>
+
+        <div class="col-md-6 col-sm-12 py-5">
+        
+         <div class="picture d-flex justify-content-center">
+          <img class="img-fluid rounded-circle img-size mr-5" src="{{imagemUsuario}}">
+         <h1 class="titulodescer">Atualizar Cadastro</h1>
+             
+              
+            </div>
+
+            
+            <form class="example-form  ml-2 mt-5">
+               
                 <!--Nome-->
-                <div class="formlado py-4">
+                <div class="formlado">
                   <p>
                     <mat-form-field appearance="outline" [color]="controlColor" class="mr-3">
                       <mat-label>Nome</mat-label>
@@ -25,7 +32,7 @@
                         <span>Nome
                           precisa ter mais de 2 caracteres </span>
                       </mat-error>
-                      <mat-error *ngIf=" nome.hasError('maxlength') "><span>Nome precisa ter menos de 6 caracteres </span>
+                      <mat-error *ngIf=" nome.hasError('maxlength') "><span>Nome precisa ter menos de 100 caracteres </span>
                       </mat-error>
                       <mat-icon matSuffix>public</mat-icon>
 

@@ -1,3 +1,96 @@
 .formlado{
     display: inline-flex;
   }
+
+  .img-size{
+  height: 130px;
+  width: 130px;
+  /* width: 100%;
+  height: 100%; */
+}
+
+.picture{
+  position:relative;
+  right:170px;
+}
+
+.titulodescer{
+  padding:30px;
+  font-size:25pt;
+   position:relative;
+   top:30px;
+   left:40px;
+}
+@media screen and (min-width: 320px) {
+  body {
+  font-size: 80%;
+ }
+/*disposição do header*/
+ ::ng-deep .mat-horizontal-stepper-header  {
+  padding: 10px 8px 4px 0px !important;
+ margin-right: 0px;
+ position: relative;
+ 
+  
+}
+.mat-card{
+  height: 350px;
+  width: 250px;
+  
+}
+/*disposição dos form*/
+.formlado{
+  display: inline-flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+   padding: 0px 12px 0px 0px
+}
+
+
+/*disposição do botao colaborador*/
+.formladomesmo{
+  display: inline-flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+   padding: 0px 12px 0px 0px
+}
+
+
+ /*disposição do container*/
+.back{
+  position: relative;
+  
+  
+} 
+/*tamanhodoput*/
+.mat-form-field{
+  min-width: 100px ;
+  }
+
+  
+
+
+
+}
+
+@media (max-width: 540px) {
+ .img-size{
+  height: 90px;
+  width: 90px;
+  position:relative;
+  left:100px;
+  /* width: 100%;
+  height: 100%; */
+  
+}
+.picture{
+  position:relative;
+  right:100px;
+}
+
+.titulodescer{
+  
+  font-size:16pt;
+  
+}
+ }
